@@ -23,12 +23,14 @@
 <script src="http://www.proquest.com/includes/IMC-jquery-1.10.2.min.js"></script>
 <script src="http://www.proquest.com/includes/bootstrap.min.js"></script>
 <script src="http://www.proquest.com/includes/parsley.min.js"></script>
-<script src="http://www.proquest.com/includes/jquery.cookie.js"></script>
-<script src="http://www.proquest.com/includes/jquery.form.min.js"></script>
 <script>
-// Enable Bootstrap tooltips
-$(function () {
-	$('[data-toggle="tooltip"]').tooltip();
+//debugger;
+//function setEmailTxt() {
+    //$('#EmailTxt').val($('#email').val());    // Sets hidden field for current date
+//}
+$( document ).ready(function() {
+    $('#contact').parsley({ excluded: ':hidden' });
+    //$('#email').val($('#EmailTxt').val());    // Sets Email field from hidden EmailTxt
 });
 </script>
 <style type="text/css">
@@ -44,12 +46,18 @@ $(function () {
 .parsley-type {
   color: #a51f1e;
 }
-.pq-lead-text {
-  font-size: 16px;
+.header {
+  color: #333333;
+  font-weight: bold;
+}
+#h3header {
+  font-size: 20px;
+  color: #333333;
+  font-weight: bold;
 }
 .pq-form-label {
   color: #333333;
-  font-size: 15px !important;
+  font-size:15px !important;
 }
 hr {
   display: block;
@@ -59,24 +67,6 @@ hr {
   margin-right: auto;
   border-style: inset;
   border-width: 2px;
-}
-#email-warning {
-  display: none;
-}
-.well-sm-adjacent {
-  padding-top: 9px;
-}
-.tooltip-inner {
-  max-width: 275px;
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
-  border-style: solid;
-  border-width: 1px;
-}
-/* ID needed here for specificity */
-#pq-contact .tooltip-arrow {
-  border-top-color: #ebccd1;
 }
 </style>
 </head>
@@ -103,9 +93,9 @@ hr {
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div id="navbar-collapse-1" class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-right">
-                <li><a name="TopNav_SupportCenter" href="http://www.proquest.com/company/support-landing.html">Support Center |</a></li>
-                <li><a name="TopNavNews" href="http://www.proquest.com/about/news/">News |</a></li>
-                <li><a name="TopNav_Contact" href="http://www.proquest.com/contact/contact-landing.html">Contact</a></li>
+                <li><a xthyperlink="846523" xtlinkname="TopNav_SupportCenter" xt="SPCLICK" name="TopNav_SupportCenter" href="http://www.proquest.com/company/support-landing.html">Support Center |</a></li>
+                <li><a xthyperlink="846524" xtlinkname="TopNavNews" xt="SPCLICK" name="TopNavNews" href="http://www.proquest.com/about/news/">News |</a></li>
+                <li><a xthyperlink="846525" xtlinkname="TopNav_Contact" xt="SPCLICK" name="TopNav_Contact" href="http://www.proquest.com/contact/contact-landing.html">Contact</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -114,30 +104,27 @@ hr {
     </div>
   </div>
 </div><!-- /.header-area -->
-
 <div class="proquest_part">
   <div class="container">
     <div class="col-md-12">
       <div class="inner_proquest">
-        <a href="https://www.proquest.com" target="_blank" name="httpswwwproquestcom"><!-- img src="logo_3.jpg" name="logo_3.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="logo_5.jpg" contentid="21197080" xt="SPIMAGE" / --><img src="logo_3_0.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" contentId="21769817" spname="logo_3_0.jpg" xt="SPIMAGE" /></a>
+        <a href="https://www.proquest.com" target="_blank" xthyperlink="877680" xt="SPCLICK" xtlinkname="httpswwwproquestcom" name="httpswwwproquestcom"><img src="logo_3.jpg" name="logo_3.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="logo_5.jpg" contentid="21197080" xt="SPIMAGE" /></a>
       </div>
     </div>
   </div>
 </div><!-- /.proquest_part -->
-
 <div class="arts_db_part">
   <div class="container">
     <div class="col-md-12">
       <div class="inner_db">
         <div class="top_db">
-          <p><a href="https://www.proquest.com" style="color: #00a0df; text-decoration: none;" name="httpswwwproquestcom">ProQuest</a > > Your Subscription Preferences</p>
+          <p><a href="https://www.proquest.com" style="color: #00a0df; text-decoration: none;" xthyperlink="877727" xt="SPCLICK" xtlinkname="httpswwwproquestcom" name="httpswwwproquestcom">ProQuest</a > > Your Subscription Preferences</p>
         </div>
         <div class="bottom_t"><span style="font-size: 36px; padding-bottom: 10px;">Your Subscription Preferences</span></div>
       </div>
     </div>
   </div>
 </div><!-- /.arts_db_part -->
-
 <div class="background_part">
   <div class="container-fluid">
     <div class="col-md-12">
@@ -145,52 +132,26 @@ hr {
     </div>
   </div>
 </div><!-- /.background_part -->
-
 <div class="small_para_part">
   <div class="container">
     <div class="col-md-12">
-      <p class="pq-lead-text">Get the ProQuest email that's most relevant, informative and useful. By completing your subscription preferences, your favorite types and topics of email will get to you faster. Come back at any time to update your selections.<br>
-      </p>
-    </div>
-    <div id="email-warning" class="col-md-6">
-      <div class="well-sm-adjacent">
-        <p class="pq-lead-text"><strong>For security purposes and protection of customer data, we have disabled the ability to edit your email address within this form.</strong></p>
-        <p>To update your email address, please register again by submitting a <a href="#" class="clear-identity-action" name="new_form" xt="SPNOTRACK">new form</a>.</p>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="well well-sm">
-        <p>To unsubscribe from all ProQuest mailings, please <a href="http://go.proquest.com/preferences/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;">select here</a>.</p>
-        <p>To manage your Alexander Street communication preferences, <a href="https://alexanderstreet.com/preferences" target="_blank" name="AS Unsubscribe" style="color: #00a0df; text-decoration: none;">select here</a>.</p>
+      <div class="inner_small">
+        <p><span style="font-size: 16px;">Get the ProQuest email that's most relevant, informative and useful. By completing your subscription preferences, your favorite types and topics of email will get to you faster. Come back at any time to update your selections.</span></p>
+        <p>To unsubscribe from all ProQuest mailings, please <a href="http://go.proquest.com/preferences/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;" xt="SPCLICKSTREAM" xthyperlink="846562" xtlinkname="Unsubscribe Redirect">select here</a>.</p>
+        <p>To manage your Alexander street communication preferences, please <a href="https://alexanderstreet.com/preferences" target="_blank" name="AS Unsubscribe" style="color: #00a0df; text-decoration: none;" xt="SPCLICKSTREAM" xthyperlink="865058" xtlinkname="AS Unsubscribe">select here</a>.</p>
       </div>
     </div>
   </div>
 </div><!-- /.small_para_part -->
-
 <div class="first_form_part">
   <div class="container">
     <div class="col-md-12">
       <div class="inner_first_one">
-        <h2>Tell us about you. <span class="n_fields">(<span class="parsley-required">*</span> = required fields)</span></h2>
-
-      <!-- ======== START FORM ======== -->
-        <form id="pq-contact" name="pq-contact" method="post" class="pq-contact" style="background-color: #FFFFFF; margin-top: 20px;">
-        <!-- ====== START Section 1 - Personal Info ====== -->
+        <h2><br>
+          Tell us about you. <span class="n_fields">(<span class="parsley-required">*</span> = required fields)</span></h2>
+        <form style="background-color: #FFFFFF; margin-top: 20px;" method="post" name="contact" id="contact">
+          <!-- ====== START Section 1 - Personal Info ====== -->
           <div class="panel-body">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label class="pq-form-label" for="control_EMAIL">Email <span class="parsley-required">*</span></label>
-                  <input type="text" class="form-control" id="control_EMAIL" name="EmailTxt" required="" data-toggle="tooltip" data-placement="top" title="For security purposes and protection of customer data, you will not be able to change your email address once you subscribe."/>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label class="pq-form-label" for="control_COLUMN270">Twitter Handle</label>
-                  <input type="text" class="form-control" id="control_COLUMN270" name="Twitter Handle" />
-                </div>
-              </div>
-            </div>
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
@@ -241,6 +202,14 @@ hr {
                   <input type="text" class="form-control" id="control_COLUMN166" name="Organization Name" required="" />
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_EMAIL">Email <span class="parsley-required">*</span></label>
+                  <input type="text" class="form-control" id="control_EMAIL" name="Email" required="" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label class="pq-form-label" for="control_COLUMN40">Country <span class="parsley-required">*</span></label>
@@ -404,11 +373,17 @@ hr {
                   </select>
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_COLUMN270">Twitter Handle</label>
+                  <input type="text" class="form-control" id="control_COLUMN270" name="Twitter Handle" />
+                </div>
+              </div>
             </div>
           </div>
-        <!-- ====== END Section 1 - Personal Info ====== -->
+          <!-- ====== END Section 1 - Personal Info ====== -->
           <hr>
-        <!-- ====== START Section 2 - Email Types ====== -->
+          <!-- ====== START Section 2 - Email Types ====== -->
           <div class="newsletter_part_2">
             <span style="font-size: 24px;">What types of emails are you interested in receiving?<br>
             <br>
@@ -452,9 +427,9 @@ hr {
               </div>
             </div>
           </div>
-        <!-- ====== END Section 2 - Email Types ====== -->
+          <!-- ====== END Section 2 - Email Types ====== -->
           <hr>
-        <!-- ====== START Section 3 - Newsletters ====== -->
+          <!-- ====== START Section 3 - Newsletters ====== -->
           <div class="newsletter_part_2">
             <span style="font-size: 24px;">Newsletters<br>
             <br>
@@ -504,9 +479,9 @@ hr {
               </div>
             </div>
           </div>
-        <!-- ====== END Section 3 - Newsletters ====== -->
+          <!-- ====== END Section 3 - Newsletters ====== -->
           <hr>
-        <!-- ====== START Section 4 - Blogs ====== -->
+          <!-- ====== START Section 4 - Blogs ====== -->
           <div class="newsletter_part_2">
             <span style="font-size: 24px;">ProQuest Blog Newsletter (English only)<br>
             <br>
@@ -528,13 +503,13 @@ hr {
               </div>
             </div>
           </div>
-        <!-- ====== END Section 4 - Blogs ====== -->
+          <!-- ====== END Section 4 - Blogs ====== -->
           <hr>
           <div class="row" style="text-align: center;">
             <span style="font-size: 24px; font-style: italic;">Ready to Submit? <a href="#SubmitButton" style="color: #00a0df; text-decoration: none;" name="BMLinnktoBottom" xt="SPBOOKMARK">Yes</a></span>
           </div>
           <hr>
-        <!-- ====== START Section 5 ====== -->
+          <!-- ====== START Section 5 ====== -->
           <div class="newsletter_part_2">
             <span style="font-size: 24px;">What topics are you interested in?<br>
             </span>
@@ -542,7 +517,7 @@ hr {
               <br>
             </span>
             <div class="panel-body">
-            <!-- ==== START Section 5.1 - Collection Types ==== -->
+              <!-- ==== START Section 5.1 - Collection Types ==== -->
               <span style="font-size: 20px; font-weight: bold;">Collection Types<br>
                 <br>
               </span>
@@ -625,9 +600,9 @@ hr {
                   </div>
                 </div>
               </div>
-            <!-- ==== END Section 5.1 - Collection Types ==== -->
+              <!-- ==== END Section 5.1 - Collection Types ==== -->
               <hr>
-            <!-- ==== START Section 5.2 - Subject ==== -->
+              <!-- ==== START Section 5.2 - Subject ==== -->
               <span style="font-size: 20px; font-weight: bold;">Subject<br>
                 <br>
               </span>
@@ -732,9 +707,9 @@ hr {
                   </div>
                 </div>
               </div>
-            <!-- ==== END Section 5.2 - Subject ==== -->
+              <!-- ==== END Section 5.2 - Subject ==== -->
               <hr>
-            <!-- ==== START Section 5.3 - Ebook Title Alerts ==== -->
+              <!-- ==== START Section 5.3 - Ebook Title Alerts ==== -->
               <span style="font-size: 24px;">Ebook Title Alerts<br>
               </span>
               <p>
@@ -820,9 +795,9 @@ hr {
                   </div>
                 </div>
               </div>
-            <!-- ==== END Section 5.3 - Ebook Title Alerts ==== -->
+              <!-- ==== END Section 5.3 - Ebook Title Alerts ==== -->
               <hr>
-            <!-- ==== START Section 5.4 - Preferred Language ==== -->
+              <!-- ==== START Section 5.4 - Preferred Language ==== -->
               <span style="font-size: 24px;">Your Preferred Language<br>
                 <br>
               </span>
@@ -962,82 +937,76 @@ hr {
                   </div>
                 </div>
               </div>
-            <!-- ==== END Section 5.4 - Preferred Language ==== -->
+              <!-- ==== END Section 5.4 - Preferred Language ==== -->
             </div>
           </div>
-        <!-- ====== END Section 5 ====== -->
+          <!-- ====== END Section 5 ====== -->
+          <div style="display: none;"><!--<input type="text" name="EmailTxt" id="EmailTxt" value="" />--></div>
           <div class="row">
-            <a name="SubmitButton"></a>
             <input type="submit" value="Submit" class="btn btn-primary btn-lg" />
-            <input type="button" value="Clear Preferences" onclick="formClear();" class="btn btn-primary btn-lg" />
-            <p><br></p>
+            <input type="button" value="Clear Form" onclick="formClear();" class="btn btn-primary btn-lg" />
+            <p><a name="SubmitButton"></a></p>
           </div>
           <input type="hidden" name="LastTouchLeadSource" id="LastTouchLeadSource" value="Newsletters">
           <input type="hidden" name="LastTouchLeadSourceDate" id="LastTouchLeadSourceDate" value="mm/dd/yyyy">
         </form>
-      <!-- ======== END FORM ======== -->
-
       </div><!-- /.inner_first_one -->
     </div>
   </div>
-  
   <div class="footer_one">
     <div class="container">
       <div class="col-md-12">
         <div class="col-md-2">
           <div class="single_ft">
             <h4>Navigation</h4><!--Navigation-->
-            <a name="Footer_Navigation_Libraries" href="http://www.proquest.com/libraries"> For Libraries</a><br>
-            <a name="Footer_Navigation_Researchers" href="http://www.proquest.com/researchers"> For Researchers</a><br>
-            <a name="Footer_Navigation_ProductsServices" href="http://www.proquest.com/products-services"> Products &amp; Services</a><br>
-            <a name="Footer_Navigation_Customers" href="http://www.proquest.com/customer-care"> For Customers</a><br>
-            <a name="Footer_Navigation_Events" href="http://www.proquest.com/events"> Events</a><br>
-            <a name="Footer_Navigation_About" href="http://www.proquest.com/about"> About</a><br>
-            <a name="Footer_Navigation_Blogs" href="http://www.proquest.com/blog"> Blogs</a>
+            <a xthyperlink="846526" xtlinkname="Footer_Navigation_Libraries" xt="SPCLICK" name="Footer_Navigation_Libraries" href="http://www.proquest.com/libraries"> For Libraries</a><br>
+            <a xthyperlink="846527" xtlinkname="Footer_Navigation_Researchers" xt="SPCLICK" name="Footer_Navigation_Researchers" href="http://www.proquest.com/researchers"> For Researchers</a><br>
+            <a xthyperlink="846528" xtlinkname="Footer_Navigation_ProductsServices" xt="SPCLICK" name="Footer_Navigation_ProductsServices" href="http://www.proquest.com/products-services"> Products &amp; Services</a><br>
+            <a xthyperlink="846529" xtlinkname="Footer_Navigation_Customers" xt="SPCLICK" name="Footer_Navigation_Customers" href="http://www.proquest.com/customer-care"> For Customers</a><br>
+            <a xthyperlink="846530" xtlinkname="Footer_Navigation_Events" xt="SPCLICK" name="Footer_Navigation_Events" href="http://www.proquest.com/events"> Events</a><br>
+            <a xthyperlink="846531" xtlinkname="Footer_Navigation_About" xt="SPCLICK" name="Footer_Navigation_About" href="http://www.proquest.com/about"> About</a><br>
+            <a xthyperlink="846532" xtlinkname="Footer_Navigation_Blogs" xt="SPCLICK" name="Footer_Navigation_Blogs" href="http://www.proquest.com/blog"> Blogs</a>
           </div>
         </div>
         <div class="col-md-2 col-xs-6">
           <div class="single_ft">
             <h4>Support</h4><!--Support-->
-            <a name="Footer_Support_SupportCenter" href="http://www.proquest.com/company/support-landing.html"> Support Center</a><br>
-            <a name="Footer_Support_ToolsResources" href="http://www.proquest.com/customer-care/tools-resources/"> Tools and Resources</a><br>
-            <a name="Footer_Support_TrainingWebinars" href="http://www.proquest.com/customer-care/training-webinars/"> Training Webinars</a><br>
-            <a name="Footer_Support_LibGuides" href="http://proquest.libguides.com/home"> LibGuides</a>
+            <a xthyperlink="846533" xtlinkname="Footer_Support_SupportCenter" xt="SPCLICK" name="Footer_Support_SupportCenter" href="http://www.proquest.com/company/support-landing.html"> Support Center</a><br>
+            <a xthyperlink="846534" xtlinkname="Footer_Support_ToolsResources" xt="SPCLICK" name="Footer_Support_ToolsResources" href="http://www.proquest.com/customer-care/tools-resources/"> Tools and Resources</a><br>
+            <a xthyperlink="846535" xtlinkname="Footer_Support_TrainingWebinars" xt="SPCLICK" name="Footer_Support_TrainingWebinars" href="http://www.proquest.com/customer-care/training-webinars/"> Training Webinars</a><br>
+            <a xthyperlink="846536" xtlinkname="Footer_Support_LibGuides" xt="SPCLICK" name="Footer_Support_LibGuides" href="http://proquest.libguides.com/home"> LibGuides</a>
           </div>
         </div>
       </div>
     </div>
   </div><!-- /.footer_one -->
-  
   <div class="main_footer">
     <div class="container">
       <div class="col-md-12">
         <div class="inner_footer">
           <p style="text-align: center;">
-            <a name="BottomNav_Privacy" href="http://www.proquest.com/about/privacy-statement.html">Privacy</a>&nbsp;&nbsp;
-            <a name="BottomNav_TermsofUse" href="http://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>&nbsp;&nbsp;
-            <a name="BottomNav_Cookies" href="http://www.proquest.com/about/cookie-policy.html">Cookies</a>&nbsp;&nbsp;
-            <a name="BottomNav_Accessibility" href="http://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>&nbsp;&nbsp;
-            <a name="BottomNav_DMCAPolicy" href="http://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a>
+            <a xthyperlink="846537" xtlinkname="BottomNav_Privacy" xt="SPCLICK" name="BottomNav_Privacy" href="http://www.proquest.com/about/privacy-statement.html">Privacy</a>&nbsp;&nbsp;
+            <a xthyperlink="846538" xtlinkname="BottomNav_TermsofUse" xt="SPCLICK" name="BottomNav_TermsofUse" href="http://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>&nbsp;&nbsp;
+            <a xthyperlink="846539" xtlinkname="BottomNav_Cookies" xt="SPCLICK" name="BottomNav_Cookies" href="http://www.proquest.com/about/cookie-policy.html">Cookies</a>&nbsp;&nbsp;
+            <a xthyperlink="846540" xtlinkname="BottomNav_Accessibility" xt="SPCLICK" name="BottomNav_Accessibility" href="http://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>&nbsp;&nbsp;
+            <a xthyperlink="846541" xtlinkname="BottomNav_DMCAPolicy" xt="SPCLICK" name="BottomNav_DMCAPolicy" href="http://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a>
           </p>
         </div>
       </div>
     </div>
   </div><!-- /.main_footer -->
-
 </div><!-- /.first_form_part -->
-
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script>
   window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>');
 </script>
-<script src="http://www.proquest.com/includes/pq-clear-contact-form.js"></script>
+<script src="http://www.proquest.com/includes/bootstrap.min.js"></script>
+<script src="http://www.proquest.com/includes/plugins.js"></script>
+<script src="http://www.proquest.com/includes/main.js"></script>
+<script src="http://www.proquest.com/includes/wow.min.js"></script>
 </body>
-
 <script>
-var formLanguage = "en";
-
 // Put language-specific button labels here
 var SELECT_ALL_LABEL = 'Select All';
 var UNSELECT_ALL_LABEL = 'Unselect All';
@@ -1045,33 +1014,32 @@ var UNSELECT_ALL_LABEL = 'Unselect All';
 // Function to Select or Unselect all checkboxes in a multi-select checkbox area
 function toggleCheckboxes(checkboxesSelector, buttonSelector) {
 
-  var checkboxes = $('[name="'+checkboxesSelector+'"]');
-  var button = $( buttonSelector );
+	var checkboxes = $('[name="'+checkboxesSelector+'"]');
+	var button = $( buttonSelector );
 
-  if (button.val() == SELECT_ALL_LABEL) {
-    checkboxes.each(function() {
-      this.checked = true;
-    })
-    button.val(UNSELECT_ALL_LABEL);
-  } else {
-    checkboxes.each(function() {
-      this.checked = false;
-    })
-    button.val(SELECT_ALL_LABEL);
-  }
+	if (button.val() == SELECT_ALL_LABEL) {
+		checkboxes.each(function() {
+			this.checked = true;
+		})
+		button.val(UNSELECT_ALL_LABEL);
+	} else {
+		checkboxes.each(function() {
+			this.checked = false;
+		})
+		button.val(SELECT_ALL_LABEL);
+	}
 }
 
-// Function to clear the checkbox selections from the form
+// Function to clear the form
 function formClear() {
-  $(':input', '#pq-contact').not(':text, :button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected');
-  $('#toggle1').val(SELECT_ALL_LABEL);
-  $('#toggle2').val(SELECT_ALL_LABEL);
-  $('#toggle3').val(SELECT_ALL_LABEL);
+	$(':input', '#contact').not(':button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected').not(':checkbox, :radio').val('');
+	$('#toggle1').val(SELECT_ALL_LABEL);
+	$('#toggle2').val(SELECT_ALL_LABEL);
+	$('#toggle3').val(SELECT_ALL_LABEL);
 }
 
+// Set the date for the "Last Touch Lead Source Date"
 $( document ).ready(function() {
-
-  // Set the date for the "Last Touch Lead Source Date"
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth()+1; //January is 0!
@@ -1082,15 +1050,6 @@ $( document ).ready(function() {
   today = mm+'/'+dd+'/'+yyyy;
   $('#LastTouchLeadSourceDate').val(today);         // Sets hidden field for current date
   $('#LastTouchLeadSource').val('Targeted Email');  // Sets hidden field for LastTouchLeadSource
-
-  // Set Parsley defaults
-//  $('#pq-contact').parsley({ excluded: ':hidden' });
-
-  // From pq-clear-contact-form.js - disallow changing the email address if already set
-  initContactForm('pq-contact', 'control_EMAIL', 'control_COLUMN30');
-
-  console.log('Document loaded.');
-
 });
 </script>
 </html>
