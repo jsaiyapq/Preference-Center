@@ -1,0 +1,71 @@
+﻿Language			ISO code	IMC	pq.com
+----------------------------------------------------------------
+Chinese (Traditional)		zh-Hant		TW	-none-
+Chinese (Simplified)		zh-Hans		CN	APAC-CN
+Japanese			ja		JP	APAC-JP
+Korean				ko		KR	APAC-KO
+Portuguese (Brazil)		pt-BR		PORT	LATAM-PT
+Spanish (Latin America)		es-419		ES	LATAM-ES
+
+----
+
+TRANSLATIONS NEEDED
+===================
+
+"Country" in zh-Hant, zh-Hans and ko, even though the dropdown list is in English for all the Preference Centers.
+Note: ko still has no "Salutation" (honorific prefix) field.
+
+----
+
+"ProQuest Blog Newsletter (English Only)" in zh-Hant, zh-Hans, pt-BR, es-419 (LatAm)
+
+----
+
+"(* = required fields)" needed in zh-Hant, pt-BR, es-419
+
+Note:
+"* (带*号内容为必填项)" is zh-Hans
+"（*は必須項目です。英語入力のみ）" is ja
+"(* = 필수 항목)" is ko
+
+----
+
+"[Is this] not __name__?  <<Clear the form>>."
+ - or -
+"If you are not __name__, <<clear the form>>." needed in zh-Hant, ja, ko
+
+Note:
+<<text>> indicates link text.
+"如不是您本人，请重新填写。" is zh-Hans for the above text -- __name__ was not used and entire text is the link
+"Se você não é __name__ <<limpe aqui o formulário>>." is pt-BR
+"Si usted no es __name__ <<borre el formulario>>." is es-419
+
+----
+
+"To update your email address, please register again by submitting a <<new form>>."
+ - or -
+[Whatever makes sense as a link in that language] is needed in all languages.
+
+----
+
+Modify "Clear Form" button at bottom of the form to read "Clear Preferences"
+(Clicking will only clear checkmarks but will leave user personal info intact)
+"Clear Preferences" (or equivalent to description above) is needed in all languages.
+
+----
+
+CHANGES
+=======
+
+Since "Alexander Street" is the name of a company and not a place, I recommend these changes be made (after proofing by the translators):
+
+"Para gerenciar suas preferências de comunicação de rua Alexander, por favor <<selecione aqui>>."
+should be
+"Para gerenciar suas preferências de comunicação de Alexander Street, por favor <<selecione aqui>>."
+for pt-BR
+
+"Para administrar sus preferencias de comunicación de calle Alexander, por favor <<haga clic aqu>>."
+should be
+"Para administrar sus preferencias de comunicación de Alexander Street, por favor <<haga clic aquí>>."
+for es-419
+Also note what I believe is a typo in the link text.
