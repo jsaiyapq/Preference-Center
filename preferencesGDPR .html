@@ -7,7 +7,7 @@
 <body>
 
 <!--*********************** Start Header ***********************-->
-<div class="header-area"><!-- add 'id="topbar"' to match www.proquest.com style -->
+<div class="header-area" id="topbar"><!-- add 'id="topbar"' to match www.proquest.com style -->
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -46,7 +46,7 @@
   <div class="container">
     <div class="col-md-12">
       <div class="left_overview"><img src="userContentService.jpg" class="img-responsive" alt="" style="font-size:20px; color: #444444;" title="Hero image" width="1140" height="380"   xt="SPIMAGE" contentid="21954674" spname="userContentService.jpg" />
-        <h3 style="font-weight:bold;">Confirm Your Communication Status</h3>
+        <h3 style="font-weight:bold;">Do You Want to Receive Email from ProQuest?</h3>
       </div>
     </div>
   </div>
@@ -59,7 +59,7 @@
       <!--*********************** Start Summary Copy ***********************-->
       <div class="col-md-5" style="color: #FFF; margin-top: 15px;">
         <div class="right-content-parts">
-          <div id="email-warning" style="display: none; background-color: #F5F5F6; padding: 10px;">
+          <div id="email-warning" style="display: none; background-color: #F5F5F6; padding: 10px; margin-bottom: 15px;">
             <p><strong>For security purposes and protection of customer data, we have disabled the ability to edit your email address within this form.</strong></p>
             <p>To update your email address, please register again by submitting a <a href="#" class="clear-identity-action" name="NewForm" xt="SPNOTRACK">new form</a>.</p>
           </div> <!-- ** ADD ** -->
@@ -78,7 +78,8 @@
         <div class="left-contact-form">
           <div class="contact-forms"> 
             <!-- <h3 class="text-center">Echo CTA here, but avoid any "below" language.</h3> -->
-            <form data-validate="parsley" id="contact" name="contact" method="post" class="pq-contact" onsubmit="">
+            <form data-validate="parsley" id="contact" name="contact" method="post" class="pq-contact" onsubmit="" autocomplete="off">
+            <!-- Autocomplete set to "off" for compatibility workaround for Firefox. -->
 
               <!-- The "Last Touch Lead Source" can be updated by changing the value="" -->
               <input type="hidden" name="LastTouchLeadSource" id="LastTouchLeadSource" value="gDPRFacultyForm">
@@ -194,6 +195,12 @@
 .parsley-type {
 	color: white;
 }
+.clear-identity-action a:visited {
+	color: purple;
+}
+a:visited {
+	color: purple;
+}
 </style>
 <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script src="http://contentz.mkt941.com/lp/static/js/iMAWebCookie.js?2aa8b034-139209dc9f9-6b01afd6fbb6724a9fe9ac1747b0e3f6&h=www.pages04.net" type="text/javascript"></script>
@@ -215,7 +222,7 @@ function setLastTouchLeadSourceDate() {
   if (dd < 10) { dd = '0'+dd };
   if (mm < 10) { mm = '0'+mm };
   today = mm+'/'+dd+'/'+yyyy;
-  $('#LastTouchLeadSourceDate').val(today);  // Sets hidden field for current date
+  $('#DoubleOptInDate').val(today);  // Sets hidden field for current date
 }
 
 // Document Ready
