@@ -2,6 +2,7 @@
 <html lang="es-419" class="no-js">
 <head>
 <title>ProQuest Preference Center</title>
+<link rel="icon" type="image/x-icon" href="https://www.proquest.com/favicon.ico" />
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +26,6 @@
 <script src="https://www.proquest.com/includes/IMC-jquery-1.10.2.min.js"></script>
 <script src="https://www.proquest.com/includes/bootstrap.min.js"></script>
 <script src="https://www.proquest.com/includes/parsley.min.js"></script>
-<script src="https://www.proquest.com/includes/jquery.cookie.js"></script>
 <script src="https://www.proquest.com/includes/jquery.form.min.js"></script>
 <script src="https://www.proquest.com/includes/pq-clear-preference-center.js"></script>
 <script>
@@ -63,8 +63,8 @@ hr {
 #email-warning {
   display: none;
 }
-.well-sm-adjacent {
-  padding-top: 9px;
+a.clear-identity-action {
+  color: #00a0df;
 }
 .tooltip-inner {
   max-width: 275px;
@@ -123,7 +123,9 @@ hr {
   <div class="container">
     <div class="col-md-12">
       <div class="inner_proquest">
-        <a href="https://www.proquest.com" target="_blank" name="httpswwwproquestcom" xthyperlink="915138" xt="SPCLICK" xtlinkname="httpswwwproquestcom"><img src="pq-header-logo.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="pq-header-logo.jpg" xt="SPIMAGE" contentId="21963239" /></a>
+        <a href="https://www.proquest.com/LATAM-ES/" target="_blank" name="httpswwwproquestcom">
+          <img src="pq-header-logo.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="pq-header-logo.jpg" xt="SPIMAGE" />
+        </a>
       </div>
     </div>
   </div>
@@ -161,16 +163,11 @@ hr {
       </p>
     </div>
     <div id="email-warning" class="col-md-6">
-      <div class="well-sm-adjacent">
-        <p class="pq-lead-text"><strong>Por razones de seguridad y protección de datos de clientes, hemos desactivado la opción de editar su correo electrónico en este formulario.</strong></p>
-        <p>Para actualizar su dirección de correo electrónico, le rogamos, vuelva a registrarse enviando un <a href="#" class="clear-identity-action" name="new_form" xt="SPNOTRACK">nuevo formulario</a>.</p>
-      </div>
+      <p class="pq-lead-text"><strong>Por razones de seguridad y protección de datos de clientes, hemos desactivado la opción de editar su correo electrónico en este formulario.</strong></p>
+      <p>Para actualizar su dirección de correo electrónico, le rogamos, vuelva a registrarse enviando un <a href="#" class="clear-identity-action" name="new_form" xt="SPNOTRACK">nuevo formulario</a>.</p>
     </div>
     <div class="col-md-6">
-      <div class="well well-sm">
-        <p>Para anular la suscripción de todos los correos de ProQuest <a href="https://go.proquest.com/preferences/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;" xthyperlink="915140" xt="SPCLICK" xtlinkname="Unsubscribe Redirect">haga clic aquí</a>.</p>
-        <p>Para administrar sus preferencias de comunicación de calle Alexander, por favor <a href="https://alexanderstreet.com/preferences" target="_blank" name="AS Unsubscribe" style="color: #00a0df; text-decoration: none;" xthyperlink="915141" xt="SPCLICK" xtlinkname="AS Unsubscribe">haga clic aquí</a>.</p>
-      </div>
+      <div class="well well-sm">Para anular la suscripción de todos los correos de ProQuest <a href="https://go.proquest.com/preferences-es/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;">haga clic aquí</a>.</div>
     </div>
   </div>
 </div>
@@ -188,7 +185,7 @@ hr {
         <!-- Autocomplete set to "off" for compatibility workaround for Firefox. -->
 
         <!-- ====== START Hidden Fields for Checkboxes ====== -->
-          <!-- Needed because WCA, a.k.a. IMC doesn't know how to do multi-select checkboxes. -->
+          <!-- Needed because Silverpop/IMC/WCA doesn't know how to do multi-select checkboxes. -->
           <div id="shadow-fields">
             <input type="hidden" class="shadow-field" name="email_type_pc" />
             <input type="hidden" class="shadow-field" name="email_newsleter_type" />
@@ -444,7 +441,7 @@ hr {
             <span style="font-size: 24px;">¿Qué tipos de mensajes de correo electrónico le gustaría recibir?<br>
               <br>
             </span>
-            <div class="panel-body">
+            <div class="panel-body cbgroup">
 
               <div class="row">
                 <div class="col-md-5">
@@ -487,7 +484,7 @@ hr {
             <span style="font-size: 24px;">Boletines<br>
               <br>
             </span>
-            <div class="panel-body">
+            <div class="panel-body cbgroup">
 
               <div class="row">
                 <div class="col-md-4">
@@ -545,7 +542,7 @@ hr {
           <div class="panel">
             <span style="font-size: 24px;">¿Qué temas le interesan?<br>
             </span>
-            <span style="font-size: 18px;"><i>FPara todas las secciones, marque las casillas para todas las comunicaciones de su interés &ndash; puede seleccionar más de una opción.</i><br>
+            <span style="font-size: 18px;"><i>Para todas las secciones, marque las casillas para todas las comunicaciones de su interés &ndash; puede seleccionar más de una opción.</i><br>
               <br>
             </span>
             <div class="panel-body">
@@ -554,7 +551,7 @@ hr {
               <span style="font-size: 20px; font-weight: bold;">Tipos de colección<br>
                 <br>
               </span>
-              <div class="panel-body">
+              <div class="panel-body cbgroup">
 
                 <div class="row">
                   <div class="col-md-4">
@@ -613,7 +610,7 @@ hr {
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="button" onclick="toggleCheckboxes('email_collection_types_cbgroup', this);" value="Seleccionar todo" id="toggle1" class="btn btn-primary btn-xs" />
+                      <input type="button" onclick="toggleCheckboxes('email_collection_types_cbgroup', this);" value="Seleccionar todo" class="btn btn-primary btn-xs select-all-btn" />
                     </div>
                   </div>
                 </div>
@@ -627,7 +624,7 @@ hr {
               <span style="font-size: 20px; font-weight: bold;">Áreas temáticas<br>
                 <br>
               </span>
-              <div class="panel-body">
+              <div class="panel-body cbgroup">
 
                 <div class="row">
                   <div class="col-md-4">
@@ -722,7 +719,7 @@ hr {
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="button" onclick="toggleCheckboxes('email_topic_pc_cbgroup', this);" value="Seleccionar todo" id="toggle2" class="btn btn-primary btn-xs" />
+                      <input type="button" onclick="toggleCheckboxes('email_topic_pc_cbgroup', this);" value="Seleccionar todo" class="btn btn-primary btn-xs select-all-btn" />
                     </div>
                   </div>
                 </div>
@@ -734,25 +731,45 @@ hr {
           </div>
         <!-- ====== END Section 4 - Topics of Interest ====== -->
 
+          <hr>
+
+        <!-- ====== START Submission Buttons ====== -->
           <div class="panel">
             <div class="panel-body">
+
               <div class="row">
+                <div class="col-xs-12">
+                  <p>Privacy regulations require that we get your consent to continue to collect, store and use the personal information submitted for account creation or collected while using our services.</p>
+                  <div class="form-group">
+                    <label class="pq-form-label"><span class="parsley-required">*</span>&nbsp;<input type="checkbox" value="Yes" name="Double OptIn" required="" />
+                    I consent to the collection and use of my personal information consistent with the <a href="https://www.proquest.com/go/privacy" style="color: #00a0df;">Privacy Policy</a>. I&nbsp;acknowledge that use of the service is subject to the <a href="https://proquest.com/go/termsandconditions" style="color: #00a0df;">Terms & Conditions</a>.</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
                 <a name="SubmitButton"></a>
                 <input type="submit" value="Enviar" class="btn btn-primary btn-lg" />
                 <input type="button" value="Borrar Preferencias" onclick="clearPreferences();" class="btn btn-primary btn-lg" />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <input type="hidden" name="LastTouchLeadSource" id="LastTouchLeadSource" value="Targeted Email">
+              </div>
+          </div>
+        <!-- ====== END Submission Buttons ====== -->
+
+        <input type="hidden" name="LastTouchLeadSource" id="LastTouchLeadSource" value="Targeted Email">
           <input type="hidden" name="LastTouchLeadSourceDate" id="LastTouchLeadSourceDate" value="mm/dd/yyyy">
 
         </form>
       <!-- ======== END FORM ======== -->
 
       </div>
+      </div>
     </div>
-  </div>
 
 
 <!-- ======== START Temporary Footer (to be removed) ======== -->
@@ -761,7 +778,7 @@ hr {
     <div class="container">
       <div class="col-md-12">
         <div class="col-md-2 col-xs-6">
-          <div class="single_ft">
+          <div class="single_ft quicklinks">
             <h4>Navegación</h4><!--Navigation-->
             <a name="Footer_Navigation_Libraries" href="https://www.proquest.com/libraries" xthyperlink="915142" xt="SPCLICK" xtlinkname="Footer_Navigation_Libraries">Para bibliotecas</a><br>
             <a name="Footer_Navigation_Researchers" href="https://www.proquest.com/researchers" xthyperlink="915143" xt="SPCLICK" xtlinkname="Footer_Navigation_Researchers">Para los investigadores</a><br>
@@ -773,7 +790,7 @@ hr {
           </div>
         </div>
         <div class="col-md-2 col-xs-6">
-          <div class="single_ft">
+          <div class="single_ft quicklinks">
             <h4>Soporte</h4><!--Support-->
             <a name="Footer_Support_SupportCenter" href="https://www.proquest.com/company/support-landing.html" xthyperlink="915149" xt="SPCLICK" xtlinkname="Footer_Support_SupportCenter">Centro de Apoyo</a><br>
             <a name="Footer_Support_ToolsResources" href="https://www.proquest.com/customer-care/tools-resources/" xthyperlink="915150" xt="SPCLICK" xtlinkname="Footer_Support_ToolsResources">Herramientas y recursos</a><br>
@@ -785,18 +802,18 @@ hr {
     </div>
   </div><!-- /.footer_one -->
 
+  <!-- For the "Cookie Preferences" footer link - served by trustarc.com -->
+  <script src="https://consent.trustarc.com/notice?domain=proquest.com&c=teconsent&js=nj&noticeType=bb&text=true" async="async" crossorigin=""></script>
+
   <div class="main_footer">
-    <div class="container">
-      <div class="col-md-12">
-        <div class="inner_footer">
-          <p style="text-align: center;">
-            <a name="BottomNav_Privacy" href="https://www.proquest.com/about/privacy-statement.html" xthyperlink="915153" xt="SPCLICK" xtlinkname="BottomNav_Privacy">Privacy</a>&nbsp;&nbsp;
-            <a name="BottomNav_TermsofUse" href="https://www.proquest.com/about/terms-and-conditions.html" xthyperlink="915154" xt="SPCLICK" xtlinkname="BottomNav_TermsofUse">Terms of Use</a>&nbsp;&nbsp;
-            <a name="BottomNav_Cookies" href="https://www.proquest.com/about/cookie-policy.html" xthyperlink="915155" xt="SPCLICK" xtlinkname="BottomNav_Cookies">Cookies</a>&nbsp;&nbsp;
-            <a name="BottomNav_Accessibility" href="https://www.proquest.com/company/ProQuest-ADA-Compliance.html" xthyperlink="915156" xt="SPCLICK" xtlinkname="BottomNav_Accessibility">Accessibility</a>&nbsp;&nbsp;
-            <a name="BottomNav_DMCAPolicy" href="https://media2.proquest.com/documents/dmcapolicy.pdf" xthyperlink="915157" xt="SPCLICK" xtlinkname="BottomNav_DMCAPolicy">DMCA Policy</a>
-          </p>
-        </div>
+    <div class="container links col-xs-12">
+      <div style="text-align: center;">
+        <a name="BottomNav_Privacy" href="https://www.proquest.com/about/privacy-statement.html" xthyperlink="915153" xt="SPCLICK" xtlinkname="BottomNav_Privacy">Privacy</a>
+        <a name="BottomNav_TermsofUse" href="https://www.proquest.com/about/terms-and-conditions.html" xthyperlink="915154" xt="SPCLICK" xtlinkname="BottomNav_TermsofUse">Terms of Use</a>
+        <a name="BottomNav_Cookies" href="https://www.proquest.com/about/cookie-policy.html" xthyperlink="915155" xt="SPCLICK" xtlinkname="BottomNav_Cookies">Cookies</a>
+        <div id="teconsent" style="display: inline;"></div>
+        <a name="BottomNav_Accessibility" href="https://www.proquest.com/company/ProQuest-ADA-Compliance.html" xthyperlink="915156" xt="SPCLICK" xtlinkname="BottomNav_Accessibility">Accessibility</a>
+        <a name="BottomNav_DMCAPolicy" href="https://media2.proquest.com/documents/dmcapolicy.pdf" xthyperlink="915157" xt="SPCLICK" xtlinkname="BottomNav_DMCAPolicy">DMCA Policy</a>
       </div>
     </div>
   </div><!-- /.main_footer -->
@@ -809,6 +826,27 @@ hr {
 
 </body>
 
+<style>
+.main_footer {
+  float: left;
+  width: 100%;
+  padding: 0;
+}
+.main_footer a {
+  color: white;
+}
+.main_footer .links {
+  padding: 5px 15px;
+}
+.main_footer .links a {
+  font-size: 12px;
+  padding: 5px;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+</style>
+
 <script>
 var formLanguage = 'es-419';
 
@@ -819,7 +857,6 @@ var UNSELECT_ALL_LABEL = 'Deselecciona todo';
 // Function to set checkboxes from hidden shadow fields mapped to DB fields 
 //  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
 function setCheckboxes() {
-  console.log('In setCheckboxes();'); ////////////////
   $('.shadow-field').each(function() {
     var shadow_field = $(this);
     var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
@@ -835,7 +872,6 @@ function setCheckboxes() {
 // Function to set hidden shadow fields (mapped to DB fields) based on checkbox values
 //  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
 function getCheckboxes() {
-  console.log('In getCheckboxes();'); ////////////////
   $('.shadow-field').each(function() {
     var shadow_field = $(this);
     var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
@@ -868,13 +904,12 @@ function toggleCheckboxes(checkboxesSelector, buttonSelector) {
 
 // Function to clear the checkbox selections from the form
 function clearPreferences() {
-  $(':input', '#pq-contact').not(':text, :button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected');
-  $('#toggle1').val(SELECT_ALL_LABEL);
-  $('#toggle2').val(SELECT_ALL_LABEL);
+  $('input:checkbox', '.cbgroup').removeAttr('checked');
+  $('.select-all-btn').val(SELECT_ALL_LABEL);
 }
 
-// Function to set the date for the "Last Touch Lead Source Date"
-function setLastTouchLeadSourceDate() {
+// Function to get today's date for filling out date fields
+function getTodaysDateString() {
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth()+1; //January is 0!
@@ -883,20 +918,22 @@ function setLastTouchLeadSourceDate() {
   if (dd < 10) { dd = '0'+dd };
   if (mm < 10) { mm = '0'+mm };
   today = mm+'/'+dd+'/'+yyyy;
-  $('#LastTouchLeadSourceDate').val(today);  // Sets hidden field for current date
+
+  return today;
 }
 
 // Document Ready
 $( document ).ready(function() {
 
-  // From pq-clear-contact-form.js - disallow changing the email address if already set
+  // From pq-clear-preference-center.js - disallow changing the email address if already set
   initContactForm('pq-contact', 'control_EMAIL', 'control_COLUMN30');
 
-  // Populate checkboxes
+  // Populate checkboxes with data from DB
   setCheckboxes();
 
-  // Do that last-touch-lead-source thing
-  setLastTouchLeadSourceDate();
+  // Set hidden fields to current date
+  var dateString = getTodaysDateString();
+  $('#LastTouchLeadSourceDate').val(dateString);
 
   console.log('Document loaded.'); ////////////////
 

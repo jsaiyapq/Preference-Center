@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="com.silverpop.brandeddomains" content="www.pages04.net,bowker.com,go.proquest.com,proquest.com,proquest.mkt5049.com,stage.www.proquest.com,trials.proquest.com,www.proquest.com" />
-  <meta name="com.silverpop.defaultsource" content="Web" />
-  <meta name="com.silverpop.cothost" content="engage4.silverpop.com" />
   <title>ProQuest Preference Center Confirmation</title>
   <link rel="icon" type="image/x-icon" href="https://www.proquest.com/favicon.ico" />
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="com.silverpop.brandeddomains" content="www.pages04.net,bowker.com,go.proquest.com,proquest.com,proquest.mkt5049.com,stage.www.proquest.com,trials.proquest.com,www.proquest.com" />
+  <meta name="com.silverpop.defaultsource" content="Web" />
+  <meta name="com.silverpop.cothost" content="engage4.silverpop.com" />
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat" />
@@ -25,29 +26,7 @@
   <link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/bootstrap-override-20140226.css" />
 
   <!--[if IE]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script>
-    function checkform(event) {
 
-      //Sets the date for the "Last Touch Lead Source Date"
-      var today = new Date();
-      var dd = today.getDate();
-      var mm = today.getMonth()+1; //January is 0!
-      var yyyy = today.getFullYear();
-
-      if(dd<10) { dd='0'+dd } 
-      if(mm<10) { mm='0'+mm }
-      today = mm+'/'+dd+'/'+yyyy;
-      document.getElementById("Last Touch Lead Source Date").value = today;
-      
-      // If there is a comment included then "Direct Inquiry" if not then "Marketing Accepted Lead"
-      var myForm = document.contact;
-      if(myForm.comment.value=="")
-        document.getElementById("Lead Status").value = "Marketing Accepted Lead";
-      else
-        document.getElementById("Lead Status").value = "Direct Inquiry";
-
-    }
-  </script>
   <style>
   .main_footer {
       float: left;
@@ -71,53 +50,53 @@
 </head>
 
 <body>
-  <!--[if lt IE 7]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<!--[if lt IE 7]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 
-  <div class="header-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <nav class="navbar navbar-default">
-            <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
-                <button aria-expanded="false" data-target="#navbar-collapse-1" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar">&nbsp;</span>
-                  <span class="icon-bar">&nbsp;</span>
-                  <span class="icon-bar">&nbsp;</span>
-                </button>
-              </div><!-- /.navbar-header -->
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div id="navbar-collapse-1" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a name="TopNav_SupportCenter" href="https://www.proquest.com/company/support-landing.html" xthyperlink="920653" xt="SPCLICK" xtlinkname="TopNav_SupportCenter">Support Center |</a></li>
-                  <li><a name="TopNavNews" href="https://www.proquest.com/about/news/" xthyperlink="920654" xt="SPCLICK" xtlinkname="TopNavNews">News |</a></li>
-                  <li><a name="TopNav_Contact" href="https://www.proquest.com/contact/contact-landing.html" xthyperlink="920655" xt="SPCLICK" xtlinkname="TopNav_Contact">Contact</a></li>
-                </ul>
-              </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div><!-- /.header-area -->
-
-  <div class="proquest_part">
-    <div class="container">
+<div class="header-area">
+  <div class="container">
+    <div class="row">
       <div class="col-md-12">
-        <div class="inner_proquest">
-          <a xthyperlink="845630" xtlinkname="Top_PQ_Logo" xt="SPCLICKSTREAM" name="Top_PQ_Logo" href="https://www.proquest.com">
-            <img contentid="21142880" spname="logo_2.jpg" alt="" class="img-responsive" src="logo_2.jpg" />
-          </a>
-        </div>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button aria-expanded="false" data-target="#navbar-collapse-1" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar">&nbsp;</span>
+                <span class="icon-bar">&nbsp;</span>
+                <span class="icon-bar">&nbsp;</span>
+              </button>
+            </div><!-- /.navbar-header -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="navbar-collapse-1" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a name="TopNav_SupportCenter" href="https://www.proquest.com/company/support-landing.html">Support Center |</a></li>
+                <li><a name="TopNavNews" href="https://www.proquest.com/about/news/">News |</a></li>
+                <li><a name="TopNav_Contact" href="https://www.proquest.com/contact/contact-landing.html">Contact</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
       </div>
     </div>
   </div>
+</div><!-- /.header-area -->
 
-  <div class="background_part">
+<div class="proquest_part">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="inner_proquest">
+        <a href="https://www.proquest.com" target="_blank" name="httpswwwproquestcom">
+          <img src="pq-header-logo.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="pq-header-logo.jpg" xt="SPIMAGE" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div><!-- /.proquest_part -->
+
+<div class="background_part">
 
   <div class="container">&nbsp;</div>
 
@@ -127,9 +106,10 @@
         <div class="left_overview">
           <h3>Done and done! We've got your email preferences updated.&nbsp;</h3>
           <h3>If you've got a few minutes, feel free to check out our 
-          <a href="https://www.proquest.com/blog/pqblog/" target="_blank" style="color:#00A0DF; text-decoration:none;" name="ConfirmationPage_BlogLink" xt="SPCLICKSTREAM" xthyperlink="849040" xtlinkname="ConfirmationPage_BlogLink">blog</a>, read about ProQuest in the 
-          <a href="https://www.proquest.com/about/news/" target="_blank" style="color:#00A0DF; text-decoration:none;" name="ConfirmationPage_NewsLink" xt="SPCLICKSTREAM" xthyperlink="849041" xtlinkname="ConfirmationPage_NewsLink">news</a> or view our collection of 
-          <a href="https://proquest.libguides.com" target="_blank" style="color:#00A0DF; text-decoration:none;" name="ConfirmationPage_LibGuides" xt="SPCLICKSTREAM" xthyperlink="849042" xtlinkname="ConfirmationPage_LibGuides">LibGuides</a>.&nbsp;</h3>
+            <a href="https://www.proquest.com/blog/pqblog/" target="_blank" style="color:#00A0DF; text-decoration:none;" name="ConfirmationPage_BlogLink" xt="SPCLICKSTREAM" xthyperlink="849040" xtlinkname="ConfirmationPage_BlogLink">blog</a>, read about ProQuest in the 
+            <a href="https://www.proquest.com/about/news/" target="_blank" style="color:#00A0DF; text-decoration:none;" name="ConfirmationPage_NewsLink" xt="SPCLICKSTREAM" xthyperlink="849041" xtlinkname="ConfirmationPage_NewsLink">news</a> or view our collection of 
+            <a href="https://proquest.libguides.com" target="_blank" style="color:#00A0DF; text-decoration:none;" name="ConfirmationPage_LibGuides" xt="SPCLICKSTREAM" xthyperlink="849042" xtlinkname="ConfirmationPage_LibGuides">LibGuides</a>.
+          </h3>
           <!--<p>This is where we will put the link to the gated content or a simple thank you for submitting their form information. This area can be as long or as short as we want it to be, fitting to the needs of the confirmation page.</p>-->
           <p>&nbsp;</p>
         </div>
@@ -145,22 +125,22 @@
         <div class="col-md-2 col-xs-6">
           <div class="single_ft quicklinks">
             <h4>Navigation</h4><!--Navigation-->
-            <a name="Footer_Navigation_Libraries" href="https://www.proquest.com/libraries" xthyperlink="920656" xt="SPCLICK" xtlinkname="Footer_Navigation_Libraries">For Libraries</a><br>
-            <a name="Footer_Navigation_Researchers" href="https://www.proquest.com/researchers" xthyperlink="920657" xt="SPCLICK" xtlinkname="Footer_Navigation_Researchers">For Researchers</a><br>
-            <a name="Footer_Navigation_ProductsServices" href="https://www.proquest.com/products-services" xthyperlink="920658" xt="SPCLICK" xtlinkname="Footer_Navigation_ProductsServices">Products &amp; Services</a><br>
-            <a name="Footer_Navigation_Customers" href="https://www.proquest.com/customer-care" xthyperlink="920659" xt="SPCLICK" xtlinkname="Footer_Navigation_Customers">For Customers</a><br>
-            <a name="Footer_Navigation_Events" href="https://www.proquest.com/events" xthyperlink="920660" xt="SPCLICK" xtlinkname="Footer_Navigation_Events">Events</a><br>
-            <a name="Footer_Navigation_About" href="https://www.proquest.com/about" xthyperlink="920661" xt="SPCLICK" xtlinkname="Footer_Navigation_About">About</a><br>
-            <a name="Footer_Navigation_Blogs" href="https://www.proquest.com/blog" xthyperlink="920662" xt="SPCLICK" xtlinkname="Footer_Navigation_Blogs">Blogs</a>
+            <a name="Footer_Navigation_Libraries" href="https://www.proquest.com/libraries">For Libraries</a><br>
+            <a name="Footer_Navigation_Researchers" href="https://www.proquest.com/researchers">For Researchers</a><br>
+            <a name="Footer_Navigation_ProductsServices" href="https://www.proquest.com/products-services">Products &amp; Services</a><br>
+            <a name="Footer_Navigation_Customers" href="https://www.proquest.com/customer-care">For Customers</a><br>
+            <a name="Footer_Navigation_Events" href="https://www.proquest.com/events">Events</a><br>
+            <a name="Footer_Navigation_About" href="https://www.proquest.com/about">About</a><br>
+            <a name="Footer_Navigation_Blogs" href="https://www.proquest.com/blog">Blogs</a>
           </div>
         </div>
         <div class="col-md-2 col-xs-6">
           <div class="single_ft quicklinks">
             <h4>Support</h4><!--Support-->
-            <a name="Footer_Support_SupportCenter" href="https://www.proquest.com/company/support-landing.html" xthyperlink="920663" xt="SPCLICK" xtlinkname="Footer_Support_SupportCenter">Support Center</a><br>
-            <a name="Footer_Support_ToolsResources" href="https://www.proquest.com/customer-care/tools-resources/" xthyperlink="920664" xt="SPCLICK" xtlinkname="Footer_Support_ToolsResources">Tools and Resources</a><br>
-            <a name="Footer_Support_TrainingWebinars" href="https://www.proquest.com/customer-care/training-webinars/" xthyperlink="920665" xt="SPCLICK" xtlinkname="Footer_Support_TrainingWebinars">Training Webinars</a><br>
-            <a name="Footer_Support_LibGuides" href="https://proquest.libguides.com/home" xthyperlink="920666" xt="SPCLICK" xtlinkname="Footer_Support_LibGuides">LibGuides</a>
+            <a name="Footer_Support_SupportCenter" href="https://www.proquest.com/company/support-landing.html">Support Center</a><br>
+            <a name="Footer_Support_ToolsResources" href="https://www.proquest.com/customer-care/tools-resources/">Tools and Resources</a><br>
+            <a name="Footer_Support_TrainingWebinars" href="https://www.proquest.com/customer-care/training-webinars/">Training Webinars</a><br>
+            <a name="Footer_Support_LibGuides" href="https://proquest.libguides.com/home">LibGuides</a>
           </div>
         </div>
       </div>
@@ -173,36 +153,29 @@
   <div class="main_footer">
     <div class="container links col-xs-12">
       <div style="text-align: center;">
-        <a name="BottomNav_Privacy" href="https://www.proquest.com/about/privacy-statement.html" xthyperlink="920667" xt="SPCLICK" xtlinkname="BottomNav_Privacy">Privacy</a>
-        <a name="BottomNav_TermsofUse" href="https://www.proquest.com/about/terms-and-conditions.html" xthyperlink="920668" xt="SPCLICK" xtlinkname="BottomNav_TermsofUse">Terms of Use</a>
-        <a name="BottomNav_Cookies" href="https://www.proquest.com/about/cookie-policy.html" xthyperlink="920669" xt="SPCLICK" xtlinkname="BottomNav_Cookies">Cookies</a>
+        <a name="BottomNav_Privacy" href="https://www.proquest.com/about/privacy-statement.html">Privacy</a>
+        <a name="BottomNav_TermsofUse" href="https://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>
+        <a name="BottomNav_Cookies" href="https://www.proquest.com/about/cookie-policy.html">Cookies</a>
         <div id="teconsent" style="display: inline;"></div>
-        <a name="BottomNav_Accessibility" href="https://www.proquest.com/company/ProQuest-ADA-Compliance.html" xthyperlink="920670" xt="SPCLICK" xtlinkname="BottomNav_Accessibility">Accessibility</a>
-        <a name="BottomNav_DMCAPolicy" href="https://media2.proquest.com/documents/dmcapolicy.pdf" xthyperlink="920671" xt="SPCLICK" xtlinkname="BottomNav_DMCAPolicy">DMCA Policy</a>
+        <a name="BottomNav_Accessibility" href="https://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>
+        <a name="BottomNav_DMCAPolicy" href="https://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a>
       </div>
     </div>
   </div><!-- /.main_footer -->
 
 <!-- ======== END Temporary Footer ======== -->
 
-  </div>
+</div><!-- /.background_part -->
 
-  <script>
-    // function to clear the form if it's not the person who opened it. Useful for people accessing via a public computer
-    function myFunction() {
-      document.getElementById("contact").reset();
-    }
-  </script>
-
-    <!-- Google Tag Manager -->
-    <script>
+<!-- Google Tag Manager -->
+<script>
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PKTQGK');
-    </script>
-    <!-- End Google Tag Manager -->
+</script>
+<!-- End Google Tag Manager -->
 
-  </body>
+</body>
 </html>
