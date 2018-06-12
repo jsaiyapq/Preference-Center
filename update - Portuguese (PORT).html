@@ -1,29 +1,41 @@
 <!DOCTYPE html>
-<html class="no-js" lang="pt-BR">
-    <head>
-        <title>ProQuest Preference Center</title>
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat" />
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Slabo+27px" />
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Indie+Flower" />
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dancing+Script:400,700" />
-        <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-animate.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-normalize.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-style.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-responsive.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/bootstrap-override-20140226.css" /> <script src="http://www.proquest.com/includes/IMC-modernizr-2.6.2.min.js"></script> <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--> <script src="http://www.proquest.com/includes/IMC-jquery-1.10.2.min.js"></script> <script src="http://www.proquest.com/includes/bootstrap.min.js"></script> <script src="http://www.proquest.com/includes/parsley.min.js"></script> <script>
-//debugger;
-//function setEmailTxt() {
-    //$('#EmailTxt').val($('#email').val());    // Sets hidden field for current date
-//}
-$( document ).ready(function() {
-    $('#contact').parsley({ excluded: ':hidden' });
-    //$('#email').val($('#EmailTxt').val());    // Sets Email field from hidden EmailTxt
+<html lang="pt-BR" class="no-js">
+<head>
+<title>ProQuest Preference Center</title>
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Slabo+27px" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Indie+Flower" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dancing+Script:400,700" />
+<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+<link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-animate.css" />
+<link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-normalize.css" />
+<link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-style.css" />
+<link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-responsive.css" />
+<link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/bootstrap-override-20140226.css" />
+
+<script src="http://www.proquest.com/includes/IMC-modernizr-2.6.2.min.js"></script>
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="http://www.proquest.com/includes/IMC-jquery-1.10.2.min.js"></script>
+<script src="http://www.proquest.com/includes/bootstrap.min.js"></script>
+<script src="http://www.proquest.com/includes/parsley.min.js"></script>
+<script src="http://www.proquest.com/includes/jquery.cookie.js"></script>
+<script src="http://www.proquest.com/includes/jquery.form.min.js"></script>
+<script src="http://www.proquest.com/includes/pq-clear-preference-center.js"></script>
+<script>
+// Enable Bootstrap tooltips
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
 });
-</script> <style type="text/css">
+</script>
+
+<style type="text/css">
 .parsley-error {
   border: 2px solid #a51f1e;
 }
@@ -36,750 +48,833 @@ $( document ).ready(function() {
 .parsley-type {
   color: #a51f1e;
 }
-.header {
-  color: #333333;
-  font-weight: bold;
+hr {
+  display: block;
+  margin: 0.5em auto 0.5em auto;
+  border: 2px inset;
 }
-#h3header {
-  font-size: 20px;
-  color: #333333;
-  font-weight: bold;
+.pq-lead-text {
+  font-size: 16px;
 }
 .pq-form-label {
   color: #333333;
-  font-size:15px !important;
+  font-size: 15px !important;
 }
-hr {
-  display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: inset;
-  border-width: 2px;
+#email-warning {
+  display: none;
+}
+.well-sm-adjacent {
+  padding-top: 9px;
+}
+.tooltip-inner {
+  max-width: 275px;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  border-style: solid;
+  border-width: 1px;
+}
+/* ID needed here for specificity */
+#pq-contact .tooltip-arrow {
+  border-top-color: #ebccd1;
 }
 </style>
-            <!-- Facebook Pixel Code --> <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '662016790538712');
-  fbq('track', 'PageView');
-   fbq('track', 'CompleteRegistration');
-</script> <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=662016790538712&ev=PageView&noscript=1"
-/></noscript> <!-- End Facebook Pixel Code -->
-    </head>
-<script>
-  fbq('track', 'ViewContent', {
-    value: 0,
-    currency: 'USD',
-  });
-</script>
-    <body>
-        <!--[if lt IE 7]>
+</head>
+
+<body>
+<!--[if lt IE 7]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-        <div class="header-area">
-        <div class="container">
-        <div class="row">
-        <div class="col-md-12"><nav class="navbar navbar-default">
-        <div class="container-fluid"><!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header"><button aria-expanded="false" data-target="#navbar-collapse-1" data-toggle="collapse" class="navbar-toggle collapsed" type="button">                 <span class="sr-only">Toggle navigation</span>                 <span class="icon-bar">&nbsp;</span>                 <span class="icon-bar">&nbsp;</span>                 <span class="icon-bar">&nbsp;</span>               </button></div>
-        <!-- /.navbar-header -->             <!-- Collect the nav links, forms, and other content for toggling -->
-        <div id="navbar-collapse-1" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-            <li><a xtlinkname="TopNav_SupportCenter" xt="SPCLICK" name="TopNav_SupportCenter" href="http://www.proquest.com/company/support-landing.html" xthyperlink="850520">Support Center |</a></li>
-            <li><a xtlinkname="TopNavNews" xt="SPCLICK" name="TopNavNews" href="http://www.proquest.com/about/news/" xthyperlink="850521">News |</a></li>
-            <li><a xtlinkname="TopNav_Contact" xt="SPCLICK" name="TopNav_Contact" href="http://www.proquest.com/contact/contact-landing.html" xthyperlink="850522">Contact</a></li>
-        </ul>
-        </div>
-        <!-- /.navbar-collapse --></div>
-        <!-- /.container-fluid -->         </nav></div>
-        </div>
-        </div>
-        </div>
-        <!-- /.header-area -->
-        <div class="proquest_part">
-        <div class="container">
-        <div class="col-md-12">
-        <div class="inner_proquest"><a href="https://www.proquest.com" target="_blank" xt="SPCLICK" xtlinkname="httpswwwproquestcom" name="httpswwwproquestcom" xthyperlink="877685"><img src="logo_3.jpg" name="logo_3.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" spname="logo_5.jpg" contentid="21211308" xt="SPIMAGE" width="169" height="66" /></a></div>
-        </div>
-        </div>
-        </div>
-        <!-- /.proquest_part -->
-        <div class="arts_db_part">
-        <div class="container">
-        <div class="col-md-12">
-        <div class="inner_db">
+
+
+<!-- ============ START Temporary Header (to be removed) ============ -->
+
+<div class="header-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button aria-expanded="false" data-target="#navbar-collapse-1" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar">&nbsp;</span>
+                <span class="icon-bar">&nbsp;</span>
+                <span class="icon-bar">&nbsp;</span>
+              </button>
+            </div><!-- /.navbar-header -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="navbar-collapse-1" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a name="TopNav_SupportCenter" href="http://www.proquest.com/company/support-landing.html">Support Center |</a></li>
+                <li><a name="TopNavNews" href="http://www.proquest.com/about/news/">News |</a></li>
+                <li><a name="TopNav_Contact" href="http://www.proquest.com/contact/contact-landing.html">Contact</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</div><!-- /.header-area -->
+
+<div class="proquest_part">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="inner_proquest">
+        <a href="https://www.proquest.com" target="_blank" name="httpswwwproquestcom"><img src="pq-header-logo.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="pq-header-logo.jpg" xt="SPIMAGE" /></a>
+      </div>
+    </div>
+  </div>
+</div><!-- /.proquest_part -->
+
+<div class="arts_db_part">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="inner_db">
         <div class="top_db">
-        <p><a href="https://www.proquest.com" style="color: #00a0df; text-decoration: none;" xthyperlink="877725" xt="SPCLICK" xtlinkname="httpswwwproquestcom" name="httpswwwproquestcom">ProQuest</a> &gt; Your Subscription Preferences</p>
+          <p><a href="https://www.proquest.com" style="color: #00a0df; text-decoration: none;" name="httpswwwproquestcom">ProQuest</a> > Your Email Preferences</p>
         </div>
-        <div class="bottom_t"><span style="font-size: 36px; padding-bottom: 10px;">Suas prefer&ecirc;ncias de assinaturas</span></div>
-        </div>
-        </div>
-        </div>
-        </div>
-        <!-- /.arts_db_part -->
-        <div class="background_part">
-        <div class="container-fluid">
-        <div class="col-md-12">
-        <div class="inner_subscription">&nbsp;</div>
-        </div>
-        </div>
-        </div>
-        <!-- /.background_part -->
-        <div class="small_para_part">
-        <div class="container">
-        <div class="col-md-12">
-        <div class="inner_small">
-        <p><span style="font-size: 16px;">Receba os e-mails da ProQuest que s&atilde;o mais relevantes, informativos e &uacute;teis. Ao atualizar as suas prefer&ecirc;ncias de inscri&ccedil;&atilde;o, seus tipos e t&oacute;picos favoritos de e-mail chegar&atilde;o a voc&ecirc; mais rapidamente. Volte a qualquer momento para atualizar suas sele&ccedil;&otilde;es.</span></p>
-        <p>Para cancelar a inscri&ccedil;&atilde;o de todas as correspond&ecirc;ncias da ProQuest <a href="http://go.proquest.com/preferences-pt/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;" xt="SPCLICKSTREAM" xtlinkname="Unsubscribe Redirect" xthyperlink="850523">selecione aqui</a>.</p>
-        <p>Para gerenciar suas prefer&ecirc;ncias de comunica&ccedil;&atilde;o de Alexander Street, por favor <a href="https://alexanderstreet.com/preferences" target="_blank" name="AS Unsubscribe" style="color: #00a0df; text-decoration: none;" xt="SPCLICKSTREAM" xtlinkname="AS Unsubscribe" xthyperlink="865063">selecione aqui</a>.</p>
-        </div>
-        </div>
-        </div>
-        </div>
-        <!-- /.small_para_part -->
-        <div class="first_form_part">
-        <div class="container">
-        <div class="col-md-12">
-        <div class="inner_first_one">
-        <h2><br />
-        Conte-nos sobre voc&ecirc;. <span class="parsley-required">*</span></h2>
-        <form style="background-color: #FFFFFF; margin-top: 20px;" method="post" name="contact" id="contact" data-validate="parsley">
-            <!-- ====== START Section 1 - Personal Info ====== -->
-            <div class="panel-body">
+        <div class="bottom_t"><span style="font-size: 36px; padding-bottom: 10px;">Your Email Preferences</span></div>
+      </div>
+    </div>
+  </div>
+</div><!-- /.arts_db_part -->
+
+<div class="background_part">
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <div class="inner_subscription">&nbsp;</div>
+    </div>
+  </div>
+</div><!-- /.background_part -->
+
+<!-- ============ END Temporary Header ============ -->
+
+
+<!-- ============ START Intro Text ============ -->
+<div class="small_para_part">
+  <div class="container">
+    <div class="col-md-12">
+      <p class="pq-lead-text">Receba os e-mails da ProQuest que são mais relevantes, informativos e úteis. Ao atualizar as suas preferências de inscrição, seus tipos e tópicos favoritos de e-mail chegarão a você mais rapidamente. Volte a qualquer momento para atualizar suas seleções.<br>
+      </p>
+    </div>
+    <div id="email-warning" class="col-md-6">
+      <div class="well-sm-adjacent">
+        <p class="pq-lead-text"><strong>Por motivos de segurança e para proteger os dados de nossos clientes, desativamos a opção de editar seu endereço de e-mail neste formulário.</strong></p>
+        <p>Para atualizar o seu e-mail, por favor, registre-se novamente enviando um <a href="#" class="clear-identity-action" name="new_form" xt="SPNOTRACK">novo formulário</a>.</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="well well-sm">
+        <p>Para cancelar a inscrição de todas as correspondências da ProQuest <a href="http://go.proquest.com/preferences/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;">selecione aqui</a>.</p>
+        <p>Para gerenciar suas preferências de comunicação de rua Alexander, por favor <a href="https://alexanderstreet.com/preferences" target="_blank" name="AS Unsubscribe" style="color: #00a0df; text-decoration: none;">selecione aqui</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ============ END Intro Text ============ -->
+
+<!-- ============ START Main Form Body ============ -->
+<div class="main_form_part">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="panel">
+        <h2>Conte-nos sobre você. <span class="n_fields">(<span class="parsley-required">*</span> = campos obrigatórios)</span></h2>
+
+      <!-- ======== START FORM ======== -->
+        <form id="pq-contact" name="pq-contact" onsubmit="getCheckboxes();" method="post" class="pq-contact" style="margin-top: 20px;" autocomplete="off">
+        <!-- Autocomplete set to "off" for compatibility workaround for Firefox. -->
+
+        <!-- ====== START Hidden Fields for Checkboxes ====== -->
+          <!-- Needed because WCA, a.k.a. IMC doesn't know how to do multi-select checkboxes. -->
+          <div id="shadow-fields">
+            <input type="hidden" class="shadow-field" name="email_type_pc" />
+            <input type="hidden" class="shadow-field" name="email_newsleter_type" />
+            <input type="hidden" class="shadow-field" name="email_collection_types" />
+            <input type="hidden" class="shadow-field" name="email_topic_pc" />
+          </div>
+        <!-- ====== END Hidden Fields for Checkboxes ====== -->
+
+        <!-- ====== START Section 1 - Personal Info ====== -->
+          <div class="panel-body">
+
             <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><label class="pq-form-label">Pronome de Tratamento</label>                   <select class="form-control" id="control_COLUMN42" name="Salutation" lang="en">
-            <option selected="" value="">Select one</option>
-            <option value="Mr.">Mr.</option>
-            <option value="Ms.">Ms.</option>
-            <option value="Mrs.">Mrs.</option>
-            <option value="Dr.">Dr.</option>
-            <option value="Prof.">Prof.</option>
-            <option value="Capt.">Capt.</option>
-            <option value="CDR">CDR</option>
-            <option value="Chap.">Chap.</option>
-            <option value="Lt.">Lt.</option>
-            <option value="Col">Col</option>
-            <option value="Lt Col">Lt Col</option>
-            <option value="Major">Major</option>
-            <option value="Sgt.">Sgt.</option>
-            <option value="Rev">Rev</option>
-            <option value="Miss">Miss</option>
-            <option value="LTG">LTG</option>
-            <option value="MG">MG</option>
-            <option value="RADM">RADM</option>
-            <option value="Sir">Sir</option>
-            </select></div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_EMAIL">Email <span class="parsley-required">*</span></label>
+                  <input type="text" class="form-control" id="control_EMAIL" name="Email" required="" data-toggle="tooltip" data-placement="top" title="Por motivos de segurança e para proteger os seus dados, você não poderá alterar seu endereço de e-mail após submetê-lo."/>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_COLUMN270">ID Twitter</label>
+                  <input type="text" class="form-control" id="control_COLUMN270" name="Twitter Handle" />
+                </div>
+              </div>
             </div>
-            </div>
+
+            <!-- "Salutation" field is input-required in the "es-419" version of the page -->
+            <!-- "Salutation" field does not appear in the "ko" version of the page -->
             <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><label class="pq-form-label">Nome <span class="parsley-required">*</span></label>                   <input class="form-control" id="control_COLUMN30" name="First Name" required="" type="text" /></div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_COLUMN42">Pronome de Tratamento</label>
+                  <select class="form-control" id="control_COLUMN42" name="Salutation" lang="en">
+                    <option selected="" value="">Select one</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Dr.">Dr.</option>
+                    <option value="Prof.">Prof.</option>
+                    <option value="Capt.">Capt.</option>
+                    <option value="CDR">CDR</option>
+                    <option value="Chap.">Chap.</option>
+                    <option value="Lt.">Lt.</option>
+                    <option value="Col">Col</option>
+                    <option value="Lt Col">Lt Col</option>
+                    <option value="Major">Major</option>
+                    <option value="Sgt.">Sgt.</option>
+                    <option value="Rev">Rev</option>
+                    <option value="Miss">Miss</option>
+                    <option value="LTG">LTG</option>
+                    <option value="MG">MG</option>
+                    <option value="RADM">RADM</option>
+                    <option value="Sir">Sir</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div class="col-md-4">
-            <div class="form-group"><label class="pq-form-label">Sobrenome <span class="parsley-required">*</span></label>                   <input class="form-control" id="control_COLUMN16" name="Last Name" required="" type="text" /></div>
-            </div>
-            </div>
+
             <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><label class="pq-form-label">Institui&ccedil;&atilde;o <span class="parsley-required">*</span></label>                   <input class="form-control" id="control_COLUMN166" name="Organization Name" required="" type="text" /></div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_COLUMN30">Nome <span class="parsley-required">*</span></label>
+                  <input type="text" class="form-control" id="control_COLUMN30" name="First Name" required="" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_COLUMN16">Sobrenome <span class="parsley-required">*</span></label>
+                  <input type="text" class="form-control" id="control_COLUMN16" name="Last Name" required="" />
+                </div>
+              </div>
             </div>
-            <div class="col-md-4">
-            <div class="form-group"><label class="pq-form-label">Email <span class="parsley-required">*</span></label>                   <input class="form-control" id="control_EMAIL" name="Email" required="" type="text" /></div>
-            </div>
-            </div>
+
             <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><label class="pq-form-label">Pa&iacute;s <span class="parsley-required">*</span></label>                   <select class="form-control" id="control_COLUMN40" name="Country" required="" lang="en">
-            <option selected="" value="">Select one</option>
-            <option value="Afghanistan">Afghanistan</option>
-            <option value="Algeria">Algeria</option>
-            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-            <option value="Argentina">Argentina</option>
-            <option value="Aruba">Aruba</option>
-            <option value="Australia">Australia</option>
-            <option value="Austria">Austria</option>
-            <option value="Bahamas">Bahamas</option>
-            <option value="Bahrain">Bahrain</option>
-            <option value="Bangladesh">Bangladesh</option>
-            <option value="Barbados">Barbados</option>
-            <option value="Belgium">Belgium</option>
-            <option value="Belize">Belize</option>
-            <option value="Bermuda">Bermuda</option>
-            <option value="Bhutan">Bhutan</option>
-            <option value="Bolivia, Plurinational State of">Bolivia, Plurinational State of</option>
-            <option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option>
-            <option value="Botswana">Botswana</option>
-            <option value="Brazil">Brazil</option>
-            <option value="Bulgaria">Bulgaria</option>
-            <option value="Afghanistan">Afghanistan</option>
-            <option value="Cambodia">Cambodia</option>
-            <option value="Canada">Canada</option>
-            <option value="Cayman Islands">Cayman Islands</option>
-            <option value="Chile">Chile</option>
-            <option value="China">China</option>
-            <option value="Colombia">Colombia</option>
-            <option value="Congo">Congo</option>
-            <option value="Congo, The Democratic Republic of the">Congo, The Democratic Republic of the</option>
-            <option value="Costa Rica">Costa Rica</option>
-            <option value="Cote d'Ivoire">Cote d'Ivoire</option>
-            <option value="Croatia">Croatia</option>
-            <option value="Cuba">Cuba</option>
-            <option value="Curacao">Curacao</option>
-            <option value="Cyprus">Cyprus</option>
-            <option value="Czech Republic">Czech Republic</option>
-            <option value="Denmark">Denmark</option>
-            <option value="Dominica">Dominica</option>
-            <option value="Dominican Republic">Dominican Republic</option>
-            <option value="Ecuador">Ecuador</option>
-            <option value="Egypt">Egypt</option>
-            <option value="El Salvador">El Salvador</option>
-            <option value="Estonia">Estonia</option>
-            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
-            <option value="Fiji">Fiji</option>
-            <option value="Finland">Finland</option>
-            <option value="France">France</option>
-            <option value="Gambia">Gambia</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Germany">Germany</option>
-            <option value="Ghana">Ghana</option>
-            <option value="Gibraltar">Gibraltar</option>
-            <option value="Greece">Greece</option>
-            <option value="Grenada">Grenada</option>
-            <option value="Guam">Guam</option>
-            <option value="Guatemala">Guatemala</option>
-            <option value="Guyana">Guyana</option>
-            <option value="Haiti">Haiti</option>
-            <option value="Honduras">Honduras</option>
-            <option value="Hong Kong">Hong Kong</option>
-            <option value="Hungary">Hungary</option>
-            <option value="Iceland">Iceland</option>
-            <option value="India">India</option>
-            <option value="Indonesia">Indonesia</option>
-            <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
-            <option value="Iraq">Iraq</option>
-            <option value="Ireland">Ireland</option>
-            <option value="Israel">Israel</option>
-            <option value="Italy">Italy</option>
-            <option value="Jamaica">Jamaica</option>
-            <option value="Japan">Japan</option>
-            <option value="Jordan">Jordan</option>
-            <option value="Kazakhstan">Kazakhstan</option>
-            <option value="Kenya">Kenya</option>
-            <option value="Korea, North">Korea, North</option>
-            <option value="Korea, South">Korea, South</option>
-            <option value="Kuwait">Kuwait</option>
-            <option value="Kyrgyzstan">Kyrgyzstan</option>
-            <option value="Latvia">Latvia</option>
-            <option value="Lebanon">Lebanon</option>
-            <option value="Lithuania">Lithuania</option>
-            <option value="Luxembourg">Luxembourg</option>
-            <option value="Macao">Macao</option>
-            <option value="Malaysia">Malaysia</option>
-            <option value="Malta">Malta</option>
-            <option value="Mauritius">Mauritius</option>
-            <option value="Mexico">Mexico</option>
-            <option value="Mongolia">Mongolia</option>
-            <option value="Montserrat">Montserrat</option>
-            <option value="Mozambique">Mozambique</option>
-            <option value="Namibia">Namibia</option>
-            <option value="Nepal">Nepal</option>
-            <option value="Netherlands">Netherlands</option>
-            <option value="New Zealand">New Zealand</option>
-            <option value="Nicaragua">Nicaragua</option>
-            <option value="Nigeria">Nigeria</option>
-            <option value="Norway">Norway</option>
-            <option value="Occupied Palestinian Territory">Occupied Palestinian Territory</option>
-            <option value="Oman">Oman</option>
-            <option value="Pakistan">Pakistan</option>
-            <option value="Panama">Panama</option>
-            <option value="Papua New Guinea">Papua New Guinea</option>
-            <option value="Paraguay">Paraguay</option>
-            <option value="Peru">Peru</option>
-            <option value="Philippines">Philippines</option>
-            <option value="Poland">Poland</option>
-            <option value="Portugal">Portugal</option>
-            <option value="Puerto Rico">Puerto Rico</option>
-            <option value="Qatar">Qatar</option>
-            <option value="Romania">Romania</option>
-            <option value="Russian Federation">Russian Federation</option>
-            <option value="Rwanda">Rwanda</option>
-            <option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option>
-            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-            <option value="Saint Lucia">Saint Lucia</option>
-            <option value="Saint Martin (French part)">Saint Martin (French part)</option>
-            <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
-            <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
-            <option value="Saudi Arabia">Saudi Arabia</option>
-            <option value="Serbia">Serbia</option>
-            <option value="Singapore">Singapore</option>
-            <option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
-            <option value="Slovakia">Slovakia</option>
-            <option value="Slovenia">Slovenia</option>
-            <option value="South Africa">South Africa</option>
-            <option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
-            <option value="Spain">Spain</option>
-            <option value="Sri Lanka">Sri Lanka</option>
-            <option value="Suriname">Suriname</option>
-            <option value="Sweden">Sweden</option>
-            <option value="Switzerland">Switzerland</option>
-            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
-            <option value="Taiwan">Taiwan</option>
-            <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
-            <option value="Thailand">Thailand</option>
-            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-            <option value="Tunisia">Tunisia</option>
-            <option value="Turkey">Turkey</option>
-            <option value="Turkmenistan">Turkmenistan</option>
-            <option value="Tuvalu">Tuvalu</option>
-            <option value="Uganda">Uganda</option>
-            <option value="Ukraine">Ukraine</option>
-            <option value="United Arab Emirates">United Arab Emirates</option>
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="United States">United States</option>
-            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
-            <option value="Uruguay">Uruguay</option>
-            <option value="Uzbekistan">Uzbekistan</option>
-            <option value="Vanuatu">Vanuatu</option>
-            <option value="Venezuela, Bolivarian Republic of">Venezuela, Bolivarian Republic of</option>
-            <option value="Vietnam">Vietnam</option>
-            <option value="Virgin Islands, British">Virgin Islands, British</option>
-            <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
-            <option value="Zambia">Zambia</option>
-            <option value="Zimbabwe">Zimbabwe</option>
-            </select></div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_COLUMN166">Instituição <span class="parsley-required">*</span></label>
+                  <input type="text" class="form-control" id="control_COLUMN166" name="Organization Name" required="" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_COLUMN40">País <span class="parsley-required">*</span></label>
+                  <select class="form-control" id="control_COLUMN40" name="Country" lang="en" required="">
+                    <option selected="" value="">Select one</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Aruba">Aruba</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Azerbaijan, Republic of">Azerbaijan, Republic of</option>
+                    <option value="Bahamas">Bahamas</option>
+                    <option value="Bahrain">Bahrain</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Barbados">Barbados</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Belize">Belize</option>
+                    <option value="Bermuda">Bermuda</option>
+                    <option value="Bhutan">Bhutan</option>
+                    <option value="Bolivia, Plurinational State of">Bolivia, Plurinational State of</option>
+                    <option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option>
+                    <option value="Botswana">Botswana</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Bulgaria">Bulgaria</option>
+                    <option value="Cambodia">Cambodia</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Cayman Islands">Cayman Islands</option>
+                    <option value="Chile">Chile</option>
+                    <option value="China">China</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Congo">Congo</option>
+                    <option value="Congo, The Democratic Republic of the">Congo, The Democratic Republic of the</option>
+                    <option value="Costa Rica">Costa Rica</option>
+                    <option value="Cote d'Ivoire">Cote d'Ivoire</option>
+                    <option value="Croatia">Croatia</option>
+                    <option value="Cuba">Cuba</option>
+                    <option value="Curacao">Curacao</option>
+                    <option value="Cyprus">Cyprus</option>
+                    <option value="Czech Republic">Czech Republic</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Dominica">Dominica</option>
+                    <option value="Dominican Republic">Dominican Republic</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="El Salvador">El Salvador</option>
+                    <option value="Estonia">Estonia</option>
+                    <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                    <option value="Fiji">Fiji</option>
+                    <option value="Finland">Finland</option>
+                    <option value="France">France</option>
+                    <option value="Gambia">Gambia</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Gibraltar">Gibraltar</option>
+                    <option value="Greece">Greece</option>
+                    <option value="Grenada">Grenada</option>
+                    <option value="Guam">Guam</option>
+                    <option value="Guatemala">Guatemala</option>
+                    <option value="Guyana">Guyana</option>
+                    <option value="Haiti">Haiti</option>
+                    <option value="Honduras">Honduras</option>
+                    <option value="Hong Kong">Hong Kong</option>
+                    <option value="Hungary">Hungary</option>
+                    <option value="Iceland">Iceland</option>
+                    <option value="India">India</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                    <option value="Iraq">Iraq</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Israel">Israel</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Jamaica">Jamaica</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Kazakhstan">Kazakhstan</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Korea, North">Korea, North</option>
+                    <option value="Korea, South">Korea, South</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Kyrgyzstan">Kyrgyzstan</option>
+                    <option value="Latvia">Latvia</option>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Lithuania">Lithuania</option>
+                    <option value="Luxembourg">Luxembourg</option>
+                    <option value="Macao">Macao</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Malta">Malta</option>
+                    <option value="Mauritius">Mauritius</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Mongolia">Mongolia</option>
+                    <option value="Montserrat">Montserrat</option>
+                    <option value="Mozambique">Mozambique</option>
+                    <option value="Namibia">Namibia</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Nicaragua">Nicaragua</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Occupied Palestinian Territory">Occupied Palestinian Territory</option>
+                    <option value="Oman">Oman</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Panama">Panama</option>
+                    <option value="Papua New Guinea">Papua New Guinea</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Peru">Peru</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Puerto Rico">Puerto Rico</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Russian Federation">Russian Federation</option>
+                    <option value="Rwanda">Rwanda</option>
+                    <option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option>
+                    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                    <option value="Saint Lucia">Saint Lucia</option>
+                    <option value="Saint Martin (French part)">Saint Martin (French part)</option>
+                    <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                    <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="Serbia">Serbia</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
+                    <option value="Slovakia">Slovakia</option>
+                    <option value="Slovenia">Slovenia</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Suriname">Suriname</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                    <option value="Taiwan">Taiwan</option>
+                    <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                    <option value="Tunisia">Tunisia</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="Turkmenistan">Turkmenistan</option>
+                    <option value="Tuvalu">Tuvalu</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="United Arab Emirates">United Arab Emirates</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="United States">United States</option>
+                    <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                    <option value="Uruguay">Uruguay</option>
+                    <option value="Uzbekistan">Uzbekistan</option>
+                    <option value="Vanuatu">Vanuatu</option>
+                    <option value="Venezuela, Bolivarian Republic of">Venezuela, Bolivarian Republic of</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Virgin Islands, British">Virgin Islands, British</option>
+                    <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                    <option value="Zambia">Zambia</option>
+                    <option value="Zimbabwe">Zimbabwe</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div class="col-md-4">
-            <div class="form-group"><label class="pq-form-label">ID Twitter</label>                   <input class="form-control" id="control_COLUMN270" name="Twitter Handle" type="text" /></div>
-            </div>
-            </div>
-            </div>
-            <!-- ====== END Section 1 - Personal Info ====== -->           <hr />
-            <!-- ====== START Section 2 - Email Types ====== -->
-            <div class="newsletter_part_2"><span style="font-size: 24px;">Que tipos de e-mails voc&ecirc; est&aacute; interessado em receber?<br />
-            <br />
+
+          </div>
+        <!-- ====== END Section 1 - Personal Info ====== -->
+
+          <hr>
+
+        <!-- ====== START Section 2 - Email Types ====== -->
+          <div class="panel">
+            <span style="font-size: 24px;">Que tipos de e-mails você está interessado em receber?<br>
+              <br>
             </span>
             <div class="panel-body">
-            <div class="row">
-            <div class="col-md-6">
-            <div class="form-group"><input value="Administration" name="email_type_pc" type="checkbox" />                     <label class="pq-form-label">Alertas administrativos, de sistema ou de manuten&ccedil;&atilde;o</label></div>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Surveys" id="checkbox_2-1" name="email_type_pc_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_2-1">Pesquisas com clientes</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Product Info" id="checkbox_2-2" name="email_type_pc_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_2-2">Novos produtos e ofertas especiais</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Events" id="checkbox_2-3" name="email_type_pc_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_2-3">Próximos Eventos & Feiras</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Training" id="checkbox_2-4" name="email_type_pc_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_2-4">Próximos seminários e treinamentos online</label>
+                  </div>
+                </div>
+              </div>
+
             </div>
-            <div class="col-md-6">
-            <div class="form-group"><input value="Surveys" name="email_type_pc" type="checkbox" />                     <label class="pq-form-label">Pesquisas com clientes</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-6">
-            <div class="form-group"><input value="Product Info" name="email_type_pc" type="checkbox" />                     <label class="pq-form-label">Novos produtos e ofertas especiais</label></div>
-            </div>
-            <div class="col-md-6">
-            <div class="form-group"><input value="Events" name="email_type_pc" type="checkbox" />                     <label class="pq-form-label">Pr&oacute;ximos Eventos &amp; Feiras</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-6">
-            <div class="form-group"><input value="Training" name="email_type_pc" type="checkbox" />                     <label class="pq-form-label">Pr&oacute;ximos semin&aacute;rios e treinamentos online</label></div>
-            </div>
-            </div>
-            </div>
-            </div>
-            <!-- ====== END Section 2 - Email Types ====== -->           <hr />
-            <!-- ====== START Section 3 - Newsletters ====== -->
-            <div class="newsletter_part_2"><span style="font-size: 24px;">Newsletters<br />
-            <br />
+          </div>
+        <!-- ====== END Section 2 - Email Types ====== -->
+
+          <hr>
+
+        <!-- ====== START Section 3 - Newsletters ====== -->
+          <div class="panel">
+            <span style="font-size: 24px;">Newsletters<br>
+              <br>
             </span>
             <div class="panel-body">
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="Tips and Training" name="email_newsleter_type" type="checkbox" />                     <label class="pq-form-label">Dicas e treinamento</label></div>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Academic Libraries" id="checkbox_3-1" name="email_newsleter_type_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_3-1">Bibliotecas Acadêmicas</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Community/Associate College Libraries" id="checkbox_3-2" name="email_newsleter_type_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_3-2">Bibliotecas de faculdades comunitárias</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Chronolog" id="checkbox_3-3" name="email_newsleter_type_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_3-3">Boletim Corporativo (Chronolog)</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Public Libraries" id="checkbox_3-4" name="email_newsleter_type_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_3-4">Bibliotecas públicas</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <!-- This checkbox does not appear in the "en", "pt-BR", "es-419" versions of the page -->
+                <!--<div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Resource/Quarterly Newsletter" id="checkbox_3-5" name="email_newsleter_type_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_3-5">Resources Update</label>
+                  </div>
+                </div>-->
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="School Libraries" id="checkbox_3-6" name="email_newsleter_type_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_3-6">Bibliotecas escolares</label>
+                  </div>
+                </div>
+              </div>
+
             </div>
-            <div class="col-md-3">
-            <div class="form-group"><input value="PQ News" name="email_newsleter_type" type="checkbox" />                     <label class="pq-form-label">PQ News</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="Product Content Updates" name="email_newsleter_type" type="checkbox" />                     <label class="pq-form-label">Atualiza&ccedil;&atilde;o de recursos</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Public Libraries" name="email_newsleter_type" type="checkbox" />                     <label class="pq-form-label">Bibliotecas p&uacute;blicas</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="School Libraries" name="email_newsleter_type" type="checkbox" />                     <label class="pq-form-label">Bibliotecas escolares</label></div>
-            </div>
-            <div class="col-md-3">
-            <div class="form-group"><input value="Chronolog" name="email_newsleter_type" type="checkbox" />                     <label class="pq-form-label">Chronolog</label></div>
-            </div>
-            </div>
-            </div>
-            </div>
-            <!-- ====== END Section 3 - Newsletters ====== -->           <hr />
-            <!-- ====== START Section 4 - Blogs ====== -->
-            <div class="newsletter_part_2"><span style="font-size: 24px;">ProQuest Blog Newsletter (English only)<br />
-            <br />
+          </div>
+        <!-- ====== END Section 3 - Newsletters ====== -->
+
+          <hr>
+
+        <!-- ====== START Section 4 - Topics of Interest ====== -->
+          <div class="panel">
+            <span style="font-size: 24px;">Quais os assuntos de seu interesse?<br>
+            </span>
+            <span style="font-size: 18px;"><i>Para todas as seções, verifique as caixas para todas as comunicações de o seu interesse &ndash; você pode selecionar mais de uma opção.</i><br>
+              <br>
             </span>
             <div class="panel-body">
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="Bi-Weekly" name="email_blog_prefs" type="checkbox" />                     <label class="pq-form-label">Quinzenalmente</label></div>
+
+            <!-- ==== START Section 4.1 - Collection Types ==== -->
+              <span style="font-size: 20px; font-weight: bold;">Tipos de Coleções<br>
+                <br>
+              </span>
+              <div class="panel-body">
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Databases" id="checkbox_4-1-1" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-1">Bases de dados</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Dissertations & Theses" id="checkbox_4-1-2" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-2">Dissertações</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Ebooks" id="checkbox_4-1-3" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-3">Ebooks</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="News" id="checkbox_4-1-4" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-4">Notícias</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Primary Sources" id="checkbox_4-1-5" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-5">Fontes primárias</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Print Books" id="checkbox_4-1-6" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-6">Livros impressos</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Video" id="checkbox_4-1-7" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-7">Videos</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="button" onclick="toggleCheckboxes('email_collection_types_cbgroup', this);" value="Marcar todos" id="toggle1" class="btn btn-primary btn-xs" />
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            <!-- ==== END Section 4.1 - Collection Types ==== -->
+
+              <hr>
+
+            <!-- ==== START Section 4.2 - Subject Areas ==== -->
+              <span style="font-size: 20px; font-weight: bold;">Áreas do conhecimento<br>
+                <br>
+              </span>
+              <div class="panel-body">
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Arts and Humanities" id="checkbox_4-2-1" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-1">Artes</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Business" id="checkbox_4-2-2" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-2">Negócios</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Corp Pharma and BioMed" id="checkbox_4-2-3" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-3">Corporativo: Farma e BioMedicina</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Corp Science and Technology" id="checkbox_4-2-4" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-4">Corporativo: Ciência e Tecnologia</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Government and Legal Studies" id="checkbox_4-2-5" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-5">Estudos governamentais e jurídicos</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Health and Medicine" id="checkbox_4-2-6" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-6">Saúde</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="History" id="checkbox_4-2-7" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-7">História</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Interdisciplinary" id="checkbox_4-2-8" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-8">Interdisciplinar</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Literature and Language" id="checkbox_4-2-9" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-9">Literatura</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="News and Newspapers" id="checkbox_4-2-10" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-10">Notícias</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="SciTech" id="checkbox_4-2-11" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-11">SciTech</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="checkbox" value="Social Sciences" id="checkbox_4-2-12" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-12">Ciências Sociais</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="button" onclick="toggleCheckboxes('email_topic_pc_cbgroup', this);" value="Marcar todos" id="toggle2" class="btn btn-primary btn-xs" />
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            <!-- ==== END Section 4.2 - Subject Areas ==== -->
+
             </div>
-            <div class="col-md-3">
-            <div class="form-group"><input value="Monthly" name="email_blog_prefs" type="checkbox" />                     <label class="pq-form-label">Mensalmente</label></div>
-            </div>
-            </div>
-            </div>
-            </div>
-            <!-- ====== END Section 4 - Blogs ====== -->           <hr />
-            <!-- ====== START Section 5 ====== -->
-            <div class="newsletter_part_2"><span style="font-size: 24px;">Quais os assuntos de seu interesse?<br />
-            </span>              <span style="font-size: 18px;"><em>Para todas as se&ccedil;&otilde;es, verifique as caixas para todas as comunica&ccedil;&otilde;es de o seu interesse - voc&ecirc; pode selecionar mais de uma op&ccedil;&atilde;o.</em><br />
-            <br />
-            </span>
-            <div class="panel-body"><!-- ==== START Section 5.1 - Collection Types ==== -->               <span style="font-size: 20px; font-weight: bold;">Tipos de Cole&ccedil;&otilde;es<br />
-            <br />
-            </span>
+          </div>
+        <!-- ====== END Section 4 - Topics of Interest ====== -->
+
+          <div class="panel">
             <div class="panel-body">
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Databases" name="email_collection_types" type="checkbox" />                       <label class="pq-form-label">Bases de dados</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Dissertations & Theses" name="email_collection_types" type="checkbox" />                       <label class="pq-form-label">Disserta&ccedil;&otilde;es e Teses</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Ebooks" name="email_collection_types" type="checkbox" />                       <label class="pq-form-label">Ebooks</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Journals" name="email_collection_types" type="checkbox" />                       <label class="pq-form-label">Revistas</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Microfilm" name="email_collection_types" type="checkbox" />                       <label class="pq-form-label">Microfilme</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Print Books" name="email_collection_types" type="checkbox" />                       <label class="pq-form-label">Livros impressos</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Patents" name="email_collection_types" type="checkbox" />                       <label class="pq-form-label">Patentes</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Search & Discovery" name="email_collection_types" type="checkbox" />                       <label class="pq-form-label">Pesquisa e Descoberta</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Video" name="email_collection_types" type="checkbox" />                       <label class="pq-form-label">Video</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Workflow Tools" name="email_collection_types" type="checkbox" />                       <label class="pq-form-label">Ferramentas de fluxo de trabalho</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input onclick="toggleCheckboxes('email_collection_types', this);" value="Marcar todos" id="toggle1" class="btn btn-primary btn-xs" type="button" /></div>
-            </div>
-            </div>
-            </div>
-            <!-- ==== END Section 5.1 - Collection Types ==== -->               <hr />
-            <!-- ==== START Section 5.2 - Subject ==== -->               <span style="font-size: 20px; font-weight: bold;">&Aacute;rea do Conhecimento<br />
-            <br />
-            </span>
-            <div class="panel-body">
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Arts and Humanities" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">Artes e Humanidades</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Business" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">Neg&oacute;cios</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Common Core" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">N&uacute;cleo comum (Curr&iacute;culo B&aacute;sico)</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Education Careers" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">Educa&ccedil;&atilde;o e Carreiras</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Genealogy" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">Genealogia</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="General Research" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">Pesquisa Geral</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Health and Medicine" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">Sa&uacute;de e Medicina</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Law and Patents" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">Direito e Patentes</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Literature and Language" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">Literatura e L&iacute;ngua</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="News and Newspapers" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">Not&iacute;cias e Jornais</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Pharma and BioMed" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">Farm&aacute;cia e Biomedicina</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Science and Technology" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">Ci&ecirc;ncia e Tecnologia</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Social Sciences" name="email_topic_pc" type="checkbox" />                       <label class="pq-form-label">Ci&ecirc;ncias Sociais</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input onclick="toggleCheckboxes('email_topic_pc', this);" value="Marcar todos" id="toggle2" class="btn btn-primary btn-xs" type="button" /></div>
-            </div>
-            </div>
-            </div>
-            <!-- ==== END Section 5.2 - Subject ==== -->               <hr />
-            <!-- ==== START Section 5.3 - Ebook Title Alerts ==== -->               <span style="font-size: 24px;">Ebook Title Alerts<br />
-            </span>
-            <p><em>Os editores est&atilde;o transmitindo centenas de novos ebooks para o nosso cat&aacute;logo todos os dias - em uma ampla gama de categorias de assuntos. Os alertas mensais por email cont&ecirc;m links para novas listas de t&iacute;tulos por &aacute;rea de assunto e anunciam todos os novos editores assinados no m&ecirc;s anterior.</em></p>
-            <div class="panel-body">
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Arts" name="email_ebooks_types_pc" type="checkbox" />                       <label class="pq-form-label">Artes</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Business" name="email_ebooks_types_pc" type="checkbox" />                       <label class="pq-form-label">Neg&oacute;cios</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Education" name="email_ebooks_types_pc" type="checkbox" />                       <label class="pq-form-label">Educa&ccedil;&atilde;o</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Health and Science" name="email_ebooks_types_pc" type="checkbox" />                       <label class="pq-form-label">Sa&uacute;de e Ci&ecirc;ncia</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="History" name="email_ebooks_types_pc" type="checkbox" />                       <label class="pq-form-label">Hist&oacute;ria</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Law" name="email_ebooks_types_pc" type="checkbox" />                       <label class="pq-form-label">Direito</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Literature and Language" name="email_ebooks_types_pc" type="checkbox" />                       <label class="pq-form-label">Literatura e L&iacute;ngua</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Religion and Philosophy" name="email_ebooks_types_pc" type="checkbox" />                       <label class="pq-form-label">Religi&atilde;o e Filosofia</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input value="Science and Technology" name="email_ebooks_types_pc" type="checkbox" />                       <label class="pq-form-label">Ci&ecirc;ncia e Tecnologia</label></div>
-            </div>
-            <div class="col-md-4">
-            <div class="form-group"><input value="Social Sciences" name="email_ebooks_types_pc" type="checkbox" />                       <label class="pq-form-label">Ci&ecirc;ncias Sociais</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4">
-            <div class="form-group"><input onclick="toggleCheckboxes('email_ebooks_types_pc', this);" value="Marcar todos" id="toggle3" class="btn btn-primary btn-xs" type="button" /></div>
-            </div>
-            </div>
-            </div>
-            <!-- ==== END Section 5.3 - Ebook Title Alerts ==== -->               <hr />
-            <!-- ==== START Section 5.4 - Preferred Language ==== -->               <span style="font-size: 24px;">Idiomas de prefer&ecirc;ncia<br />
-            <br />
-            </span>
-            <div class="panel-body">
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="English" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Ingl&ecirc;s</label></div>
-            </div>
-            <div class="col-md-3">
-            <div class="form-group"><input value="Arabic" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">&Aacute;rabe</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="Chinese-Simplified" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Chin&ecirc;s (simplificado)</label></div>
-            </div>
-            <div class="col-md-3">
-            <div class="form-group"><input value="Chinese-Traditional" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Chin&ecirc;s (tradicional)</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="French" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Franc&ecirc;s</label></div>
-            </div>
-            <div class="col-md-3">
-            <div class="form-group"><input value="German" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Alem&atilde;o</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="Hindi" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Hindi</label></div>
-            </div>
-            <div class="col-md-3">
-            <div class="form-group"><input value="Indonesian" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Indon&eacute;sio</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="Italian" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Italiano</label></div>
-            </div>
-            <div class="col-md-3">
-            <div class="form-group"><input value="Japanese" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Japon&ecirc;s</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="Korean" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Coreano</label></div>
-            </div>
-            <div class="col-md-3">
-            <div class="form-group"><input value="Portuguese-Brazil" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Portugu&ecirc;s (Brasil)</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="Punjabi" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Punjabi</label></div>
-            </div>
-            <div class="col-md-3">
-            <div class="form-group"><input value="Russian" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Russo</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="Spanish-European" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Espanhol (Europa)</label></div>
-            </div>
-            <div class="col-md-3">
-            <div class="form-group"><input value="Spanish-Latin America" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Espanhol (Am&eacute;rica Latina)</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="Thai" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Tailand&ecirc;s</label></div>
-            </div>
-            <div class="col-md-3">
-            <div class="form-group"><input value="Turkish" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Turco</label></div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3">
-            <div class="form-group"><input value="Vietnamese" name="email_lang_pref" type="checkbox" />                       <label class="pq-form-label">Vietnamita</label></div>
-            </div>
-            </div>
-            </div>
-            <!-- ==== END Section 5.4 - Preferred Language ==== --></div>
-            </div>
-            <!-- ====== END Section 5 ====== -->
-            <div style="display: none;"><!--<input type="text" name="EmailTxt" id="EmailTxt" value="" />--></div>
-            <div class="row"><input value="ENVIAR" class="btn btn-primary btn-lg" type="submit" />             <input value="LIMPAR FORMUL&Aacute;RIO" onclick="formClear();" class="btn btn-primary btn-lg" type="button" />
-            <p><a name="SubmitButton"></a></p>
-            </div>
-            <input name="LastTouchLeadSource" id="LastTouchLeadSource" value="Newsletters" type="hidden" />           <input name="LastTouchLeadSourceDate" id="LastTouchLeadSourceDate" value="mm/dd/yyyy" type="hidden" />
+              <div class="row">
+                <a name="SubmitButton"></a>
+                <input type="submit" value="Enviar" class="btn btn-primary btn-lg" />
+                <input type="button" value="Limpar preferências" onclick="clearPreferences();" class="btn btn-primary btn-lg" />
+              </div>
+            </div>
+          </div>
+
+          <input type="hidden" name="LastTouchLeadSource" id="LastTouchLeadSource" value="Targeted Email">
+          <input type="hidden" name="LastTouchLeadSourceDate" id="LastTouchLeadSourceDate" value="mm/dd/yyyy">
+
         </form>
-        </div>
-        <!-- /.inner_first_one --></div>
-        </div>
-        <div class="footer_one">
-        <div class="container">
-        <div class="col-md-12">
+      <!-- ======== END FORM ======== -->
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- ======== START Temporary Footer (to be removed) ======== -->
+
+  <div class="footer_one">
+    <div class="container">
+      <div class="col-md-12">
         <div class="col-md-2 col-xs-6">
-        <div class="single_ft">
-        <h4>Navega&ccedil;&atilde;o</h4>
-        <!--Navigation-->             <a xthyperlink="850524" xtlinkname="Footer_Navigation_Libraries" xt="SPCLICK" name="Footer_Navigation_Libraries" href="http://www.proquest.com/libraries"> Para Bibliotecas</a><br />
-        <a xthyperlink="850525" xtlinkname="Footer_Navigation_Researchers" xt="SPCLICK" name="Footer_Navigation_Researchers" href="http://www.proquest.com/researchers"> Para Pesquisadores</a><br />
-        <a xthyperlink="850526" xtlinkname="Footer_Navigation_ProductsServices" xt="SPCLICK" name="Footer_Navigation_ProductsServices" href="http://www.proquest.com/products-services"> Produtos &amp; Servi&ccedil;os</a><br />
-        <a xthyperlink="850527" xtlinkname="Footer_Navigation_Customers" xt="SPCLICK" name="Footer_Navigation_Customers" href="http://www.proquest.com/customer-care"> Para Clientes</a><br />
-        <a xthyperlink="850528" xtlinkname="Footer_Navigation_Events" xt="SPCLICK" name="Footer_Navigation_Events" href="http://www.proquest.com/events"> Eventos</a><br />
-        <a xthyperlink="850529" xtlinkname="Footer_Navigation_About" xt="SPCLICK" name="Footer_Navigation_About" href="http://www.proquest.com/about"> Sobre</a><br />
-        <a xthyperlink="850530" xtlinkname="Footer_Navigation_Blogs" xt="SPCLICK" name="Footer_Navigation_Blogs" href="http://www.proquest.com/blog"> Blogs</a></div>
+          <div class="single_ft">
+            <h4>Navegação</h4><!--Navigation-->
+            <a name="Footer_Navigation_Libraries" href="http://www.proquest.com/libraries">Para Bibliotecas</a><br>
+            <a name="Footer_Navigation_Researchers" href="http://www.proquest.com/researchers">Para Pesquisadores</a><br>
+            <a name="Footer_Navigation_ProductsServices" href="http://www.proquest.com/products-services">Produtos &amp; Serviços</a><br>
+            <a name="Footer_Navigation_Customers" href="http://www.proquest.com/customer-care">Para Clientes</a><br>
+            <a name="Footer_Navigation_Events" href="http://www.proquest.com/events">Eventos</a><br>
+            <a name="Footer_Navigation_About" href="http://www.proquest.com/about">Sobre</a><br>
+            <a name="Footer_Navigation_Blogs" href="http://www.proquest.com/blog">Blogs</a>
+          </div>
         </div>
         <div class="col-md-2 col-xs-6">
-        <div class="single_ft">
-        <h4>Suporte</h4>
-        <!--Support-->             <a xthyperlink="850531" xtlinkname="Footer_Support_SupportCenter" xt="SPCLICK" name="Footer_Support_SupportCenter" href="http://www.proquest.com/company/support-landing.html"> Centro de Suporte</a><br />
-        <a xthyperlink="850532" xtlinkname="Footer_Support_ToolsResources" xt="SPCLICK" name="Footer_Support_ToolsResources" href="http://www.proquest.com/customer-care/tools-resources/"> Ferramentas e Recursos</a><br />
-        <a xthyperlink="850533" xtlinkname="Footer_Support_TrainingWebinars" xt="SPCLICK" name="Footer_Support_TrainingWebinars" href="http://www.proquest.com/customer-care/training-webinars/"> Webinars de Treinamento</a><br />
-        <a xthyperlink="850534" xtlinkname="Footer_Support_LibGuides" xt="SPCLICK" name="Footer_Support_LibGuides" href="http://proquest.libguides.com/home"> LibGuides</a></div>
+          <div class="single_ft">
+            <h4>Suporte</h4><!--Support-->
+            <a name="Footer_Support_SupportCenter" href="http://www.proquest.com/company/support-landing.html">Centro de Suporte</a><br>
+            <a name="Footer_Support_ToolsResources" href="http://www.proquest.com/customer-care/tools-resources/">Ferramentas e Recursos</a><br>
+            <a name="Footer_Support_TrainingWebinars" href="http://www.proquest.com/customer-care/training-webinars/">Webinars de Treinamento</a><br>
+            <a name="Footer_Support_LibGuides" href="http://proquest.libguides.com/home">LibGuides</a>
+          </div>
         </div>
-        </div>
-        </div>
-        </div>
-        <!-- /.footer_one -->
-        <div class="main_footer">
-        <div class="container">
-        <div class="col-md-12">
+      </div>
+    </div>
+  </div><!-- /.footer_one -->
+
+  <div class="main_footer">
+    <div class="container">
+      <div class="col-md-12">
         <div class="inner_footer">
-        <p style="text-align: center;" lang="en"><a xthyperlink="850535" xtlinkname="BottomNav_Privacy" xt="SPCLICK" name="BottomNav_Privacy" href="http://www.proquest.com/about/privacy-statement.html">Privacy</a>&nbsp;&nbsp;             <a xthyperlink="850536" xtlinkname="BottomNav_TermsofUse" xt="SPCLICK" name="BottomNav_TermsofUse" href="http://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>&nbsp;&nbsp;             <a xthyperlink="850537" xtlinkname="BottomNav_Cookies" xt="SPCLICK" name="BottomNav_Cookies" href="http://www.proquest.com/about/cookie-policy.html">Cookies</a>&nbsp;&nbsp;             <a xthyperlink="850538" xtlinkname="BottomNav_Accessibility" xt="SPCLICK" name="BottomNav_Accessibility" href="http://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>&nbsp;&nbsp;             <a xthyperlink="850539" xtlinkname="BottomNav_DMCAPolicy" xt="SPCLICK" name="BottomNav_DMCAPolicy" href="http://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a></p>
+          <p style="text-align: center;">
+            <a name="BottomNav_Privacy" href="http://www.proquest.com/about/privacy-statement.html">Privacy</a>&nbsp;&nbsp;
+            <a name="BottomNav_TermsofUse" href="http://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>&nbsp;&nbsp;
+            <a name="BottomNav_Cookies" href="http://www.proquest.com/about/cookie-policy.html">Cookies</a>&nbsp;&nbsp;
+            <a name="BottomNav_Accessibility" href="http://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>&nbsp;&nbsp;
+            <a name="BottomNav_DMCAPolicy" href="http://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a>
+          </p>
         </div>
-        </div>
-        </div>
-        </div>
-        <!-- /.main_footer --></div>
-        <!-- /.first_form_part --> <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>--> <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script> <script>
-  window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>');
-</script> <script src="http://www.proquest.com/includes/bootstrap.min.js"></script> <script src="http://www.proquest.com/includes/plugins.js"></script> <script src="http://www.proquest.com/includes/main.js"></script> <script src="http://www.proquest.com/includes/wow.min.js"></script>
-    </body>
-    <script>
+      </div>
+    </div>
+  </div><!-- /.main_footer -->
+
+<!-- ======== END Temporary Footer ======== -->
+
+
+</div>
+<!-- ============ END Main Form Body ============ -->
+
+</body>
+
+<script>
+var formLanguage = 'pt-BR';
+
 // Put language-specific button labels here
 var SELECT_ALL_LABEL = 'Marcar todos';
 var UNSELECT_ALL_LABEL = 'Desmarcar todos';
 
+// Function to set checkboxes from hidden shadow fields mapped to DB fields 
+//  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
+function setCheckboxes() {
+  console.log('In setCheckboxes();'); ////////////////
+  $('.shadow-field').each(function() {
+    var shadow_field = $(this);
+    var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
+
+    var valuesArray = shadow_field.val().split(';');
+
+    $.each(valuesArray, function(index, value) {
+      checkboxes.filter('[value="'+value+'"]').prop('checked', true);
+    })
+  })
+}
+
+// Function to set hidden shadow fields (mapped to DB fields) based on checkbox values
+//  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
+function getCheckboxes() {
+  console.log('In getCheckboxes();'); ////////////////
+  $('.shadow-field').each(function() {
+    var shadow_field = $(this);
+    var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
+
+    var valuesString = checkboxes.filter(':checked').map(function() {
+      return $(this).val();
+    }).get().join(';');
+
+    shadow_field.val(valuesString);
+  })
+}
+
 // Function to Select or Unselect all checkboxes in a multi-select checkbox area
 function toggleCheckboxes(checkboxesSelector, buttonSelector) {
+  var checkboxes = $('[name="'+checkboxesSelector+'"]');
+  var button = $( buttonSelector );
 
-	var checkboxes = $('[name="'+checkboxesSelector+'"]');
-	var button = $( buttonSelector );
-
-	if (button.val() == SELECT_ALL_LABEL) {
-		checkboxes.each(function() {
-			this.checked = true;
-		})
-		button.val(UNSELECT_ALL_LABEL);
-	} else {
-		checkboxes.each(function() {
-			this.checked = false;
-		})
-		button.val(SELECT_ALL_LABEL);
-	}
+  if (button.val() == SELECT_ALL_LABEL) {
+    checkboxes.each(function() {
+      this.checked = true;
+    })
+    button.val(UNSELECT_ALL_LABEL);
+  } else {
+    checkboxes.each(function() {
+      this.checked = false;
+    })
+    button.val(SELECT_ALL_LABEL);
+  }
 }
 
-// Function to clear the form
-function formClear() {
-	$(':input', '#contact').not(':button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected').not(':checkbox, :radio').val('');
-	$('#toggle1').val(SELECT_ALL_LABEL);
-	$('#toggle2').val(SELECT_ALL_LABEL);
-	$('#toggle3').val(SELECT_ALL_LABEL);
+// Function to clear the checkbox selections from the form
+function clearPreferences() {
+  $(':input', '#pq-contact').not(':text, :button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected');
+  $('#toggle1').val(SELECT_ALL_LABEL);
+  $('#toggle2').val(SELECT_ALL_LABEL);
 }
 
-// Set the date for the "Last Touch Lead Source Date"
-$( document ).ready(function() {
+// Function to set the date for the "Last Touch Lead Source Date"
+function setLastTouchLeadSourceDate() {
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth()+1; //January is 0!
@@ -788,8 +883,23 @@ $( document ).ready(function() {
   if (dd < 10) { dd = '0'+dd };
   if (mm < 10) { mm = '0'+mm };
   today = mm+'/'+dd+'/'+yyyy;
-  $('#LastTouchLeadSourceDate').val(today);         // Sets hidden field for current date
-  $('#LastTouchLeadSource').val('Targeted Email');  // Sets hidden field for LastTouchLeadSource
+  $('#LastTouchLeadSourceDate').val(today);  // Sets hidden field for current date
+}
+
+// Document Ready
+$( document ).ready(function() {
+
+  // From pq-clear-contact-form.js - disallow changing the email address if already set
+  initContactForm('pq-contact', 'control_EMAIL', 'control_COLUMN30');
+
+  // Populate checkboxes
+  setCheckboxes();
+
+  // Do that last-touch-lead-source thing
+  setLastTouchLeadSourceDate();
+
+  console.log('Document loaded.'); ////////////////
+
 });
 </script>
 </html>

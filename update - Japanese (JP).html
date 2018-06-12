@@ -6,6 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Slabo+27px" />
@@ -18,55 +19,64 @@
 <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-style.css" />
 <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-responsive.css" />
 <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/bootstrap-override-20140226.css" />
+
 <script src="http://www.proquest.com/includes/IMC-modernizr-2.6.2.min.js"></script>
 <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script src="http://www.proquest.com/includes/IMC-jquery-1.10.2.min.js"></script>
 <script src="http://www.proquest.com/includes/bootstrap.min.js"></script>
 <script src="http://www.proquest.com/includes/parsley.min.js"></script>
+<script src="http://www.proquest.com/includes/jquery.cookie.js"></script>
+<script src="http://www.proquest.com/includes/jquery.form.min.js"></script>
+<script src="http://www.proquest.com/includes/pq-clear-preference-center.js"></script>
 <script>
-//debugger;
-//function setEmailTxt() {
-    //$('#EmailTxt').val($('#email').val());    // Sets hidden field for current date
-//}
-$( document ).ready(function() {
-    $('#contact').parsley({ excluded: ':hidden' });
-    //$('#email').val($('#EmailTxt').val());    // Sets Email field from hidden EmailTxt
+// Enable Bootstrap tooltips
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
 });
 </script>
+
 <style type="text/css">
 .parsley-error {
-	border: 2px solid #a51f1e;
+  border: 2px solid #a51f1e;
 }
 .parsley-error:focus {
-	border: 2px solid #a51f1e;
+  border: 2px solid #a51f1e;
 }
 .parsley-required {
-	color: #a51f1e;
+  color: #a51f1e;
 }
 .parsley-type {
-	color: #a51f1e;
-}
-.header {
-	color: #333333;
-	font-weight: bold;
-}
-#h3header {
-	font-size: 20px;
-	color: #333333;
-	font-weight: bold;
-}
-.pq-form-label {
-	color: #333333;
-  font-size:15px !important;
+  color: #a51f1e;
 }
 hr {
-	display: block;
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-	margin-left: auto;
-	margin-right: auto;
-	border-style: inset;
-	border-width: 2px;
+  display: block;
+  margin: 0.5em auto 0.5em auto;
+  border: 2px inset;
+}
+.pq-lead-text {
+  font-size: 16px;
+}
+.pq-form-label {
+  color: #333333;
+  font-size: 15px !important;
+}
+#email-warning {
+  display: none;
+}
+.well-sm-adjacent {
+  padding-top: 9px;
+}
+.tooltip-inner {
+  max-width: 275px;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  border-style: solid;
+  border-width: 1px;
+}
+/* ID needed here for specificity */
+#pq-contact .tooltip-arrow {
+  border-top-color: #ebccd1;
 }
 </style>
 </head>
@@ -75,6 +85,10 @@ hr {
 <!--[if lt IE 7]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
+
+
+<!-- ============ START Temporary Header (to be removed) ============ -->
+
 <div class="header-area">
   <div class="container">
     <div class="row">
@@ -93,9 +107,9 @@ hr {
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div id="navbar-collapse-1" class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-right">
-                <li><a xthyperlink="848860" xtlinkname="TopNav_SupportCenter" xt="SPCLICK" name="TopNav_SupportCenter" href="http://www.proquest.com/company/support-landing.html">Support Center |</a></li>
-                <li><a xthyperlink="848861" xtlinkname="TopNavNews" xt="SPCLICK" name="TopNavNews" href="http://www.proquest.com/about/news/">News |</a></li>
-                <li><a xthyperlink="848862" xtlinkname="TopNav_Contact" xt="SPCLICK" name="TopNav_Contact" href="http://www.proquest.com/contact/contact-landing.html">Contact</a></li>
+                <li><a name="TopNav_SupportCenter" href="http://www.proquest.com/company/support-landing.html">Support Center |</a></li>
+                <li><a name="TopNavNews" href="http://www.proquest.com/about/news/">News |</a></li>
+                <li><a name="TopNav_Contact" href="http://www.proquest.com/contact/contact-landing.html">Contact</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -104,27 +118,30 @@ hr {
     </div>
   </div>
 </div><!-- /.header-area -->
+
 <div class="proquest_part">
   <div class="container">
     <div class="col-md-12">
       <div class="inner_proquest">
-        <a href="https://www.proquest.com" target="_blank" xthyperlink="877683" xt="SPCLICK" xtlinkname="httpswwwproquestcom" name="httpswwwproquestcom"><img src="logo_3.jpg" name="logo_3.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="logo_3.jpg" contentid="21184081" xt="SPIMAGE" /></a>
+        <a href="https://www.proquest.com" target="_blank" name="httpswwwproquestcom"><img src="pq-header-logo.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="pq-header-logo.jpg" xt="SPIMAGE" /></a>
       </div>
     </div>
   </div>
 </div><!-- /.proquest_part -->
+
 <div class="arts_db_part">
   <div class="container">
     <div class="col-md-12">
       <div class="inner_db">
         <div class="top_db">
-          <p><a href="https://www.proquest.com" style="color: #00a0df; text-decoration: none;" xthyperlink="877723" xt="SPCLICK" xtlinkname="httpswwwproquestcom" name="httpswwwproquestcom">ProQuest</a > > ニュースレター登録設定</p>
+          <p><a href="https://www.proquest.com" style="color: #00a0df; text-decoration: none;" name="httpswwwproquestcom">ProQuest</a> > Your Email Preferences</p>
         </div>
-        <div class="bottom_t"><span style="font-size: 36px; padding-bottom: 10px;">ニュースレター登録設定</span></div>
+        <div class="bottom_t"><span style="font-size: 36px; padding-bottom: 10px;">Your Email Preferences</span></div>
       </div>
     </div>
   </div>
 </div><!-- /.arts_db_part -->
+
 <div class="background_part">
   <div class="container-fluid">
     <div class="col-md-12">
@@ -132,31 +149,79 @@ hr {
     </div>
   </div>
 </div><!-- /.background_part -->
+
+<!-- ============ END Temporary Header ============ -->
+
+
+<!-- ============ START Intro Text ============ -->
 <div class="small_para_part">
   <div class="container">
     <div class="col-md-12">
-      <div class="inner_small">
-        <p><span style="font-size: 16px;">お好みの項目を選んでクリックするだけであなたの図書館にぴったりのニュースレターをまとめて登録できます。変更登録もこちらからどうぞ。</span></p>
-        <p>ProQuestのニュースレターの解除は<a href="http://go.proquest.com/preferences-jp/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;" xt="SPCLICKSTREAM" xthyperlink="848863" xtlinkname="Unsubscribe Redirect">こちら</a>からどうぞ。</p>
-        <p>あなたのアレクサンダー通りのコミュニケーションの好みを管理するには<a href="https://alexanderstreet.com/preferences" target="_blank" name="AS Unsubscribe" style="color: #00a0df; text-decoration: none;" xt="SPCLICKSTREAM" xthyperlink="865061" xtlinkname="AS Unsubscribe">ここをクリック</a>。</p>
+      <p class="pq-lead-text">お好みの項目を選んでクリックするだけであなたの図書館にぴったりのニュースレターをまとめて登録できます。変更登録もこちらからどうぞ。<br>
+      </p>
+    </div>
+    <div id="email-warning" class="col-md-6">
+      <div class="well-sm-adjacent">
+        <p class="pq-lead-text"><strong>セキュリティ対策と個人情報保護のため、このフォーム上からのEメールアドレスの変更はできません。</strong></p>
+        <p>Eメールアドレスの更新は<a href="#" class="clear-identity-action" name="new_form" xt="SPNOTRACK">新しいフォーム</a>からご登録ください。</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="well well-sm">
+        <p>ProQuestのニュースレターの解除は<a href="http://go.proquest.com/preferences/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;">こちら</a>からどうぞ。</p>
+        <p>あなたのアレクサンダー通りのコミュニケーションの好みを管理するには<a href="https://alexanderstreet.com/preferences" target="_blank" name="AS Unsubscribe" style="color: #00a0df; text-decoration: none;">ここをクリック</a>。</p>
       </div>
     </div>
   </div>
-</div><!-- /.small_para_part -->
-<div class="first_form_part">
+</div>
+<!-- ============ END Intro Text ============ -->
+
+<!-- ============ START Main Form Body ============ -->
+<div class="main_form_part">
   <div class="container">
     <div class="col-md-12">
-      <div class="inner_first_one">
-        <h2><br>
-          登録情報をご入力ください。<span class="n_fields">（<span class="parsley-required">*</span>は必須項目です。英語入力のみ）</span></h2>
-        <form style="background-color: #FFFFFF; margin-top: 20px;" method="post" name="contact" id="contact" data-validate="parsley">
-          <!-- ====== START Section 1 - Personal Info ====== -->
+      <div class="panel">
+        <h2>登録情報をご入力ください。<span class="n_fields">（<span class="parsley-required">*</span>は必須項目です。英語入力のみ）</span></h2>
+
+      <!-- ======== START FORM ======== -->
+        <form id="pq-contact" name="pq-contact" onsubmit="getCheckboxes();" method="post" class="pq-contact" style="margin-top: 20px;" autocomplete="off">
+        <!-- Autocomplete set to "off" for compatibility workaround for Firefox. -->
+
+        <!-- ====== START Hidden Fields for Checkboxes ====== -->
+          <!-- Needed because WCA, a.k.a. IMC doesn't know how to do multi-select checkboxes. -->
+          <div id="shadow-fields">
+            <input type="hidden" class="shadow-field" name="email_type_pc" />
+            <input type="hidden" class="shadow-field" name="email_newsleter_type" />
+            <input type="hidden" class="shadow-field" name="email_collection_types" />
+            <input type="hidden" class="shadow-field" name="email_topic_pc" />
+          </div>
+        <!-- ====== END Hidden Fields for Checkboxes ====== -->
+
+        <!-- ====== START Section 1 - Personal Info ====== -->
           <div class="panel-body">
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_EMAIL">Email <span class="parsley-required">*</span></label>
+                  <input type="text" class="form-control" id="control_EMAIL" name="Email" required="" data-toggle="tooltip" data-placement="top" title="セキュリティ対策と個人情報保護のため、ご登録後のEメールアドレスの変更はできません。"/>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_COLUMN270">Twitterアカウント</label>
+                  <input type="text" class="form-control" id="control_COLUMN270" name="Twitter Handle" />
+                </div>
+              </div>
+            </div>
+
+            <!-- "Salutation" field is input-required in the "es-419" version of the page -->
+            <!-- "Salutation" field does not appear in the "ko" version of the page -->
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label class="pq-form-label" for="control_COLUMN42">冒頭敬辞</label>
-                  <select class="form-control" id="control_COLUMN42" name="Salutation">
+                  <select class="form-control" id="control_COLUMN42" name="Salutation" lang="en">
                     <option selected="" value="">Select one</option>
                     <option value="Mr.">Mr.</option>
                     <option value="Ms.">Ms.</option>
@@ -181,39 +246,33 @@ hr {
                 </div>
               </div>
             </div>
+
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label class="pq-form-label" for="control_COLUMN30">名 <span class="parsley-required">*</span></label>
-                  <input name="First Name" id="control_COLUMN30" class="form-control" type="text" required="" />
+                  <input type="text" class="form-control" id="control_COLUMN30" name="First Name" required="" />
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label class="pq-form-label" for="control_COLUMN16">姓 <span class="parsley-required">*</span></label>
-                  <input name="Last Name" id="control_COLUMN16" class="form-control" type="text" required="" />
+                  <input type="text" class="form-control" id="control_COLUMN16" name="Last Name" required="" />
                 </div>
               </div>
             </div>
+
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label class="pq-form-label" for="control_COLUMN166">機関名 <span class="parsley-required">*</span></label>
-                  <input name="Organization Name" id="control_COLUMN166" class="form-control" type="text" required="" />
+                  <input type="text" class="form-control" id="control_COLUMN166" name="Organization Name" required="" />
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label class="pq-form-label" for="control_EMAIL">Email <span class="parsley-required">*</span></label>
-                  <input name="Email" id="control_EMAIL" class="form-control" type="text" required="" />
-                </div>
-              </div>
-            </div>
-            <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label class="pq-form-label" for="control_COLUMN40">国 <span class="parsley-required">*</span></label>
-                  <select name="Country" id="control_COLUMN40" class="form-control" required="">
+                  <select class="form-control" id="control_COLUMN40" name="Country" lang="en" required="">
                     <option selected="" value="">Select one</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Algeria">Algeria</option>
@@ -222,6 +281,7 @@ hr {
                     <option value="Aruba">Aruba</option>
                     <option value="Australia">Australia</option>
                     <option value="Austria">Austria</option>
+                    <option value="Azerbaijan, Republic of">Azerbaijan, Republic of</option>
                     <option value="Bahamas">Bahamas</option>
                     <option value="Bahrain">Bahrain</option>
                     <option value="Bangladesh">Bangladesh</option>
@@ -235,7 +295,6 @@ hr {
                     <option value="Botswana">Botswana</option>
                     <option value="Brazil">Brazil</option>
                     <option value="Bulgaria">Bulgaria</option>
-                    <option value="Afghanistan">Afghanistan</option>
                     <option value="Cambodia">Cambodia</option>
                     <option value="Canada">Canada</option>
                     <option value="Cayman Islands">Cayman Islands</option>
@@ -373,669 +432,449 @@ hr {
                   </select>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label class="pq-form-label" for="control_COLUMN270">Twitterアカウント</label>
-                  <input name="Twitter Handle" id="control_COLUMN270" class="form-control" type="text" />
-                </div>
-              </div>
             </div>
+
           </div>
-          <!-- ====== END Section 1 - Personal Info ====== -->
+        <!-- ====== END Section 1 - Personal Info ====== -->
+
           <hr>
-          <!-- ====== START Section 2 - Email Types ====== -->
-          <div class="newsletter_part_2">
+
+        <!-- ====== START Section 2 - Email Types ====== -->
+          <div class="panel">
             <span style="font-size: 24px;">受信したいお知らせのタイプを選んでください。<br>
-            <br>
-            </span>
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="checkbox" value="Administration" name="email_type_pc" />
-                    <label class="pq-form-label">管理者向けシステムメンテナンスのお知らせ</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="checkbox" value="Surveys" name="email_type_pc" />
-                    <label class="pq-form-label">カスタマー調査</label>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="checkbox" value="Product Info" name="email_type_pc" />
-                    <label class="pq-form-label">新製品と特別オファーのご案内</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="checkbox" value="Events" name="email_type_pc" />
-                    <label class="pq-form-label">イベント情報</label>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="checkbox" value="Training" name="email_type_pc" />
-                    <label class="pq-form-label">ウェビナーとオンライントレーニングのご案内</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ====== END Section 2 - Email Types ====== -->
-          <hr>
-          <!-- ====== START Section 3 - Newsletters ====== -->
-          <div class="newsletter_part_2">
-            <span style="font-size: 24px;">ニュースレター<br>
-            <br>
-            </span>
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <input type="checkbox" value="Tips and Training" name="email_newsleter_type" />
-                    <label class="pq-form-label">利用のヒントとトレーニング</label>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <input type="checkbox" value="PQ News" name="email_newsleter_type" />
-                    <label class="pq-form-label">ProQuestニュース</label>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <input type="checkbox" value="Resources Updates" name="email_newsleter_type" />
-                    <label class="pq-form-label">リソースアップデート</label>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <input type="checkbox" value="Public Libraries" name="email_newsleter_type" />
-                    <label class="pq-form-label">公共図書館</label>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <input type="checkbox" value="Chronolog" name="email_newsleter_type" />
-                    <label class="pq-form-label">Chronolog</label>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <input type="checkbox" value="School Libraries" name="email_newsleter_type" />
-                    <label class="pq-form-label">学校図書館</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ====== END Section 3 - Newsletters ====== -->
-          <hr>
-          <!-- ====== START Section 4 - Blogs ====== -->
-          <div class="newsletter_part_2">
-            <span style="font-size: 24px;">ProQuestブログニュースレター（英語のみ）<br>
-            <br>
-            </span>
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <input type="checkbox" value="Bi-Weekly" name="email_blog_prefs" />
-                    <label class="pq-form-label">隔週</label>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <input type="checkbox" value="Monthly" name="email_blog_prefs" />
-                    <label class="pq-form-label">毎月</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ====== END Section 4 - Blogs ====== -->
-          <hr>
-          <!-- ====== START Section 5 ====== -->
-          <div class="newsletter_part_2">
-            <span style="font-size: 24px;">お好きなトピックを選択してください。<br>
-            </span>
-            <span style="font-size: 18px;"><em style="color: #999999;">複数設定可能です。全てを選択する場合は「全て選択」をクリックしてください。</em><br>  <!-- Japanese text doesn't do italics -->
               <br>
             </span>
             <div class="panel-body">
-              <!-- ==== START Section 5.1 - Collection Types ==== -->
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Surveys" id="checkbox_2-1" name="email_type_pc_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_2-1">カスタマー調査</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Product Info" id="checkbox_2-2" name="email_type_pc_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_2-2">新製品と特別オファーのご案内</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Events" id="checkbox_2-3" name="email_type_pc_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_2-3">イベント情報</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Training" id="checkbox_2-4" name="email_type_pc_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_2-4">ウェビナーとオンライントレーニングのご案内</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        <!-- ====== END Section 2 - Email Types ====== -->
+
+          <hr>
+
+        <!-- ====== START Section 3 - Newsletters ====== -->
+          <div class="panel">
+            <span style="font-size: 24px;">ニュースレター<br>
+              <br>
+            </span>
+            <div class="panel-body">
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Academic Libraries" id="checkbox_3-1" name="email_newsleter_type_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_3-1">大学図書館向け</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Community/Associate College Libraries" id="checkbox_3-2" name="email_newsleter_type_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_3-2">コミュニティカレッジ向け</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Chronolog" id="checkbox_3-3" name="email_newsleter_type_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_3-3">企業向け (Chronolog)</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Public Libraries" id="checkbox_3-4" name="email_newsleter_type_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_3-4">公共図書館</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <!-- This checkbox does not appear in the "en", "pt-BR", "es-419" versions of the page -->
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="Resource/Quarterly Newsletter" id="checkbox_3-5" name="email_newsleter_type_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_3-5">Resources Update</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="checkbox" value="School Libraries" id="checkbox_3-6" name="email_newsleter_type_cbgroup" />
+                    <label class="pq-form-label" for="checkbox_3-6">学校図書館</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        <!-- ====== END Section 3 - Newsletters ====== -->
+
+          <hr>
+
+        <!-- ====== START Section 4 - Topics of Interest ====== -->
+          <div class="panel">
+            <span style="font-size: 24px;">お好きなトピックを選択してください。<br>
+            </span>
+            <span style="font-size: 18px;"><i>複数設定可能です。全てを選択する場合は「全て選択」をクリックしてください。</i><br>
+              <br>
+            </span>
+            <div class="panel-body">
+
+            <!-- ==== START Section 4.1 - Collection Types ==== -->
               <span style="font-size: 20px; font-weight: bold;">コレクションのタイプ<br>
                 <br>
               </span>
               <div class="panel-body">
+
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Databases" name="email_collection_types" />
-                      <label class="pq-form-label">データベース</label>
+                      <input type="checkbox" value="Databases" id="checkbox_4-1-1" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-1">データベース</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Dissertations & Theses" name="email_collection_types" />
-                      <label class="pq-form-label">学位論文</label>
+                      <input type="checkbox" value="Dissertations & Theses" id="checkbox_4-1-2" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-2">学位論文</label>
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Ebooks" name="email_collection_types" />
-                      <label class="pq-form-label">Ebooks</label>
+                      <input type="checkbox" value="Ebooks" id="checkbox_4-1-3" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-3">Ebook</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Journals" name="email_collection_types" />
-                      <label class="pq-form-label">ジャーナル</label>
+                      <input type="checkbox" value="News" id="checkbox_4-1-4" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-4">ニュース</label>
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Microfilm" name="email_collection_types" />
-                      <label class="pq-form-label">マイクロフィルム</label>
+                      <input type="checkbox" value="Primary Sources" id="checkbox_4-1-5" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-5">プライマリーソース</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Print Books" name="email_collection_types" />
-                      <label class="pq-form-label">冊子体書籍</label>
+                      <input type="checkbox" value="Print Books" id="checkbox_4-1-6" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-6">冊子体書籍</label>
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Patents" name="email_collection_types" />
-                      <label class="pq-form-label">特許</label>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="checkbox" value="Search & Discovery" name="email_collection_types" />
-                      <label class="pq-form-label">サーチとディスカバリー</label>
+                      <input type="checkbox" value="Video" id="checkbox_4-1-7" name="email_collection_types_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-1-7">ビデオ</label>
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Video" name="email_collection_types" />
-                      <label class="pq-form-label">ビデオ</label>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="checkbox" value="Workflow Tools" name="email_collection_types" />
-                      <label class="pq-form-label">ワークフローツール</label>
+                      <input type="button" onclick="toggleCheckboxes('email_collection_types_cbgroup', this);" value="全て選択" id="toggle1" class="btn btn-primary btn-xs" />
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="button" onclick="toggleCheckboxes('email_collection_types', this);" value="全て選択" id="toggle1" class="btn btn-primary btn-xs" />
-                    </div>
-                  </div>
-                </div>
+
               </div>
-              <!-- ==== END Section 5.1 - Collection Types ==== -->
+            <!-- ==== END Section 4.1 - Collection Types ==== -->
+
               <hr>
-              <!-- ==== START Section 5.2 - Subject ==== -->
-              <span style="font-size: 20px; font-weight: bold;">分野<br>
+
+            <!-- ==== START Section 4.2 - Subject Areas ==== -->
+              <span style="font-size: 20px; font-weight: bold;">分野別<br>
                 <br>
               </span>
               <div class="panel-body">
+
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Arts and Humanities" name="email_topic_pc" />
-                      <label class="pq-form-label">人文学</label>
+                      <input type="checkbox" value="Arts and Humanities" id="checkbox_4-2-1" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-1">芸術</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Business" name="email_topic_pc" />
-                      <label class="pq-form-label">ビジネス</label>
+                      <input type="checkbox" value="Business" id="checkbox_4-2-2" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-2">ビジネス</label>
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Common Core" name="email_topic_pc" />
-                      <label class="pq-form-label">共通コア科目</label>
+                      <input type="checkbox" value="Corp Pharma and BioMed" id="checkbox_4-2-3" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-3">企業向け：薬学・バイオメディカル</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Education Careers" name="email_topic_pc" />
-                      <label class="pq-form-label">教育とキャリア</label>
+                      <input type="checkbox" value="Corp Science and Technology" id="checkbox_4-2-4" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-4">企業向け：科学技術</label>
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Genealogy" name="email_topic_pc" />
-                      <label class="pq-form-label">系譜学</label>
+                      <input type="checkbox" value="Government and Legal Studies" id="checkbox_4-2-5" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-5">政府関連・法学</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="General Research" name="email_topic_pc" />
-                      <label class="pq-form-label">総合分野</label>
+                      <input type="checkbox" value="Health and Medicine" id="checkbox_4-2-6" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-6">看護・医療</label>
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Health and Medicine" name="email_topic_pc" />
-                      <label class="pq-form-label">医学と保健</label>
+                      <input type="checkbox" value="History" id="checkbox_4-2-7" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-7">歴史</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Law and Patents" name="email_topic_pc" />
-                      <label class="pq-form-label">法律と特許</label>
+                      <input type="checkbox" value="Interdisciplinary" id="checkbox_4-2-8" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-8">学際分野</label>
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Literature and Language" name="email_topic_pc" />
-                      <label class="pq-form-label">文学と言語学</label>
+                      <input type="checkbox" value="Literature and Language" id="checkbox_4-2-9" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-9">文学</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="News and Newspapers" name="email_topic_pc" />
-                      <label class="pq-form-label">ニュースと新聞</label>
+                      <input type="checkbox" value="News and Newspapers" id="checkbox_4-2-10" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-10">ニュース</label>
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Pharma and BioMed" name="email_topic_pc" />
-                      <label class="pq-form-label">薬学と生物医学</label>
+                      <input type="checkbox" value="SciTech" id="checkbox_4-2-11" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-11">科学技術</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Science and Technology" name="email_topic_pc" />
-                      <label class="pq-form-label">科学とテクノロジー</label>
+                      <input type="checkbox" value="Social Sciences" id="checkbox_4-2-12" name="email_topic_pc_cbgroup" />
+                      <label class="pq-form-label" for="checkbox_4-2-12">社会科学</label>
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Social Sciences" name="email_topic_pc" />
-                      <label class="pq-form-label">社会科学</label>
+                      <input type="button" onclick="toggleCheckboxes('email_topic_pc_cbgroup', this);" value="全て選択" id="toggle2" class="btn btn-primary btn-xs" />
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="button" onclick="toggleCheckboxes('email_topic_pc', this);" value="全て選択" id="toggle2" class="btn btn-primary btn-xs" />
-                    </div>
-                  </div>
-                </div>
+
               </div>
-              <!-- ==== END Section 5.2 - Subject ==== -->
-              <hr>
-              <!-- ==== START Section 5.3 - Ebook Title Alerts ==== -->
-              <span style="font-size: 24px;">Ebookタイトルアラート<br>
-              </span>
-              <p>
-                <em style="color: #999999;">新たに収録されたebookを出版社情報とともに分野別のタイトルリストでお届けします。毎月１回発行のマンスリーアラートです。</em><br>  <!-- Japanese text doesn't do italics -->
-                <br>
-              </p>
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="checkbox" value="Arts" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label">芸術</label>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="checkbox" value="Business" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label">ビジネス</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="checkbox" value="Education" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label">教育</label>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="checkbox" value="Health and Science" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label">ヘルスサイエンス</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="checkbox" value="History" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label">歴史</label>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="checkbox" value="Law" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label">法律</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="checkbox" value="Literature and Language" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label">文学と言語学</label>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="checkbox" value="Religion and Philosophy" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label">宗教と哲学</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="checkbox" value="Science and Technology" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label">科学とテクノロジー</label>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="checkbox" value="Social Sciences" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label">社会科学</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input type="button" onclick="toggleCheckboxes('email_ebooks_types_pc', this);" value="全て選択" id="toggle3" class="btn btn-primary btn-xs" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- ==== END Section 5.3 - Ebook Title Alerts ==== -->
-              <hr>
-              <!-- ==== START Section 5.4 - Preferred Language ==== -->
-              <span style="font-size: 24px;">お好きな言語を選んでください。<br>
-                <br>
-              </span>
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="English" name="email_lang_pref" />
-                      <label class="pq-form-label">英語</label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Arabic" name="email_lang_pref" />
-                      <label class="pq-form-label">アラビア語</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Chinese-Simplified" name="email_lang_pref" />
-                      <label class="pq-form-label">中国語（簡体字）</label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Chinese-Traditional" name="email_lang_pref" />
-                      <label class="pq-form-label">中国語（繁体字）</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="French" name="email_lang_pref" />
-                      <label class="pq-form-label">フランス語</label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="German" name="email_lang_pref" />
-                      <label class="pq-form-label">ドイツ語</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Hindi" name="email_lang_pref" />
-                      <label class="pq-form-label">ヒンズー後</label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Indonesian" name="email_lang_pref" />
-                      <label class="pq-form-label">インドネシア語</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Italian" name="email_lang_pref" />
-                      <label class="pq-form-label">イタリア語</label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Japanese" name="email_lang_pref" />
-                      <label class="pq-form-label">日本語</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Korean" name="email_lang_pref" />
-                      <label class="pq-form-label">韓国語</label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Portuguese-Brazil" name="email_lang_pref" />
-                      <label class="pq-form-label">ポルトガル語（ブラジル）</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Punjabi" name="email_lang_pref" />
-                      <label class="pq-form-label">パンジャーブ語</label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Russian" name="email_lang_pref" />
-                      <label class="pq-form-label">ロシア語</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Spanish-European" name="email_lang_pref" />
-                      <label class="pq-form-label">スペイン語（ヨーロッパ）</label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Spanish-Latin America" name="email_lang_pref" />
-                      <label class="pq-form-label">スペイン語（南米）</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Thai" name="email_lang_pref" />
-                      <label class="pq-form-label">タイ語</label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Turkish" name="email_lang_pref" />
-                      <label class="pq-form-label">トルコ語</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <input type="checkbox" value="Vietnamese" name="email_lang_pref" />
-                      <label class="pq-form-label">ベトナム語</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- ==== END Section 5.4 - Preferred Language ==== -->
+            <!-- ==== END Section 4.2 - Subject Areas ==== -->
+
             </div>
           </div>
-          <!-- ====== END Section 5 ====== -->
-          <div style="display: none;"><!--<input type="text" name="EmailTxt" id="EmailTxt" value="" />--></div>
-          <div class="row">
-            <input type="submit" value="登録" class="btn btn-primary btn-lg" />
-            <input type="button" value="フォームをクリアにする" onclick="formClear();" class="btn btn-primary btn-lg" />
-            <p><a name="SubmitButton"></a></p>
+        <!-- ====== END Section 4 - Topics of Interest ====== -->
+
+          <div class="panel">
+            <div class="panel-body">
+              <div class="row">
+                <a name="SubmitButton"></a>
+                <input type="submit" value="登録" class="btn btn-primary btn-lg" />
+                <input type="button" value="フォームをクリアにする" onclick="clearPreferences();" class="btn btn-primary btn-lg" />
+              </div>
+            </div>
           </div>
-          <input type="hidden" name="LastTouchLeadSource" id="LastTouchLeadSource" value="Newsletters">
+
+          <input type="hidden" name="LastTouchLeadSource" id="LastTouchLeadSource" value="Targeted Email">
           <input type="hidden" name="LastTouchLeadSourceDate" id="LastTouchLeadSourceDate" value="mm/dd/yyyy">
+
         </form>
-      </div><!-- /.inner_first_one -->
+      <!-- ======== END FORM ======== -->
+
+      </div>
     </div>
   </div>
+
+
+<!-- ======== START Temporary Footer (to be removed) ======== -->
+
   <div class="footer_one">
     <div class="container">
       <div class="col-md-12">
         <div class="col-md-2 col-xs-6">
           <div class="single_ft">
             <h4>ナビゲーション</h4><!--Navigation-->
-            <a xthyperlink="848864" href="http://www.proquest.com/libraries" name="Footer_Navigation_Libraries" xt="SPCLICK" xtlinkname="Footer_Navigation_Libraries"> 図書館</a><br>
-            <a xthyperlink="848865" href="http://www.proquest.com/researchers" name="Footer_Navigation_Researchers" xt="SPCLICK" xtlinkname="Footer_Navigation_Researchers"> 研究者</a><br>
-            <a xthyperlink="848866" href="http://www.proquest.com/products-services" name="Footer_Navigation_ProductsServices" xt="SPCLICK" xtlinkname="Footer_Navigation_ProductsServices"> 製品とサービス</a><br>
-            <a xthyperlink="848867" href="http://www.proquest.com/customer-care" name="Footer_Navigation_Customers" xt="SPCLICK" xtlinkname="Footer_Navigation_Customers"> お客様</a><br>
-            <a xthyperlink="848868" href="http://www.proquest.com/events" name="Footer_Navigation_Events" xt="SPCLICK" xtlinkname="Footer_Navigation_Events"> イベント</a><br>
-            <a xthyperlink="848869" href="http://www.proquest.com/about" name="Footer_Navigation_About" xt="SPCLICK" xtlinkname="Footer_Navigation_About"> ブロ</a><br>
-            <a xthyperlink="848870" href="http://www.proquest.com/blog" name="Footer_Navigation_Blogs" xt="SPCLICK" xtlinkname="Footer_Navigation_Blogs"> グ</a>
+            <a name="Footer_Navigation_Libraries" href="http://www.proquest.com/libraries">図書館</a><br>
+            <a name="Footer_Navigation_Researchers" href="http://www.proquest.com/researchers">研究者</a><br>
+            <a name="Footer_Navigation_ProductsServices" href="http://www.proquest.com/products-services">製品とサービス</a><br>
+            <a name="Footer_Navigation_Customers" href="http://www.proquest.com/customer-care">お客様</a><br>
+            <a name="Footer_Navigation_Events" href="http://www.proquest.com/events">イベント</a><br>
+            <a name="Footer_Navigation_About" href="http://www.proquest.com/about">ブロ</a><br>
+            <a name="Footer_Navigation_Blogs" href="http://www.proquest.com/blog">グ</a>
           </div>
         </div>
         <div class="col-md-2 col-xs-6">
           <div class="single_ft">
             <h4>サポート</h4><!--Support-->
-            <a xthyperlink="848871" href="http://www.proquest.com/company/support-landing.html" name="Footer_Support_SupportCenter" xt="SPCLICK" xtlinkname="Footer_Support_SupportCenter"> サポートセンターツール</a><br>
-            <a xthyperlink="848872" href="http://www.proquest.com/customer-care/tools-resources/" name="Footer_Support_ToolsResources" xt="SPCLICK" xtlinkname="Footer_Support_ToolsResources"> ツールとリソース</a><br>
-            <a xthyperlink="848873" href="http://www.proquest.com/customer-care/training-webinars/" name="Footer_Support_TrainingWebinars" xt="SPCLICK" xtlinkname="Footer_Support_TrainingWebinars"> トレーニングウェビナー</a><br>
-            <a xthyperlink="848874" href="http://proquest.libguides.com/home" name="Footer_Support_LibGuides" xt="SPCLICK" xtlinkname="Footer_Support_LibGuides"> LibGuides</a>
+            <a name="Footer_Support_SupportCenter" href="http://www.proquest.com/company/support-landing.html">サポートセンターツール</a><br>
+            <a name="Footer_Support_ToolsResources" href="http://www.proquest.com/customer-care/tools-resources/">ツールとリソース</a><br>
+            <a name="Footer_Support_TrainingWebinars" href="http://www.proquest.com/customer-care/training-webinars/">トレーニングウェビナー</a><br>
+            <a name="Footer_Support_LibGuides" href="http://proquest.libguides.com/home">LibGuides</a>
           </div>
         </div>
       </div>
     </div>
   </div><!-- /.footer_one -->
+
   <div class="main_footer">
     <div class="container">
       <div class="col-md-12">
         <div class="inner_footer">
           <p style="text-align: center;">
-            <a xthyperlink="848875" href="http://www.proquest.com/about/privacy-statement.html" name="BottomNav_Privacy" xt="SPCLICK" xtlinkname="BottomNav_Privacy">Privacy</a>&nbsp;&nbsp;
-            <a xthyperlink="848876" href="http://www.proquest.com/about/terms-and-conditions.html" name="BottomNav_TermsofUse" xt="SPCLICK" xtlinkname="BottomNav_TermsofUse">Terms of Use</a>&nbsp;&nbsp;
-            <a xthyperlink="848877" href="http://www.proquest.com/about/cookie-policy.html" name="BottomNav_Cookies" xt="SPCLICK" xtlinkname="BottomNav_Cookies">Cookies</a>&nbsp;&nbsp;
-            <a xthyperlink="848878" href="http://www.proquest.com/company/ProQuest-ADA-Compliance.html" name="BottomNav_Accessibility" xt="SPCLICK" xtlinkname="BottomNav_Accessibility">Accessibility</a>&nbsp;&nbsp;
-            <a xthyperlink="848879" href="http://media2.proquest.com/documents/dmcapolicy.pdf" name="BottomNav_DMCAPolicy" xt="SPCLICK" xtlinkname="BottomNav_DMCAPolicy">DMCA Policy</a>
+            <a name="BottomNav_Privacy" href="http://www.proquest.com/about/privacy-statement.html">Privacy</a>&nbsp;&nbsp;
+            <a name="BottomNav_TermsofUse" href="http://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>&nbsp;&nbsp;
+            <a name="BottomNav_Cookies" href="http://www.proquest.com/about/cookie-policy.html">Cookies</a>&nbsp;&nbsp;
+            <a name="BottomNav_Accessibility" href="http://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>&nbsp;&nbsp;
+            <a name="BottomNav_DMCAPolicy" href="http://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a>
           </p>
         </div>
       </div>
     </div>
   </div><!-- /.main_footer -->
-</div><!-- /.first_form_part -->
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script>
-  window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>');
-</script>
-<script src="http://www.proquest.com/includes/bootstrap.min.js"></script>
-<script src="http://www.proquest.com/includes/plugins.js"></script>
-<script src="http://www.proquest.com/includes/main.js"></script>
-<script src="http://www.proquest.com/includes/wow.min.js"></script>
+
+<!-- ======== END Temporary Footer ======== -->
+
+
+</div>
+<!-- ============ END Main Form Body ============ -->
+
 </body>
+
 <script>
+var formLanguage = 'ja';
+
 // Put language-specific button labels here
 var SELECT_ALL_LABEL = '全て選択';
 var UNSELECT_ALL_LABEL = 'すべての選択を解除します';
 
+// Function to set checkboxes from hidden shadow fields mapped to DB fields 
+//  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
+function setCheckboxes() {
+  console.log('In setCheckboxes();'); ////////////////
+  $('.shadow-field').each(function() {
+    var shadow_field = $(this);
+    var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
+
+    var valuesArray = shadow_field.val().split(';');
+
+    $.each(valuesArray, function(index, value) {
+      checkboxes.filter('[value="'+value+'"]').prop('checked', true);
+    })
+  })
+}
+
+// Function to set hidden shadow fields (mapped to DB fields) based on checkbox values
+//  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
+function getCheckboxes() {
+  console.log('In getCheckboxes();'); ////////////////
+  $('.shadow-field').each(function() {
+    var shadow_field = $(this);
+    var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
+
+    var valuesString = checkboxes.filter(':checked').map(function() {
+      return $(this).val();
+    }).get().join(';');
+
+    shadow_field.val(valuesString);
+  })
+}
+
 // Function to Select or Unselect all checkboxes in a multi-select checkbox area
 function toggleCheckboxes(checkboxesSelector, buttonSelector) {
+  var checkboxes = $('[name="'+checkboxesSelector+'"]');
+  var button = $( buttonSelector );
 
-	var checkboxes = $('[name="'+checkboxesSelector+'"]');
-	var button = $( buttonSelector );
-
-	if (button.val() == SELECT_ALL_LABEL) {
-		checkboxes.each(function() {
-			this.checked = true;
-		})
-		button.val(UNSELECT_ALL_LABEL);
-	} else {
-		checkboxes.each(function() {
-			this.checked = false;
-		})
-		button.val(SELECT_ALL_LABEL);
-	}
+  if (button.val() == SELECT_ALL_LABEL) {
+    checkboxes.each(function() {
+      this.checked = true;
+    })
+    button.val(UNSELECT_ALL_LABEL);
+  } else {
+    checkboxes.each(function() {
+      this.checked = false;
+    })
+    button.val(SELECT_ALL_LABEL);
+  }
 }
 
-// Function to clear the form
-function formClear() {
-	$(':input', '#contact').not(':button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected').not(':checkbox, :radio').val('');
-	$('#toggle1').val(SELECT_ALL_LABEL);
-	$('#toggle2').val(SELECT_ALL_LABEL);
-	$('#toggle3').val(SELECT_ALL_LABEL);
+// Function to clear the checkbox selections from the form
+function clearPreferences() {
+  $(':input', '#pq-contact').not(':text, :button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected');
+  $('#toggle1').val(SELECT_ALL_LABEL);
+  $('#toggle2').val(SELECT_ALL_LABEL);
 }
 
-// Set the date for the "Last Touch Lead Source Date"
-$( document ).ready(function() {
+// Function to set the date for the "Last Touch Lead Source Date"
+function setLastTouchLeadSourceDate() {
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth()+1; //January is 0!
@@ -1044,8 +883,23 @@ $( document ).ready(function() {
   if (dd < 10) { dd = '0'+dd };
   if (mm < 10) { mm = '0'+mm };
   today = mm+'/'+dd+'/'+yyyy;
-  $('#LastTouchLeadSourceDate').val(today);         // Sets hidden field for current date
-  $('#LastTouchLeadSource').val('Targeted Email');  // Sets hidden field for LastTouchLeadSource
+  $('#LastTouchLeadSourceDate').val(today);  // Sets hidden field for current date
+}
+
+// Document Ready
+$( document ).ready(function() {
+
+  // From pq-clear-contact-form.js - disallow changing the email address if already set
+  initContactForm('pq-contact', 'control_EMAIL', 'control_COLUMN30');
+
+  // Populate checkboxes
+  setCheckboxes();
+
+  // Do that last-touch-lead-source thing
+  setLastTouchLeadSourceDate();
+
+  console.log('Document loaded.'); ////////////////
+
 });
 </script>
 </html>
