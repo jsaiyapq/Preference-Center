@@ -6,7 +6,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Slabo+27px" />
@@ -19,66 +18,55 @@
 <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-style.css" />
 <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-responsive.css" />
 <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/bootstrap-override-20140226.css" />
-
 <script src="http://www.proquest.com/includes/IMC-modernizr-2.6.2.min.js"></script>
 <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script src="http://www.proquest.com/includes/IMC-jquery-1.10.2.min.js"></script>
 <script src="http://www.proquest.com/includes/bootstrap.min.js"></script>
 <script src="http://www.proquest.com/includes/parsley.min.js"></script>
-<script src="http://www.proquest.com/includes/jquery.cookie.js"></script>
-<script src="http://www.proquest.com/includes/jquery.form.min.js"></script>
-<!--script src="http://www.proquest.com/includes/pq-clear-contact-form.js"></script-->
-<!--script src="http://stage.www.proquest.com/includes/pq-clear-contact-form.js"></script-->
-<script src="./pq-clear-contact-form.js"></script>
 <script>
-// Enable Bootstrap tooltips
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
+//debugger;
+//function setEmailTxt() {
+    //$('#EmailTxt').val($('#email').val());    // Sets hidden field for current date
+//}
+$( document ).ready(function() {
+    $('#contact').parsley({ excluded: ':hidden' });
+    //$('#email').val($('#EmailTxt').val());    // Sets Email field from hidden EmailTxt
 });
 </script>
-
 <style type="text/css">
 .parsley-error {
-  border: 2px solid #a51f1e;
+	border: 2px solid #a51f1e;
 }
 .parsley-error:focus {
-  border: 2px solid #a51f1e;
+	border: 2px solid #a51f1e;
 }
 .parsley-required {
-  color: #a51f1e;
+	color: #a51f1e;
 }
 .parsley-type {
-  color: #a51f1e;
+	color: #a51f1e;
 }
-hr {
-  display: block;
-  margin: 0.5em auto 0.5em auto;
-  border: 2px inset;
+.header {
+	color: #333333;
+	font-weight: bold;
 }
-.pq-lead-text {
-  font-size: 16px;
+#h3header {
+	font-size: 20px;
+	color: #333333;
+	font-weight: bold;
 }
 .pq-form-label {
-  color: #333333;
-  font-size: 15px !important;
+	color: #333333;
+  font-size:15px !important;
 }
-#email-warning {
-  display: none;
-}
-.well-sm-adjacent {
-  padding-top: 9px;
-}
-.tooltip-inner {
-  max-width: 275px;
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
-  border-style: solid;
-  border-width: 1px;
-}
-/* ID needed here for specificity */
-#pq-contact .tooltip-arrow {
-  border-top-color: #ebccd1;
+hr {
+	display: block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
+	border-width: 2px;
 }
 </style>
 </head>
@@ -87,10 +75,6 @@ hr {
 <!--[if lt IE 7]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-
-
-<!-- ============ START Temporary Header (to be removed) ============ -->
-
 <div class="header-area">
   <div class="container">
     <div class="row">
@@ -109,9 +93,9 @@ hr {
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div id="navbar-collapse-1" class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-right">
-                <li><a name="TopNav_SupportCenter" href="http://www.proquest.com/company/support-landing.html">Support Center |</a></li>
-                <li><a name="TopNavNews" href="http://www.proquest.com/about/news/">News |</a></li>
-                <li><a name="TopNav_Contact" href="http://www.proquest.com/contact/contact-landing.html">Contact</a></li>
+                <li><a xthyperlink="850661" xtlinkname="TopNav_SupportCenter" xt="SPCLICK" name="TopNav_SupportCenter" href="http://www.proquest.com/company/support-landing.html">Support Center |</a></li>
+                <li><a xthyperlink="850662" xtlinkname="TopNavNews" xt="SPCLICK" name="TopNavNews" href="http://www.proquest.com/about/news/">News |</a></li>
+                <li><a xthyperlink="850663" xtlinkname="TopNav_Contact" xt="SPCLICK" name="TopNav_Contact" href="http://www.proquest.com/contact/contact-landing.html">Contact</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -120,30 +104,27 @@ hr {
     </div>
   </div>
 </div><!-- /.header-area -->
-
 <div class="proquest_part">
   <div class="container">
     <div class="col-md-12">
       <div class="inner_proquest">
-        <a href="https://www.proquest.com" target="_blank" name="httpswwwproquestcom"><img src="logo_3_0.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" contentId="21769817" spname="logo_3_0.jpg" xt="SPIMAGE" /></a>
+        <a href="https://www.proquest.com" target="_blank" xthyperlink="877684" xt="SPCLICK" xtlinkname="httpswwwproquestcom" name="httpswwwproquestcom"><img src="logo_3.jpg" name="logo_3.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="logo_5.jpg" contentid="21211413" xt="SPIMAGE" /></a>
       </div>
     </div>
   </div>
 </div><!-- /.proquest_part -->
-
 <div class="arts_db_part">
   <div class="container">
     <div class="col-md-12">
       <div class="inner_db">
         <div class="top_db">
-          <p><a href="https://www.proquest.com" style="color: #00a0df; text-decoration: none;" name="httpswwwproquestcom">ProQuest</a> > Your Subscription Preferences</p>
+          <p><a href="https://www.proquest.com" style="color: #00a0df; text-decoration: none;" xthyperlink="877724" xt="SPCLICK" xtlinkname="httpswwwproquestcom" name="httpswwwproquestcom">ProQuest</a > > Your Subscription Preferences</p>
         </div>
         <div class="bottom_t"><span style="font-size: 36px; padding-bottom: 10px;">이메일 수신 관심분야 정보</span></div>
       </div>
     </div>
   </div>
 </div><!-- /.arts_db_part -->
-
 <div class="background_part">
   <div class="container-fluid">
     <div class="col-md-12">
@@ -151,61 +132,26 @@ hr {
     </div>
   </div>
 </div><!-- /.background_part -->
-
-<!-- ============ END Temporary Header ============ -->
-
-
-<!-- ============ START Intro Text ============ -->
 <div class="small_para_part">
   <div class="container">
     <div class="col-md-12">
-      <p class="pq-lead-text">고객들 개개인의 관심 분야에 맞추어 유익한 정보를 제공하고자 하오니 바쁘시겠지만 잠깐 시간을 내시어 아래 정보 기입을 부탁드립니다. 이메일 수신을 원하시는 유형/주제의 항목을 체크하고 완료 버튼을 누르시면 되며,  작성하신 내용은 언제든 수정이 가능합니다. 감사합니다.<br>
-      </p>
-    </div>
-    <div id="email-warning" class="col-md-6">
-      <div class="well-sm-adjacent">
-        <p class="pq-lead-text"><strong>보안 및 고객정보 보호를 위해 이 서식에서는 이메일 주소 변경이 불가능합니다.</strong></p>
-        <p>이메일 주소 업데이트를 위해 새로운 양식에 기재 및 등록해주시기 바랍니다.<a href="#" class="clear-identity-action" name="new_form" xt="SPNOTRACK">New Form</a></p>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="well well-sm">
-        <p>이메일 수신을 원치 않으시면 <a href="http://go.proquest.com/preferences/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;">여기</a>를 눌러 수신거부를 해주시기 바랍니다.</p>
-        <p>알렉산더 거리 의사 소통 환경 설정을 관리하려면<a href="https://alexanderstreet.com/preferences" target="_blank" name="AS Unsubscribe" style="color: #00a0df; text-decoration: none;">여기에서 선택하십시오</a>.</p>
+      <div class="inner_small">
+        <p><span style="font-size: 16px;">고객들 개개인의 관심 분야에 맞추어 유익한 정보를 제공하고자 하오니 바쁘시겠지만 잠깐 시간을 내시어 아래 정보 기입을 부탁드립니다. 이메일 수신을 원하시는 유형/주제의 항목을 체크하고 완료 버튼을 누르시면 되며,  작성하신 내용은 언제든 수정이 가능합니다. 감사합니다.</span></p>
+        <p>이메일 수신을 원치 않으시면 <a href="http://go.proquest.com/preferences-kr/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;" xt="SPCLICKSTREAM" xthyperlink="850664" xtlinkname="Unsubscribe Redirect">여기</a>를 눌러 수신거부를 해주시기 바랍니다.</p>
+        <p>알렉산더 거리 의사 소통 환경 설정을 관리하려면<a href="https://alexanderstreet.com/preferences" target="_blank" name="AS Unsubscribe" style="color: #00a0df; text-decoration: none;" xt="SPCLICKSTREAM" xthyperlink="865062" xtlinkname="AS Unsubscribe">여기에서 선택하십시오</a>.</p>
       </div>
     </div>
   </div>
-</div>
-<!-- ============ END Intro Text ============ -->
-
-<!-- ============ START Main Form Body ============ -->
-<div class="main_form_part">
+</div><!-- /.small_para_part -->
+<div class="first_form_part">
   <div class="container">
     <div class="col-md-12">
-      <div class="panel">
-        <h2>개인정보.<span class="n_fields">(<span class="parsley-required">*</span> = 필수 항목)</span></h2>
-
-      <!-- ======== START FORM ======== -->
-        <form id="pq-contact" name="pq-contact" method="post" class="pq-contact" style="margin-top: 20px;" autocomplete="off">
-
-        <!-- ====== START Section 1 - Personal Info ====== -->
+      <div class="inner_first_one">
+        <h2><br>
+          개인정보.<span class="n_fields">(<span class="parsley-required">*</span> = 필수 항목</span>)</h2>
+        <form style="background-color:#FFFFFF;" method="post" name="contact" id="contact" data-validate="parsley">
+          <!-- ====== START Section 1 - Personal Info ====== -->
           <div class="panel-body">
-
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label class="pq-form-label" for="control_EMAIL">이메일 <span class="parsley-required">*</span></label>
-                  <input type="text" class="form-control" id="control_EMAIL" name="EmailTxt" required="" data-toggle="tooltip" data-placement="top" title="For security purposes and protection of customer data, you will not be able to change your email address once you subscribe."/>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label class="pq-form-label" for="control_COLUMN270">페이스북 아이디</label>
-                  <input type="text" class="form-control" id="control_COLUMN270" name="Twitter Handle" />
-                </div>
-              </div>
-            </div>
-
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
@@ -220,7 +166,6 @@ hr {
                 </div>
               </div>
             </div>
-
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
@@ -228,6 +173,14 @@ hr {
                   <input type="text" class="form-control" id="control_COLUMN166" name="Organization Name" required="" />
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_EMAIL">이메일 <span class="parsley-required">*</span></label>
+                  <input type="text" class="form-control" id="control_EMAIL" name="Email" required="" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label class="pq-form-label" for="control_COLUMN40">Country <span class="parsley-required">*</span></label>
@@ -391,240 +344,221 @@ hr {
                   </select>
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_COLUMN270">페이스북 아이디</label>
+                  <input type="text" class="form-control" id="control_COLUMN270" name="Twitter Handle" />
+                </div>
+              </div>
             </div>
-
           </div>
-        <!-- ====== END Section 1 - Personal Info ====== -->
-
+          <!-- ====== END Section 1 - Personal Info ====== -->
           <hr>
-
-        <!-- ====== START Section 2 - Email Types ====== -->
-          <div class="panel">
+          <!-- ====== START Section 2 - Email Types ====== -->
+          <div class="newsletter_part_2">
             <span style="font-size: 24px;">아래 어떤 종류의 이메일을 받길 원하십니까?<br>
               <br>
             </span>
             <div class="panel-body">
-
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="checkbox" value="Administration" id="checkbox2-1" name="email_type_pc" />
-                    <label class="pq-form-label" for="checkbox2-1">시스템 관리 공지</label>
+                    <input type="checkbox" value="Administration" name="email_type_pc" />
+                    <label class="pq-form-label">시스템 관리 공지</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="checkbox" value="Surveys" id="checkbox2-2" name="email_type_pc" />
-                    <label class="pq-form-label" for="checkbox2-2">고객 설문조사</label>
+                    <input type="checkbox" value="Surveys" name="email_type_pc" />
+                    <label class="pq-form-label">고객 설문조사</label>
                   </div>
                 </div>
               </div>
-
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="checkbox" value="Product Info" id="checkbox2-3" name="email_type_pc" />
-                    <label class="pq-form-label" for="checkbox2-3">새 제품 및 할인 프로모션</label>
+                    <input type="checkbox" value="Product Info" name="email_type_pc" />
+                    <label class="pq-form-label">새 제품 및 할인 프로모션</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="checkbox" value="Events" id="checkbox2-4" name="email_type_pc" />
-                    <label class="pq-form-label" for="checkbox2-4">행사 정보</label>
+                    <input type="checkbox" value="Events" name="email_type_pc" />
+                    <label class="pq-form-label">행사 정보</label>
                   </div>
                 </div>
               </div>
-
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="checkbox" value="Training" id="checkbox2-5" name="email_type_pc" />
-                    <label class="pq-form-label" for="checkbox2-5">온라인 이용교육</label>
+                    <input type="checkbox" value="Training" name="email_type_pc" />
+                    <label class="pq-form-label">온라인 이용교육</label>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        <!-- ====== END Section 2 - Email Types ====== -->
-
+          <!-- ====== END Section 2 - Email Types ====== -->
           <hr>
-
-        <!-- ====== START Section 3 - Newsletters ====== -->
-          <div class="panel">
+          <!-- ====== START Section 3 - Newsletters ====== -->
+          <div class="newsletter_part_2">
             <span style="font-size: 24px;">뉴스 레터<br>
               <br>
             </span>
             <div class="panel-body">
-
               <div class="row">
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="Tips and Training" id="checkbox3-1" name="email_newsleter_type" />
-                    <label class="pq-form-label" for="checkbox3-1">이용 교육</label>
+                    <input type="checkbox" value="Tips and Training" name="email_newsleter_type" />
+                    <label class="pq-form-label">이용 교육</label>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="PQ News" id="checkbox3-2" name="email_newsleter_type" />
-                    <label class="pq-form-label" for="checkbox3-2">PQ 뉴스</label>
+                    <input type="checkbox" value="PQ News" name="email_newsleter_type" />
+                    <label class="pq-form-label">PQ 뉴스</label>
                   </div>
                 </div>
               </div>
-
               <div class="row">
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="Product Content Updates" id="checkbox3-3" name="email_newsleter_type" />
-                    <label class="pq-form-label" for="checkbox3-3">자료 업데이트</label>
+                    <input type="checkbox" value="Product Content Updates" name="email_newsleter_type" />
+                    <label class="pq-form-label">자료 업데이트</label>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <div class="form-group">
-                    <input type="checkbox" value="Public Libraries" id="checkbox3-4" name="email_newsleter_type" />
-                    <label class="pq-form-label" for="checkbox3-4">공립 도서관</label>
+                    <input type="checkbox" value="Public Libraries" name="email_newsleter_type" />
+                    <label class="pq-form-label">공립 도서관</label>
                   </div>
                 </div>
               </div>
-
               <div class="row">
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="School Libraries" id="checkbox3-5" name="email_newsleter_type" />
-                    <label class="pq-form-label" for="checkbox3-5">학교 도서관</label>
+                    <input type="checkbox" value="School Libraries" name="email_newsleter_type" />
+                    <label class="pq-form-label">학교 도서관</label>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="Chronolog" id="checkbox3-6" name="email_newsleter_type" />
-                    <label class="pq-form-label" for="checkbox3-6">Chronolog</label>
+                    <input type="checkbox" value="Chronolog" name="email_newsleter_type" />
+                    <label class="pq-form-label">Chronolog</label>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-        <!-- ====== END Section 3 - Newsletters ====== -->
-
+          <!-- ====== END Section 3 - Newsletters ====== -->
           <hr>
-
-        <!-- ====== START Section 4 - Blogs ====== -->
-          <div class="panel">
+          <!-- ====== START Section 4 - Blogs ====== -->
+          <div class="newsletter_part_2">
             <span style="font-size: 24px;">ProQuest 블로그 뉴스레터(영어)<br>
               <br>
             </span>
             <div class="panel-body">
-
               <div class="row">
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="Bi-Weekly" id="checkbox4-1" name="email_blog_prefs" />
-                    <label class="pq-form-label" for="checkbox4-1">2주에 한번</label>
+                    <input type="checkbox" value="Bi-Weekly" name="email_blog_prefs" />
+                    <label class="pq-form-label">2주에 한번</label>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="Monthly" id="checkbox4-2" name="email_blog_prefs" />
-                    <label class="pq-form-label" for="checkbox4-2">한달에 한번</label>
+                    <input type="checkbox" value="Monthly" name="email_blog_prefs" />
+                    <label class="pq-form-label">한달에 한번</label>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-        <!-- ====== END Section 4 - Blogs ====== -->
-
+          <!-- ====== END Section 4 - Blogs ====== -->
           <hr>
-
-        <!-- ====== START Section 5 ====== -->
-          <div class="panel">
+          <!-- ====== START Section 5 ====== -->
+          <div class="newsletter_part_2">
             <span style="font-size: 24px;">아래 중 관심있는 분야를 선택해주십시오.<br>
             </span>
-            <span style="font-size: 18px;"><i>아래 항목에서 관심있는 모든 분야를 선택해주십시오 (1개 이상 선택 가능).</i><br>
+            <span style="font-size: 18px;"><em>아래 항목에서 관심있는 모든 분야를 선택해주십시오 (1개 이상 선택 가능).</em><br>
               <br>
             </span>
             <div class="panel-body">
-
-            <!-- ==== START Section 5.1 - Collection Types ==== -->
+              <!-- ==== START Section 5.1 - Collection Types ==== -->
               <span style="font-size: 20px; font-weight: bold;">컬렉션 유형<br>
                 <br>
               </span>
               <div class="panel-body">
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Databases" id="checkbox5-1-1" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-1">데이터베이스</label>
+                      <input type="checkbox" value="Databases" name="email_collection_types" />
+                      <label class="pq-form-label">데이터베이스</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Dissertations & Theses" id="checkbox5-1-2" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-2">학위논문</label>
+                      <input type="checkbox" value="Dissertations & Theses" name="email_collection_types" />
+                      <label class="pq-form-label">학위논문</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Ebooks" id="checkbox5-1-3" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-3">전자책/ebook</label>
+                      <input type="checkbox" value="Ebooks" name="email_collection_types" />
+                      <label class="pq-form-label">전자책/ebook</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Journals" id="checkbox5-1-4" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-4">학술지</label>
+                      <input type="checkbox" value="Journals" name="email_collection_types" />
+                      <label class="pq-form-label">학술지</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Microfilm" id="checkbox5-1-5" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-5">마이크로필름</label>
+                      <input type="checkbox" value="Microfilm" name="email_collection_types" />
+                      <label class="pq-form-label">마이크로필름</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Print Books" id="checkbox5-1-6" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-6">인쇄도서</label>
+                      <input type="checkbox" value="Print Books" name="email_collection_types" />
+                      <label class="pq-form-label">인쇄도서</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Patents" id="checkbox5-1-7" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-7">특허</label>
+                      <input type="checkbox" value="Patents" name="email_collection_types" />
+                      <label class="pq-form-label">특허</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Search & Discovery" id="checkbox5-1-8" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-8">디스커버리 서비스</label>
+                      <input type="checkbox" value="Search & Discovery" name="email_collection_types" />
+                      <label class="pq-form-label">디스커버리 서비스</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Video" id="checkbox5-1-9" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-9">비디오</label>
+                      <input type="checkbox" value="Video" name="email_collection_types" />
+                      <label class="pq-form-label">비디오</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Workflow Tools" id="checkbox5-1-10" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-10">워크플로우 도구</label>
+                      <input type="checkbox" value="Workflow Tools" name="email_collection_types" />
+                      <label class="pq-form-label">워크플로우 도구</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
@@ -632,117 +566,106 @@ hr {
                     </div>
                   </div>
                 </div>
-
               </div>
-            <!-- ==== END Section 5.1 - Collection Types ==== -->
-
+              <!-- ==== END Section 5.1 - Collection Types ==== -->
               <hr>
-
-            <!-- ==== START Section 5.2 - Subject ==== -->
+              <!-- ==== START Section 5.2 - Subject ==== -->
               <span style="font-size: 20px; font-weight: bold;">주제분야<br>
                 <br>
               </span>
               <div class="panel-body">
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Arts and Humanities" id="checkbox5-2-1" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-1">예술 및 인문학</label>
+                      <input type="checkbox" value="Arts and Humanities" name="email_topic_pc" />
+                      <label class="pq-form-label">예술 및 인문학</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Business" id="checkbox5-2-2" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-2">경영/비즈니스</label>
+                      <input type="checkbox" value="Business" name="email_topic_pc" />
+                      <label class="pq-form-label">경영/비즈니스</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Common Core" id="checkbox5-2-3" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-3">필수 과목</label>
+                      <input type="checkbox" value="Common Core" name="email_topic_pc" />
+                      <label class="pq-form-label">필수 과목</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Education Careers" id="checkbox5-2-4" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-4">교육/진로</label>
+                      <input type="checkbox" value="Education Careers" name="email_topic_pc" />
+                      <label class="pq-form-label">교육/진로</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Genealogy" id="checkbox5-2-5" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-5">계보/족보학</label>
+                      <input type="checkbox" value="Genealogy" name="email_topic_pc" />
+                      <label class="pq-form-label">계보/족보학</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="General Research" id="checkbox5-2-6" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-6">일반 조사연구</label>
+                      <input type="checkbox" value="General Research" name="email_topic_pc" />
+                      <label class="pq-form-label">일반 조사연구</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Health and Medicine" id="checkbox5-2-7" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-7">보건/의료</label>
+                      <input type="checkbox" value="Health and Medicine" name="email_topic_pc" />
+                      <label class="pq-form-label">보건/의료</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Law and Patents" id="checkbox5-2-8" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-8">법/특허</label>
+                      <input type="checkbox" value="Law and Patents" name="email_topic_pc" />
+                      <label class="pq-form-label">법/특허</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Literature and Language" id="checkbox5-2-9" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-9">문학/언어</label>
+                      <input type="checkbox" value="Literature and Language" name="email_topic_pc" />
+                      <label class="pq-form-label">문학/언어</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="News and Newspapers" id="checkbox5-2-10" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-10">뉴스/신문</label>
+                      <input type="checkbox" value="News and Newspapers" name="email_topic_pc" />
+                      <label class="pq-form-label">뉴스/신문</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Pharma and BioMed" id="checkbox5-2-11" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-11">제약/생의학</label>
+                      <input type="checkbox" value="Pharma and BioMed" name="email_topic_pc" />
+                      <label class="pq-form-label">제약/생의학</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Science and Technology" id="checkbox5-2-12" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-12">과학/기술</label>
+                      <input type="checkbox" value="Science and Technology" name="email_topic_pc" />
+                      <label class="pq-form-label">과학/기술</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Social Sciences" id="checkbox5-2-13" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-13">사회과학</label>
+                      <input type="checkbox" value="Social Sciences" name="email_topic_pc" />
+                      <label class="pq-form-label">사회과학</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
@@ -750,96 +673,87 @@ hr {
                     </div>
                   </div>
                 </div>
-
               </div>
-            <!-- ==== END Section 5.2 - Subject ==== -->
-
+              <!-- ==== END Section 5.2 - Subject ==== -->
               <hr>
-
-            <!-- ==== START Section 5.3 - Ebook Title Alerts ==== -->
+              <!-- ==== START Section 5.3 - Ebook Title Alerts ==== -->
               <span style="font-size: 24px;">Ebook 타이틀 공지<br>
               </span>
               <p>
-                <i>각 출판사들은 매일 ProQuest의 카탈로그에 다양한 주제의  새로운 ebook을 추가하고 있습니다. 매월 이메일 공지를 통해 주제에 따른 새로운 타이틀과 전 월에 새롭게 추가된 출판사에 대한 안내를 제공받으실 수 있습니다.</i><br>
+                <em>각 출판사들은 매일 ProQuest의 카탈로그에 다양한 주제의  새로운 ebook을 추가하고 있습니다. 매월 이메일 공지를 통해 주제에 따른 새로운 타이틀과 전 월에 새롭게 추가된 출판사에 대한 안내를 제공받으실 수 있습니다.</em><br>
                 <br>
               </p>
               <div class="panel-body">
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Arts" id="checkbox5-3-1" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-1">인문학</label>
+                      <input type="checkbox" value="Arts" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">인문학</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Business" id="checkbox5-3-2" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-2">비즈니스</label>
+                      <input type="checkbox" value="Business" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">비즈니스</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Education" id="checkbox5-3-3" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-3">교육</label>
+                      <input type="checkbox" value="Education" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">교육</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Health and Science" id="checkbox5-3-4" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-4">보건학</label>
+                      <input type="checkbox" value="Health and Science" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">보건학</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="History" id="checkbox5-3-5" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-5">역사</label>
+                      <input type="checkbox" value="History" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">역사</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Law" id="checkbox5-3-6" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-6">법</label>
+                      <input type="checkbox" value="Law" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">법</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Literature and Language" id="checkbox5-3-7" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-7">문학/언어</label>
+                      <input type="checkbox" value="Literature and Language" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">문학/언어</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Religion and Philosophy" id="checkbox5-3-8" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-8">종교/철학</label>
+                      <input type="checkbox" value="Religion and Philosophy" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">종교/철학</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Science and Technology" id="checkbox5-3-9" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-9">과학/기술</label>
+                      <input type="checkbox" value="Science and Technology" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">과학/기술</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Social Sciences" id="checkbox5-3-10" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-10">사회과학</label>
+                      <input type="checkbox" value="Social Sciences" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">사회과학</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
@@ -847,248 +761,219 @@ hr {
                     </div>
                   </div>
                 </div>
-
               </div>
-            <!-- ==== END Section 5.3 - Ebook Title Alerts ==== -->
-
+              <!-- ==== END Section 5.3 - Ebook Title Alerts ==== -->
               <hr>
-
-            <!-- ==== START Section 5.4 - Preferred Language ==== -->
+              <!-- ==== START Section 5.4 - Preferred Language ==== -->
               <span style="font-size: 24px;">선호하는 언어<br>
                 <br>
               </span>
               <div class="panel-body">
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="English" id="checkbox5-4-1" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-1">영어</label>
+                      <input type="checkbox" value="English" name="email_lang_pref" />
+                      <label class="pq-form-label">영어</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Arabic" id="checkbox5-4-2" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-2">아랍어</label>
+                      <input type="checkbox" value="Arabic" name="email_lang_pref" />
+                      <label class="pq-form-label">아랍어</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Chinese-Simplified" id="checkbox5-4-3" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-3">중국어(간체)</label>
+                      <input type="checkbox" value="Chinese-Simplified" name="email_lang_pref" />
+                      <label class="pq-form-label">중국어(간체)</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Chinese-Traditional" id="checkbox5-4-4" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-4">중국어(번체)</label>
+                      <input type="checkbox" value="Chinese-Traditional" name="email_lang_pref" />
+                      <label class="pq-form-label">중국어(번체)</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="French" id="checkbox5-4-5" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-5">프랑스어</label>
+                      <input type="checkbox" value="French" name="email_lang_pref" />
+                      <label class="pq-form-label">프랑스어</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="German" id="checkbox5-4-6" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-6">독일어</label>
+                      <input type="checkbox" value="German" name="email_lang_pref" />
+                      <label class="pq-form-label">독일어</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Hindi" id="checkbox5-4-7" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-7">힌디어</label>
+                      <input type="checkbox" value="Hindi" name="email_lang_pref" />
+                      <label class="pq-form-label">힌디어</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Indonesian" id="checkbox5-4-8" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-8">인도네시아어</label>
+                      <input type="checkbox" value="Indonesian" name="email_lang_pref" />
+                      <label class="pq-form-label">인도네시아어</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Italian" id="checkbox5-4-9" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-9">이탈리아어</label>
+                      <input type="checkbox" value="Italian" name="email_lang_pref" />
+                      <label class="pq-form-label">이탈리아어</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Japanese" id="checkbox5-4-10" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-10">일본어</label>
+                      <input type="checkbox" value="Japanese" name="email_lang_pref" />
+                      <label class="pq-form-label">일본어</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Korean" id="checkbox5-4-11" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-11">한국어</label>
+                      <input type="checkbox" value="Korean" name="email_lang_pref" />
+                      <label class="pq-form-label">한국어</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Portuguese-Brazil" id="checkbox5-4-12" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-12">포르투갈어(브라질)</label>
+                      <input type="checkbox" value="Portuguese-Brazil" name="email_lang_pref" />
+                      <label class="pq-form-label">포르투갈어(브라질)</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Punjabi" id="checkbox5-4-13" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-13">펀자브어</label>
+                      <input type="checkbox" value="Punjabi" name="email_lang_pref" />
+                      <label class="pq-form-label">펀자브어</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Russian" id="checkbox5-4-14" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-14">러시아어</label>
+                      <input type="checkbox" value="Russian" name="email_lang_pref" />
+                      <label class="pq-form-label">러시아어</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Spanish-European" id="checkbox5-4-15" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-15">스페인어(유럽)</label>
+                      <input type="checkbox" value="Spanish-European" name="email_lang_pref" />
+                      <label class="pq-form-label">스페인어(유럽)</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Spanish-Latin America" id="checkbox5-4-16" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-16">스페인어(라틴 아메리카)</label>
+                      <input type="checkbox" value="Spanish-Latin America" name="email_lang_pref" />
+                      <label class="pq-form-label">스페인어(라틴 아메리카)</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Thai" id="checkbox5-4-17" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-17">태국어</label>
+                      <input type="checkbox" value="Thai" name="email_lang_pref" />
+                      <label class="pq-form-label">태국어</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Turkish" id="checkbox5-4-18" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-18">터키어</label>
+                      <input type="checkbox" value="Turkish" name="email_lang_pref" />
+                      <label class="pq-form-label">터키어</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Vietnamese" id="checkbox5-4-19" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-19">베트남어</label>
+                      <input type="checkbox" value="Vietnamese" name="email_lang_pref" />
+                      <label class="pq-form-label">베트남어</label>
                     </div>
                   </div>
                 </div>
-
               </div>
-            <!-- ==== END Section 5.4 - Preferred Language ==== -->
-
+              <!-- ==== END Section 5.4 - Preferred Language ==== -->
             </div>
           </div>
-        <!-- ====== END Section 5 ====== -->
-
-          <div class="panel">
-            <div class="panel-body">
-              <div class="row">
-                <a name="SubmitButton"></a>
-                <input type="submit" value="완료" class="btn btn-primary btn-lg" />
-                <input type="button" value="새로 작성하기" onclick="clearPreferences();" class="btn btn-primary btn-lg" />
-              </div>
-            </div>
+          <!-- ====== END Section 5 ====== -->
+          <div style="display: none;"><!--<input type="text" name="EmailTxt" id="EmailTxt" value="" />--></div>
+          <div class="row">
+            <input type="submit" value="완료" class="btn btn-primary btn-lg" />
+            <input type="button" value="새로 작성하기" onclick="formClear();" class="btn btn-primary btn-lg" />
+            <p><a name="SubmitButton"></a></p>
           </div>
-
           <input type="hidden" name="LastTouchLeadSource" id="LastTouchLeadSource" value="Newsletters">
           <input type="hidden" name="LastTouchLeadSourceDate" id="LastTouchLeadSourceDate" value="mm/dd/yyyy">
-<!-- //////// REMOVE ME //////// --><input type="hidden" name="RECIPIENT_ID_*" value="0">
-
         </form>
-      <!-- ======== END FORM ======== -->
-
-      </div>
+      </div><!-- /.inner_first_one -->
     </div>
   </div>
-
-
-<!-- ======== START Temporary Footer (to be removed) ======== -->
-
   <div class="footer_one">
     <div class="container">
       <div class="col-md-12">
         <div class="col-md-2 col-xs-6">
           <div class="single_ft">
             <h4>사이트맵</h4><!--Navigation-->
-            <a name="Footer_Navigation_Libraries" href="http://www.proquest.com/libraries">사서 대상</a><br>
-            <a name="Footer_Navigation_Researchers" href="http://www.proquest.com/researchers">연구원 대상</a><br>
-            <a name="Footer_Navigation_ProductsServices" href="http://www.proquest.com/products-services">제품/서비스</a><br>
-            <a name="Footer_Navigation_Customers" href="http://www.proquest.com/customer-care">고객 지원</a><br>
-            <a name="Footer_Navigation_Events" href="http://www.proquest.com/events">이벤트</a><br>
-            <a name="Footer_Navigation_About" href="http://www.proquest.com/about">회사 소개</a><br>
-            <a name="Footer_Navigation_Blogs" href="http://www.proquest.com/blog">블로그</a>
+            <a xthyperlink="850665" xtlinkname="Footer_Navigation_Libraries" xt="SPCLICK" name="Footer_Navigation_Libraries" href="http://www.proquest.com/libraries"> 사서 대상</a><br>
+            <a xthyperlink="850666" xtlinkname="Footer_Navigation_Researchers" xt="SPCLICK" name="Footer_Navigation_Researchers" href="http://www.proquest.com/researchers"> 연구원 대상</a><br>
+            <a xthyperlink="850667" xtlinkname="Footer_Navigation_ProductsServices" xt="SPCLICK" name="Footer_Navigation_ProductsServices" href="http://www.proquest.com/products-services"> 제품/서비스</a><br>
+            <a xthyperlink="850668" xtlinkname="Footer_Navigation_Customers" xt="SPCLICK" name="Footer_Navigation_Customers" href="http://www.proquest.com/customer-care"> 고객 지원</a><br>
+            <a xthyperlink="850669" xtlinkname="Footer_Navigation_Events" xt="SPCLICK" name="Footer_Navigation_Events" href="http://www.proquest.com/events"> 이벤트</a><br>
+            <a xthyperlink="850670" xtlinkname="Footer_Navigation_About" xt="SPCLICK" name="Footer_Navigation_About" href="http://www.proquest.com/about"> 회사 소개</a><br>
+            <a xthyperlink="850671" xtlinkname="Footer_Navigation_Blogs" xt="SPCLICK" name="Footer_Navigation_Blogs" href="http://www.proquest.com/blog"> 블로그</a>
           </div>
         </div>
         <div class="col-md-2 col-xs-6">
           <div class="single_ft">
             <h4>고객 지원</h4><!--Support-->
-            <a name="Footer_Support_SupportCenter" href="http://www.proquest.com/company/support-landing.html">서포트 센터</a><br>
-            <a name="Footer_Support_ToolsResources" href="http://www.proquest.com/customer-care/tools-resources/">자료</a><br>
-            <a name="Footer_Support_TrainingWebinars" href="http://www.proquest.com/customer-care/training-webinars/"> 온라인 이용교육</a><br>
-            <a name="Footer_Support_LibGuides" href="http://proquest.libguides.com/home">립가이드</a>
+            <a xthyperlink="850672" xtlinkname="Footer_Support_SupportCenter" xt="SPCLICK" name="Footer_Support_SupportCenter" href="http://www.proquest.com/company/support-landing.html"> 서포트 센터</a><br>
+            <a xthyperlink="850673" xtlinkname="Footer_Support_ToolsResources" xt="SPCLICK" name="Footer_Support_ToolsResources" href="http://www.proquest.com/customer-care/tools-resources/"> 자료</a><br>
+            <a xthyperlink="850674" xtlinkname="Footer_Support_TrainingWebinars" xt="SPCLICK" name="Footer_Support_TrainingWebinars" href="http://www.proquest.com/customer-care/training-webinars/"> 온라인 이용교육</a><br>
+            <a xthyperlink="850675" xtlinkname="Footer_Support_LibGuides" xt="SPCLICK" name="Footer_Support_LibGuides" href="http://proquest.libguides.com/home"> 립가이드</a>
           </div>
         </div>
       </div>
     </div>
   </div><!-- /.footer_one -->
-  
   <div class="main_footer">
     <div class="container">
       <div class="col-md-12">
         <div class="inner_footer">
           <p style="text-align: center;">
-            <a name="BottomNav_Privacy" href="http://www.proquest.com/about/privacy-statement.html">Privacy</a>&nbsp;&nbsp;
-            <a name="BottomNav_TermsofUse" href="http://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>&nbsp;&nbsp;
-            <a name="BottomNav_Cookies" href="http://www.proquest.com/about/cookie-policy.html">Cookies</a>&nbsp;&nbsp;
-            <a name="BottomNav_Accessibility" href="http://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>&nbsp;&nbsp;
-            <a name="BottomNav_DMCAPolicy" href="http://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a>
+            <a xthyperlink="850676" xtlinkname="BottomNav_Privacy" xt="SPCLICK" name="BottomNav_Privacy" href="http://www.proquest.com/about/privacy-statement.html">Privacy</a>&nbsp;&nbsp; 
+            <a xthyperlink="850677" xtlinkname="BottomNav_TermsofUse" xt="SPCLICK" name="BottomNav_TermsofUse" href="http://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>&nbsp;&nbsp; 
+            <a xthyperlink="850678" xtlinkname="BottomNav_Cookies" xt="SPCLICK" name="BottomNav_Cookies" href="http://www.proquest.com/about/cookie-policy.html">Cookies</a>&nbsp;&nbsp; 
+            <a xthyperlink="850679" xtlinkname="BottomNav_Accessibility" xt="SPCLICK" name="BottomNav_Accessibility" href="http://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>&nbsp;&nbsp; 
+            <a xthyperlink="850680" xtlinkname="BottomNav_DMCAPolicy" xt="SPCLICK" name="BottomNav_DMCAPolicy" href="http://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a>
           </p>
         </div>
       </div>
     </div>
   </div><!-- /.main_footer -->
-
-<!-- ======== END Temporary Footer ======== -->
-
-
-</div>
-<!-- ============ END Main Form Body ============ -->
-
-</body>
-
+</div><!-- /.first_form_part -->
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script>
-var formLanguage = "ko";
-
+  window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>');
+</script>
+<script src="http://www.proquest.com/includes/bootstrap.min.js"></script>
+<script src="http://www.proquest.com/includes/plugins.js"></script>
+<script src="http://www.proquest.com/includes/main.js"></script>
+<script src="http://www.proquest.com/includes/wow.min.js"></script>
+</body>
+<script>
 // Put language-specific button labels here
 var SELECT_ALL_LABEL = '모두 선택';
 var UNSELECT_ALL_LABEL = '모두 선택 취소';
@@ -1096,34 +981,32 @@ var UNSELECT_ALL_LABEL = '모두 선택 취소';
 // Function to Select or Unselect all checkboxes in a multi-select checkbox area
 function toggleCheckboxes(checkboxesSelector, buttonSelector) {
 
-  var checkboxes = $('[name="'+checkboxesSelector+'"]');
-  var button = $( buttonSelector );
+	var checkboxes = $('[name="'+checkboxesSelector+'"]');
+	var button = $( buttonSelector );
 
-  if (button.val() == SELECT_ALL_LABEL) {
-    checkboxes.each(function() {
-      this.checked = true;
-    })
-    button.val(UNSELECT_ALL_LABEL);
-  } else {
-    checkboxes.each(function() {
-      this.checked = false;
-    })
-    button.val(SELECT_ALL_LABEL);
-  }
+	if (button.val() == SELECT_ALL_LABEL) {
+		checkboxes.each(function() {
+			this.checked = true;
+		})
+		button.val(UNSELECT_ALL_LABEL);
+	} else {
+		checkboxes.each(function() {
+			this.checked = false;
+		})
+		button.val(SELECT_ALL_LABEL);
+	}
 }
 
-// Function to clear the checkbox selections from the form
-function clearPreferences() {
-  $(':input', '#pq-contact').not(':text, :button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected');
-  $('#toggle1').val(SELECT_ALL_LABEL);
-  $('#toggle2').val(SELECT_ALL_LABEL);
-  $('#toggle3').val(SELECT_ALL_LABEL);
+// Function to clear the form
+function formClear() {
+	$(':input', '#contact').not(':button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected').not(':checkbox, :radio').val('');
+	$('#toggle1').val(SELECT_ALL_LABEL);
+	$('#toggle2').val(SELECT_ALL_LABEL);
+	$('#toggle3').val(SELECT_ALL_LABEL);
 }
 
-// Document Ready
+// Set the date for the "Last Touch Lead Source Date"
 $( document ).ready(function() {
-
-  // Set the date for the "Last Touch Lead Source Date"
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth()+1; //January is 0!
@@ -1134,12 +1017,6 @@ $( document ).ready(function() {
   today = mm+'/'+dd+'/'+yyyy;
   $('#LastTouchLeadSourceDate').val(today);         // Sets hidden field for current date
   $('#LastTouchLeadSource').val('Targeted Email');  // Sets hidden field for LastTouchLeadSource
-  
-  // From pq-clear-contact-form.js - disallow changing the email address if already set
-  initContactForm('pq-contact', 'control_EMAIL', 'control_COLUMN30');
-
-  console.log('Document loaded.'); ////////////////
-
 });
 </script>
 </html>

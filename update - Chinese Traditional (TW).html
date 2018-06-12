@@ -6,7 +6,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Slabo+27px" />
@@ -19,64 +18,55 @@
 <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-style.css" />
 <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-responsive.css" />
 <link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/bootstrap-override-20140226.css" />
-
 <script src="http://www.proquest.com/includes/IMC-modernizr-2.6.2.min.js"></script>
 <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script src="http://www.proquest.com/includes/IMC-jquery-1.10.2.min.js"></script>
 <script src="http://www.proquest.com/includes/bootstrap.min.js"></script>
 <script src="http://www.proquest.com/includes/parsley.min.js"></script>
-<script src="http://www.proquest.com/includes/jquery.cookie.js"></script>
-<script src="http://www.proquest.com/includes/jquery.form.min.js"></script>
-<script src="http://www.proquest.com/includes/pq-clear-contact-form.js"></script>
 <script>
-// Enable Bootstrap tooltips
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
+//debugger;
+//function setEmailTxt() {
+    //$('#EmailTxt').val($('#email').val());    // Sets hidden field for current date
+//}
+$( document ).ready(function() {
+    $('#contact').parsley({ excluded: ':hidden' });
+    //$('#email').val($('#EmailTxt').val());    // Sets Email field from hidden EmailTxt
 });
 </script>
-
 <style type="text/css">
 .parsley-error {
-  border: 2px solid #a51f1e;
+	border: 2px solid #a51f1e;
 }
 .parsley-error:focus {
-  border: 2px solid #a51f1e;
+	border: 2px solid #a51f1e;
 }
 .parsley-required {
-  color: #a51f1e;
+	color: #a51f1e;
 }
 .parsley-type {
-  color: #a51f1e;
+	color: #a51f1e;
 }
-hr {
-  display: block;
-  margin: 0.5em auto 0.5em auto;
-  border: 2px inset;
+.header {
+	color: #333333;
+	font-weight: bold;
 }
-.pq-lead-text {
-  font-size: 16px;
+#h3header {
+	font-size: 20px;
+	color: #333333;
+	font-weight: bold;
 }
 .pq-form-label {
-  color: #333333;
-  font-size: 15px !important;
+	color: #333333;
+  font-size:15px !important;
 }
-#email-warning {
-  display: none;
-}
-.well-sm-adjacent {
-  padding-top: 9px;
-}
-.tooltip-inner {
-  max-width: 275px;
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
-  border-style: solid;
-  border-width: 1px;
-}
-/* ID needed here for specificity */
-#pq-contact .tooltip-arrow {
-  border-top-color: #ebccd1;
+hr {
+	display: block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
+	border-width: 2px;
 }
 </style>
 </head>
@@ -85,10 +75,6 @@ hr {
 <!--[if lt IE 7]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-
-
-<!-- ============ START Temporary Header (to be removed) ============ -->
-
 <div class="header-area">
   <div class="container">
     <div class="row">
@@ -107,9 +93,9 @@ hr {
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div id="navbar-collapse-1" class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-right">
-                <li><a name="TopNav_SupportCenter" href="http://www.proquest.com/company/support-landing.html">Support Center |</a></li>
-                <li><a name="TopNavNews" href="http://www.proquest.com/about/news/">News |</a></li>
-                <li><a name="TopNav_Contact" href="http://www.proquest.com/contact/contact-landing.html">Contact</a></li>
+                <li><a xthyperlink="850786" xtlinkname="TopNav_SupportCenter" xt="SPCLICK" name="TopNav_SupportCenter" href="http://www.proquest.com/company/support-landing.html">Support Center |</a></li>
+                <li><a xthyperlink="850787" xtlinkname="TopNavNews" xt="SPCLICK" name="TopNavNews" href="http://www.proquest.com/about/news/">News |</a></li>
+                <li><a xthyperlink="850788" xtlinkname="TopNav_Contact" xt="SPCLICK" name="TopNav_Contact" href="http://www.proquest.com/contact/contact-landing.html">Contact</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -118,30 +104,27 @@ hr {
     </div>
   </div>
 </div><!-- /.header-area -->
-
 <div class="proquest_part">
   <div class="container">
     <div class="col-md-12">
       <div class="inner_proquest">
-        <a href="https://www.proquest.com" target="_blank" name="httpswwwproquestcom"><img src="logo_3_0.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" contentId="21769817" spname="logo_3_0.jpg" xt="SPIMAGE" /></a>
+        <a href="https://www.proquest.com" target="_blank" xthyperlink="877682" xt="SPCLICK" xtlinkname="httpswwwproquestcom" name="httpswwwproquestcom"><img src="logo_3.jpg" name="logo_3.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="logo_5.jpg" contentid="21214114" xt="SPIMAGE" /></a>
       </div>
     </div>
   </div>
 </div><!-- /.proquest_part -->
-
 <div class="arts_db_part">
   <div class="container">
     <div class="col-md-12">
       <div class="inner_db">
         <div class="top_db">
-          <p><a href="https://www.proquest.com" style="color: #00a0df; text-decoration: none;" name="httpswwwproquestcom">ProQuest</a> > Your Subscription Preferences</p>
+          <p><a href="https://www.proquest.com" style="color: #00a0df; text-decoration: none;" xthyperlink="877721" xt="SPCLICK" xtlinkname="httpswwwproquestcom" name="httpswwwproquestcom">ProQuest</a > > Your Subscription Preferences</p>
         </div>
         <div class="bottom_t"><span style="font-size: 36px; padding-bottom: 10px;">電子郵件訂閱偏好(設置)</span></div>
       </div>
     </div>
   </div>
 </div><!-- /.arts_db_part -->
-
 <div class="background_part">
   <div class="container-fluid">
     <div class="col-md-12">
@@ -149,62 +132,26 @@ hr {
     </div>
   </div>
 </div><!-- /.background_part -->
-
-<!-- ============ END Temporary Header ============ -->
-
-
-<!-- ============ START Intro Text ============ -->
 <div class="small_para_part">
   <div class="container">
     <div class="col-md-12">
-      <p class="pq-lead-text">請設置您接收ProQuest電子郵件的訂閱偏好，並填寫您最喜歡的郵件類型及感興趣的研究主題，及時獲取相關性強、最有價值的ProQuest產品資訊。如您的上述設置資訊有變動，請隨時更新相關選項。<br>
-      </p>
-    </div>
-    <div id="email-warning" class="col-md-6">
-      <div class="well-sm-adjacent">
-        <p class="pq-lead-text"><strong>為保護使用者個人資訊安全，此表格中使用者的Email位址不能修改。</strong></p>
-        <p>如需更新Email位址，請重新登記，並提交新的表格。 <a href="#" class="clear-identity-action" name="new_form" xt="SPNOTRACK">New Form</a></p>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="well well-sm">
-        <p>如您需要退訂ProQuest電子郵件,請選擇 <a href="http://go.proquest.com/preferences/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;">這裡</a>。</p>
-        <p>要管理你的亞歷山大街道交流偏好 <a href="https://alexanderstreet.com/preferences" target="_blank" name="AS Unsubscribe" style="color: #00a0df; text-decoration: none;">選擇這裡</a>。</p>
+      <div class="inner_small">
+        <p><span style="font-size: 16px;">請設置您接收ProQuest電子郵件的訂閱偏好，並填寫您最喜歡的郵件類型及感興趣的研究主題，及時獲取相關性強、最有價值的ProQuest產品資訊。如您的上述設置資訊有變動，請隨時更新相關選項。</span></p>
+        <p>如您需要退訂ProQuest電子郵件,請選擇 <a href="http://go.proquest.com/preferences-tw/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;" xt="SPCLICKSTREAM" xthyperlink="850789" xtlinkname="Unsubscribe Redirect">這裡</a>。</p>
+        <p>要管理你的亞歷山大街道交流偏好 <a href="https://alexanderstreet.com/preferences" target="_blank" name="AS Unsubscribe" style="color: #00a0df; text-decoration: none;" xt="SPCLICKSTREAM" xthyperlink="865060" xtlinkname="AS Unsubscribe">選擇這裡</a>。</p>
       </div>
     </div>
   </div>
-</div>
-<!-- ============ END Intro Text ============ -->
-
-<!-- ============ START Main Form Body ============ -->
-<div class="main_form_part">
+</div><!-- /.small_para_part -->
+<div class="first_form_part">
   <div class="container">
     <div class="col-md-12">
-      <div class="panel">
-        <h2>請輸入您的個人資訊。 <span class="n_fields">(<span class="parsley-required">*</span> = required fields)</span></h2>
-
-      <!-- ======== START FORM ======== -->
-        <form id="pq-contact" name="pq-contact" method="post" autocomplete="off" class="pq-contact" style="margin-top: 20px;">
-        <!-- autocomplete set to "off" for compatibility workaround for Firefox -->
-
-        <!-- ====== START Section 1 - Personal Info ====== -->
+      <div class="inner_first_one">
+        <h2><br>
+          請輸入您的個人資訊。</h2>
+        <form style="background-color: #FFFFFF; margin-top: 20px;" method="post" name="contact" id="contact" data-validate="parsley">
+          <!-- ====== START Section 1 - Personal Info ====== -->
           <div class="panel-body">
-
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label class="pq-form-label" for="control_EMAIL">電子郵件 <span class="parsley-required">*</span></label>
-                  <input type="text" class="form-control" id="control_EMAIL" name="EmailTxt" required="" data-toggle="tooltip" data-placement="top" title="為保護使用者個人資訊安全，完成（郵件）訂閱登記後，用戶的郵寄地址將無法修改。"/>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label class="pq-form-label" for="control_COLUMN270">Twitter帳號</label>
-                  <input type="text" class="form-control" id="control_COLUMN270" name="Twitter Handle" />
-                </div>
-              </div>
-            </div>
-
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
@@ -234,7 +181,6 @@ hr {
                 </div>
               </div>
             </div>
-
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
@@ -249,7 +195,6 @@ hr {
                 </div>
               </div>
             </div>
-
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
@@ -257,6 +202,14 @@ hr {
                   <input type="text" class="form-control" id="control_COLUMN166" name="Organization Name" required="" />
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_EMAIL">電子郵件 <span class="parsley-required">*</span></label>
+                  <input type="text" class="form-control" id="control_EMAIL" name="Email" required="" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label class="pq-form-label" for="control_COLUMN40">Country <span class="parsley-required">*</span></label>
@@ -420,240 +373,221 @@ hr {
                   </select>
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="pq-form-label" for="control_COLUMN270">Twitter帳號</label>
+                  <input type="text" class="form-control" id="control_COLUMN270" name="Twitter Handle" />
+                </div>
+              </div>
             </div>
-
           </div>
-        <!-- ====== END Section 1 - Personal Info ====== -->
-
+          <!-- ====== END Section 1 - Personal Info ====== -->
           <hr>
-
-        <!-- ====== START Section 2 - Email Types ====== -->
-          <div class="panel">
+          <!-- ====== START Section 2 - Email Types ====== -->
+          <div class="newsletter_part_2">
             <span style="font-size: 24px;">您期望收到哪種類型的電子郵件？<br>
-              <br>
+            <br>
             </span>
             <div class="panel-body">
-
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="checkbox" value="Administration" id="checkbox2-1" name="email_type_pc" />
-                    <label class="pq-form-label" for="checkbox2-1">管理工具、系統升級與系統維護方面的提醒</label>
+                    <input type="checkbox" value="Administration" name="email_type_pc" />
+                    <label class="pq-form-label">管理工具、系統升級與系統維護方面的提醒</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="checkbox" value="Surveys" id="checkbox2-2" name="email_type_pc" />
-                    <label class="pq-form-label" for="checkbox2-2">用戶問卷調查</label>
+                    <input type="checkbox" value="Surveys" name="email_type_pc" />
+                    <label class="pq-form-label">用戶問卷調查</label>
                   </div>
                 </div>
               </div>
-
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="checkbox" value="Product Info" id="checkbox2-3" name="email_type_pc" />
-                    <label class="pq-form-label" for="checkbox2-3">新產品及促銷產品資訊</label>
+                    <input type="checkbox" value="Product Info" name="email_type_pc" />
+                    <label class="pq-form-label">新產品及促銷產品資訊</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="checkbox" value="Events" id="checkbox2-4" name="email_type_pc" />
-                    <label class="pq-form-label" for="checkbox2-4">即將舉行的會議及活動</label>
+                    <input type="checkbox" value="Events" name="email_type_pc" />
+                    <label class="pq-form-label">即將舉行的會議及活動</label>
                   </div>
                 </div>
               </div>
-
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="checkbox" value="Training" id="checkbox2-5" name="email_type_pc" />
-                    <label class="pq-form-label" for="checkbox2-5">即將舉行的線上教育訓練</label>
+                    <input type="checkbox" value="Training" name="email_type_pc" />
+                    <label class="pq-form-label">即將舉行的線上教育訓練</label>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        <!-- ====== END Section 2 - Email Types ====== -->
-
+          <!-- ====== END Section 2 - Email Types ====== -->
           <hr>
-
-        <!-- ====== START Section 3 - Newsletters ====== -->
-          <div class="panel">
+          <!-- ====== START Section 3 - Newsletters ====== -->
+          <div class="newsletter_part_2">
             <span style="font-size: 24px;">通訊<br>
-              <br>
+            <br>
             </span>
             <div class="panel-body">
-
               <div class="row">
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="Tips and Training" id="checkbox3-1" name="email_newsleter_type" />
-                    <label class="pq-form-label" for="checkbox3-1">小貼士及教育訓練</label>
+                    <input type="checkbox" value="Tips and Training" name="email_newsleter_type" />
+                    <label class="pq-form-label">小貼士及教育訓練</label>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="PQ News" id="checkbox3-2" name="email_newsleter_type" />
-                    <label class="pq-form-label" for="checkbox3-2">ProQuest新聞資訊</label>
+                    <input type="checkbox" value="PQ News" name="email_newsleter_type" />
+                    <label class="pq-form-label">ProQuest新聞資訊</label>
                   </div>
                 </div>
               </div>
-
               <div class="row">
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="Product Content Updates" id="checkbox3-3" name="email_newsleter_type" />
-                    <label class="pq-form-label" for="checkbox3-3">ProQuest資源最新資訊</label>
+                    <input type="checkbox" value="Product Content Updates" name="email_newsleter_type" />
+                    <label class="pq-form-label">ProQuest資源最新資訊</label>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="Public Libraries" id="checkbox3-4" name="email_newsleter_type" />
-                    <label class="pq-form-label" for="checkbox3-4">公共圖書館</label>
+                    <input type="checkbox" value="Public Libraries" name="email_newsleter_type" />
+                    <label class="pq-form-label">公共圖書館</label>
                   </div>
                 </div>
               </div>
-
               <div class="row">
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="School Libraries" id="checkbox3-5" name="email_newsleter_type" />
-                    <label class="pq-form-label" for="checkbox3-5">學校圖書館</label>
+                    <input type="checkbox" value="School Libraries" name="email_newsleter_type" />
+                    <label class="pq-form-label">學校圖書館</label>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="Chronolog" id="checkbox3-6" name="email_newsleter_type" />
-                    <label class="pq-form-label" for="checkbox3-6">Chronolog</label>
+                    <input type="checkbox" value="Chronolog" name="email_newsleter_type" />
+                    <label class="pq-form-label">Chronolog</label>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-        <!-- ====== END Section 3 - Newsletters ====== -->
-
+          <!-- ====== END Section 3 - Newsletters ====== -->
           <hr>
-
-        <!-- ====== START Section 4 - Blogs ====== -->
-          <div class="panel">
+          <!-- ====== START Section 4 - Blogs ====== -->
+          <div class="newsletter_part_2">
             <span style="font-size: 24px;">ProQuest 博文通訊<br>
-              <br>
+            <br>
             </span>
             <div class="panel-body">
-
               <div class="row">
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="Bi-Weekly" id="checkbox4-1" name="email_blog_prefs" />
-                    <label class="pq-form-label" for="checkbox4-1">每兩週/期</label>
+                    <input type="checkbox" value="Bi-Weekly" name="email_blog_prefs" />
+                    <label class="pq-form-label">每兩週/期</label>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="checkbox" value="Monthly" id="checkbox4-2" name="email_blog_prefs" />
-                    <label class="pq-form-label" for="checkbox4-2">每月/期</label>
+                    <input type="checkbox" value="Monthly" name="email_blog_prefs" />
+                    <label class="pq-form-label">每月/期</label>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-        <!-- ====== END Section 4 - Blogs ====== -->
-
+          <!-- ====== END Section 4 - Blogs ====== -->
           <hr>
-
-        <!-- ====== START Section 5 ====== -->
-          <div class="panel">
+          <!-- ====== START Section 5 ====== -->
+          <div class="newsletter_part_2">
             <span style="font-size: 24px;">您對哪些研究主題感興趣？<br>
             </span>
-            <span style="font-size: 18px;"><i>請選擇您感興趣的所有溝通途徑 &ndash; 可多選</i><br>
+            <span style="font-size: 18px;"><em>請選擇您感興趣的所有溝通途徑 - 可多選</em><br>
               <br>
             </span>
             <div class="panel-body">
-
-            <!-- ==== START Section 5.1 - Collection Types ==== -->
+              <!-- ==== START Section 5.1 - Collection Types ==== -->
               <span style="font-size: 20px; font-weight: bold;">資源類型<br>
                 <br>
               </span>
               <div class="panel-body">
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Databases" id="checkbox5-1-1" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-1">資料庫</label>
+                      <input type="checkbox" value="Databases" name="email_collection_types" />
+                      <label class="pq-form-label">資料庫</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Dissertations & Theses" id="checkbox5-1-2" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-2">博碩士論文</label>
+                      <input type="checkbox" value="Dissertations & Theses" name="email_collection_types" />
+                      <label class="pq-form-label">博碩士論文</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Ebooks" id="checkbox5-1-3" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-3">電子書</label>
+                      <input type="checkbox" value="Ebooks" name="email_collection_types" />
+                      <label class="pq-form-label">電子書</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Journals" id="checkbox5-1-4" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-4">期刊</label>
+                      <input type="checkbox" value="Journals" name="email_collection_types" />
+                      <label class="pq-form-label">期刊</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Microfilm" id="checkbox5-1-5" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-5">縮微膠片/膠捲</label>
+                      <input type="checkbox" value="Microfilm" name="email_collection_types" />
+                      <label class="pq-form-label">縮微膠片/膠捲</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Print Books" id="checkbox5-1-6" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-6">紙本書</label>
+                      <input type="checkbox" value="Print Books" name="email_collection_types" />
+                      <label class="pq-form-label">紙本書</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Patents" id="checkbox5-1-7" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-7">專利</label>
+                      <input type="checkbox" value="Patents" name="email_collection_types" />
+                      <label class="pq-form-label">專利</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Search & Discovery" id="checkbox5-1-8" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-8">檢索與發現服務</label>
+                      <input type="checkbox" value="Search & Discovery" name="email_collection_types" />
+                      <label class="pq-form-label">檢索與發現服務</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Video" id="checkbox5-1-9" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-9">視頻</label>
+                      <input type="checkbox" value="Video" name="email_collection_types" />
+                      <label class="pq-form-label">視頻</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Workflow Tools" id="checkbox5-1-10" name="email_collection_types" />
-                      <label class="pq-form-label" for="checkbox5-1-10">工作流程工具</label>
+                      <input type="checkbox" value="Workflow Tools" name="email_collection_types" />
+                      <label class="pq-form-label">工作流程工具</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
@@ -661,117 +595,106 @@ hr {
                     </div>
                   </div>
                 </div>
-
               </div>
-            <!-- ==== END Section 5.1 - Collection Types ==== -->
-
+              <!-- ==== END Section 5.1 - Collection Types ==== -->
               <hr>
-
-            <!-- ==== START Section 5.2 - Subject ==== -->
+              <!-- ==== START Section 5.2 - Subject ==== -->
               <span style="font-size: 20px; font-weight: bold;">主題領域<br>
                 <br>
               </span>
               <div class="panel-body">
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Arts and Humanities" id="checkbox5-2-1" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-1">藝術與人文</label>
+                      <input type="checkbox" value="Arts and Humanities" name="email_topic_pc" />
+                      <label class="pq-form-label">藝術與人文</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Business" id="checkbox5-2-2" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-2">商業</label>
+                      <input type="checkbox" value="Business" name="email_topic_pc" />
+                      <label class="pq-form-label">商業</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Common Core" id="checkbox5-2-3" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-3">通識教育</label>
+                      <input type="checkbox" value="Common Core" name="email_topic_pc" />
+                      <label class="pq-form-label">通識教育</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Education Careers" id="checkbox5-2-4" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-4">教育與職業發展</label>
+                      <input type="checkbox" value="Education Careers" name="email_topic_pc" />
+                      <label class="pq-form-label">教育與職業發展</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Genealogy" id="checkbox5-2-5" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-5">家譜學</label>
+                      <input type="checkbox" value="Genealogy" name="email_topic_pc" />
+                      <label class="pq-form-label">家譜學</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="General Research" id="checkbox5-2-6" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-6">綜合</label>
+                      <input type="checkbox" value="General Research" name="email_topic_pc" />
+                      <label class="pq-form-label">綜合</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Health and Medicine" id="checkbox5-2-7" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-7">健康與醫學</label>
+                      <input type="checkbox" value="Health and Medicine" name="email_topic_pc" />
+                      <label class="pq-form-label">健康與醫學</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Law and Patents" id="checkbox5-2-8" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-8">法律與專利</label>
+                      <input type="checkbox" value="Law and Patents" name="email_topic_pc" />
+                      <label class="pq-form-label">法律與專利</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Literature and Language" id="checkbox5-2-9" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-9">文學與語言學</label>
+                      <input type="checkbox" value="Literature and Language" name="email_topic_pc" />
+                      <label class="pq-form-label">文學與語言學</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="News and Newspapers" id="checkbox5-2-10" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-10">新聞</label>
+                      <input type="checkbox" value="News and Newspapers" name="email_topic_pc" />
+                      <label class="pq-form-label">新聞</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Pharma and BioMed" id="checkbox5-2-11" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-11">製藥學與生物醫學</label>
+                      <input type="checkbox" value="Pharma and BioMed" name="email_topic_pc" />
+                      <label class="pq-form-label">製藥學與生物醫學</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Science and Technology" id="checkbox5-2-12" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-12">科學與技術</label>
+                      <input type="checkbox" value="Science and Technology" name="email_topic_pc" />
+                      <label class="pq-form-label">科學與技術</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Social Sciences" id="checkbox5-2-13" name="email_topic_pc" />
-                      <label class="pq-form-label" for="checkbox5-2-13">社會學</label>
+                      <input type="checkbox" value="Social Sciences" name="email_topic_pc" />
+                      <label class="pq-form-label">社會學</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
@@ -779,96 +702,87 @@ hr {
                     </div>
                   </div>
                 </div>
-
               </div>
-            <!-- ==== END Section 5.2 - Subject ==== -->
-
+              <!-- ==== END Section 5.2 - Subject ==== -->
               <hr>
-
-            <!-- ==== START Section 5.3 - Ebook Title Alerts ==== -->
+              <!-- ==== START Section 5.3 - Ebook Title Alerts ==== -->
               <span style="font-size: 24px;">電子書書目提醒<br>
               </span>
               <p>
-                <i>ProQuest電子書書目系統每天新增數百種新書清單，其內容覆蓋廣泛的學科領域。我們每月/期的電子書提醒郵件為使用者提供按主題領域分類的新書書目清單連結，及上個月新增的出版社資訊。</i><br>
+                <em>ProQuest電子書書目系統每天新增數百種新書清單，其內容覆蓋廣泛的學科領域。我們每月/期的電子書提醒郵件為使用者提供按主題領域分類的新書書目清單連結，及上個月新增的出版社資訊。</em><br>
                 <br>
               </p>
               <div class="panel-body">
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Arts" id="checkbox5-3-1" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-1">藝術</label>
+                      <input type="checkbox" value="Arts" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">藝術</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Business" id="checkbox5-3-2" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-2">商業</label>
+                      <input type="checkbox" value="Business" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">商業</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Education" id="checkbox5-3-3" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-3">教育</label>
+                      <input type="checkbox" value="Education" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">教育</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Health and Science" id="checkbox5-3-4" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-4">醫學與科學</label>
+                      <input type="checkbox" value="Health and Science" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">醫學與科學</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="History" id="checkbox5-3-5" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-5">歷史</label>
+                      <input type="checkbox" value="History" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">歷史</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Law" id="checkbox5-3-6" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-6">法律</label>
+                      <input type="checkbox" value="Law" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">法律</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Literature and Language" id="checkbox5-3-7" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-7">文學與語言學</label>
+                      <input type="checkbox" value="Literature and Language" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">文學與語言學</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Religion and Philosophy" id="checkbox5-3-8" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-8">宗教與哲學</label>
+                      <input type="checkbox" value="Religion and Philosophy" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">宗教與哲學</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Science and Technology" id="checkbox5-3-9" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-9">科學與技術</label>
+                      <input type="checkbox" value="Science and Technology" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">科學與技術</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="checkbox" value="Social Sciences" id="checkbox5-3-10" name="email_ebooks_types_pc" />
-                      <label class="pq-form-label" for="checkbox5-3-10">社會學</label>
+                      <input type="checkbox" value="Social Sciences" name="email_ebooks_types_pc" />
+                      <label class="pq-form-label">社會學</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
@@ -876,248 +790,219 @@ hr {
                     </div>
                   </div>
                 </div>
-
               </div>
-            <!-- ==== END Section 5.3 - Ebook Title Alerts ==== -->
-
+              <!-- ==== END Section 5.3 - Ebook Title Alerts ==== -->
               <hr>
-
-            <!-- ==== START Section 5.4 - Preferred Language ==== -->
+              <!-- ==== START Section 5.4 - Preferred Language ==== -->
               <span style="font-size: 24px;">優選語言<br>
                 <br>
               </span>
               <div class="panel-body">
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="English" id="checkbox5-4-1" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-1">英文</label>
+                      <input type="checkbox" value="English" name="email_lang_pref" />
+                      <label class="pq-form-label">英文</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Arabic" id="checkbox5-4-2" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-2">阿拉伯語</label>
+                      <input type="checkbox" value="Arabic" name="email_lang_pref" />
+                      <label class="pq-form-label">阿拉伯語</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Chinese-Simplified" id="checkbox5-4-3" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-3">簡體中文</label>
+                      <input type="checkbox" value="Chinese-Simplified" name="email_lang_pref" />
+                      <label class="pq-form-label">簡體中文</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Chinese-Traditional" id="checkbox5-4-4" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-4">繁體中文</label>
+                      <input type="checkbox" value="Chinese-Traditional" name="email_lang_pref" />
+                      <label class="pq-form-label">繁體中文</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="French" id="checkbox5-4-5" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-5">法語</label>
+                      <input type="checkbox" value="French" name="email_lang_pref" />
+                      <label class="pq-form-label">法語</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="German" id="checkbox5-4-6" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-6">德語</label>
+                      <input type="checkbox" value="German" name="email_lang_pref" />
+                      <label class="pq-form-label">德語</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Hindi" id="checkbox5-4-7" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-7">印度語</label>
+                      <input type="checkbox" value="Hindi" name="email_lang_pref" />
+                      <label class="pq-form-label">印度語</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Indonesian" id="checkbox5-4-8" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-8">印尼語</label>
+                      <input type="checkbox" value="Indonesian" name="email_lang_pref" />
+                      <label class="pq-form-label">印尼語</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Italian" id="checkbox5-4-9" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-9">義大利語</label>
+                      <input type="checkbox" value="Italian" name="email_lang_pref" />
+                      <label class="pq-form-label">義大利語</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Japanese" id="checkbox5-4-10" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-10">日語</label>
+                      <input type="checkbox" value="Japanese" name="email_lang_pref" />
+                      <label class="pq-form-label">日語</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Korean" id="checkbox5-4-11" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-11">韓語</label>
+                      <input type="checkbox" value="Korean" name="email_lang_pref" />
+                      <label class="pq-form-label">韓語</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Portuguese-Brazil" id="checkbox5-4-12" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-12">葡萄牙語</label>
+                      <input type="checkbox" value="Portuguese-Brazil" name="email_lang_pref" />
+                      <label class="pq-form-label">葡萄牙語</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Punjabi" id="checkbox5-4-13" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-13">旁遮普語</label>
+                      <input type="checkbox" value="Punjabi" name="email_lang_pref" />
+                      <label class="pq-form-label">旁遮普語</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Russian" id="checkbox5-4-14" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-14">俄語</label>
+                      <input type="checkbox" value="Russian" name="email_lang_pref" />
+                      <label class="pq-form-label">俄語</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Spanish-European" id="checkbox5-4-15" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-15">西班牙語（歐洲）</label>
+                      <input type="checkbox" value="Spanish-European" name="email_lang_pref" />
+                      <label class="pq-form-label">西班牙語（歐洲）</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Spanish-Latin America" id="checkbox5-4-16" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-16">西班牙語（拉美地區）</label>
+                      <input type="checkbox" value="Spanish-Latin America" name="email_lang_pref" />
+                      <label class="pq-form-label">西班牙語（拉美地區）</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Thai" id="checkbox5-4-17" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-17">泰語</label>
+                      <input type="checkbox" value="Thai" name="email_lang_pref" />
+                      <label class="pq-form-label">泰語</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Turkish" id="checkbox5-4-18" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-18">土耳其語</label>
+                      <input type="checkbox" value="Turkish" name="email_lang_pref" />
+                      <label class="pq-form-label">土耳其語</label>
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <input type="checkbox" value="Vietnamese" id="checkbox5-4-19" name="email_lang_pref" />
-                      <label class="pq-form-label" for="checkbox5-4-19">越南語</label>
+                      <input type="checkbox" value="Vietnamese" name="email_lang_pref" />
+                      <label class="pq-form-label">越南語</label>
                     </div>
                   </div>
                 </div>
-
               </div>
-            <!-- ==== END Section 5.4 - Preferred Language ==== -->
-
+              <!-- ==== END Section 5.4 - Preferred Language ==== -->
             </div>
           </div>
-        <!-- ====== END Section 5 ====== -->
-
-          <div class="panel">
-            <div class="panel-body">
-              <div class="row">
-                <a name="SubmitButton"></a>
-                <input type="submit" value="提交" class="btn btn-primary btn-lg" />
-                <input type="button" value="清空表格中內容" onclick="clearPreferences();" class="btn btn-primary btn-lg" />
-              </div>
-            </div>
+          <!-- ====== END Section 5 ====== -->
+          <div style="display: none;"><!--<input type="text" name="EmailTxt" id="EmailTxt" value="" />--></div>
+          <div class="row">
+            <input type="submit" value="提交" class="btn btn-primary btn-lg" />
+            <input type="button" value="清空表格中內容" onclick="formClear();" class="btn btn-primary btn-lg" />
+            <p><a name="SubmitButton"></a></p>
           </div>
-
           <input type="hidden" name="LastTouchLeadSource" id="LastTouchLeadSource" value="Newsletters">
           <input type="hidden" name="LastTouchLeadSourceDate" id="LastTouchLeadSourceDate" value="mm/dd/yyyy">
-<!-- //////// REMOVE ME //////// --><input type="hidden" name="RECIPIENT_ID_*" value="0">
-
         </form>
-      <!-- ======== END FORM ======== -->
-
-      </div>
+      </div><!-- /.inner_first_one -->
     </div>
   </div>
-
-
-<!-- ======== START Temporary Footer (to be removed) ======== -->
-
   <div class="footer_one">
     <div class="container">
       <div class="col-md-12">
         <div class="col-md-2 col-xs-6">
           <div class="single_ft">
             <h4>巡覽列</h4><!--Navigation-->
-            <a name="Footer_Navigation_Libraries" href="http://www.proquest.com/libraries">圖書館用戶</a><br>
-            <a name="Footer_Navigation_Researchers" href="http://www.proquest.com/researchers">研究人員</a><br>
-            <a name="Footer_Navigation_ProductsServices" href="http://www.proquest.com/products-services">產品與服務</a><br>
-            <a name="Footer_Navigation_Customers" href="http://www.proquest.com/customer-care">客戶</a><br>
-            <a name="Footer_Navigation_Events" href="http://www.proquest.com/events">活動</a><br>
-            <a name="Footer_Navigation_About" href="http://www.proquest.com/about">關於ProQuest</a><br>
-            <a name="Footer_Navigation_Blogs" href="http://www.proquest.com/blog">博客</a>
+            <a xthyperlink="850790" xtlinkname="Footer_Navigation_Libraries" xt="SPCLICK" name="Footer_Navigation_Libraries" href="http://www.proquest.com/libraries"> 圖書館用戶</a><br>
+            <a xthyperlink="850791" xtlinkname="Footer_Navigation_Researchers" xt="SPCLICK" name="Footer_Navigation_Researchers" href="http://www.proquest.com/researchers"> 研究人員</a><br>
+            <a xthyperlink="850792" xtlinkname="Footer_Navigation_ProductsServices" xt="SPCLICK" name="Footer_Navigation_ProductsServices" href="http://www.proquest.com/products-services"> 產品與服務</a><br>
+            <a xthyperlink="850793" xtlinkname="Footer_Navigation_Customers" xt="SPCLICK" name="Footer_Navigation_Customers" href="http://www.proquest.com/customer-care"> 客戶</a><br>
+            <a xthyperlink="850794" xtlinkname="Footer_Navigation_Events" xt="SPCLICK" name="Footer_Navigation_Events" href="http://www.proquest.com/events"> 活動</a><br>
+            <a xthyperlink="850795" xtlinkname="Footer_Navigation_About" xt="SPCLICK" name="Footer_Navigation_About" href="http://www.proquest.com/about"> 關於ProQuest</a><br>
+            <a xthyperlink="850796" xtlinkname="Footer_Navigation_Blogs" xt="SPCLICK" name="Footer_Navigation_Blogs" href="http://www.proquest.com/blog"> 博客</a>
           </div>
         </div>
         <div class="col-md-2 col-xs-6">
           <div class="single_ft">
             <h4>支援頁面</h4><!--Support-->
-            <a name="Footer_Support_SupportCenter" href="http://www.proquest.com/company/support-landing.html">支持中心</a><br>
-            <a name="Footer_Support_ToolsResources" href="http://www.proquest.com/customer-care/tools-resources/">工具與資源</a><br>
-            <a name="Footer_Support_TrainingWebinars" href="http://www.proquest.com/customer-care/training-webinars/">網路培訓</a><br>
-            <a name="Footer_Support_LibGuides" href="http://proquest.libguides.com/home">LibGuides</a>
+            <a xthyperlink="850797" xtlinkname="Footer_Support_SupportCenter" xt="SPCLICK" name="Footer_Support_SupportCenter" href="http://www.proquest.com/company/support-landing.html"> 支持中心</a><br>
+            <a xthyperlink="850798" xtlinkname="Footer_Support_ToolsResources" xt="SPCLICK" name="Footer_Support_ToolsResources" href="http://www.proquest.com/customer-care/tools-resources/"> 工具與資源</a><br>
+            <a xthyperlink="850799" xtlinkname="Footer_Support_TrainingWebinars" xt="SPCLICK" name="Footer_Support_TrainingWebinars" href="http://www.proquest.com/customer-care/training-webinars/"> 網路培訓</a><br>
+            <a xthyperlink="850800" xtlinkname="Footer_Support_LibGuides" xt="SPCLICK" name="Footer_Support_LibGuides" href="http://proquest.libguides.com/home"> LibGuides</a>
           </div>
         </div>
       </div>
     </div>
   </div><!-- /.footer_one -->
-  
   <div class="main_footer">
     <div class="container">
       <div class="col-md-12">
         <div class="inner_footer">
           <p style="text-align: center;">
-            <a name="BottomNav_Privacy" href="http://www.proquest.com/about/privacy-statement.html">Privacy</a>&nbsp;&nbsp;
-            <a name="BottomNav_TermsofUse" href="http://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>&nbsp;&nbsp;
-            <a name="BottomNav_Cookies" href="http://www.proquest.com/about/cookie-policy.html">Cookies</a>&nbsp;&nbsp;
-            <a name="BottomNav_Accessibility" href="http://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>&nbsp;&nbsp;
-            <a name="BottomNav_DMCAPolicy" href="http://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a>
+            <a xthyperlink="850801" xtlinkname="BottomNav_Privacy" xt="SPCLICK" name="BottomNav_Privacy" href="http://www.proquest.com/about/privacy-statement.html">Privacy</a>&nbsp;&nbsp;
+            <a xthyperlink="850802" xtlinkname="BottomNav_TermsofUse" xt="SPCLICK" name="BottomNav_TermsofUse" href="http://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>&nbsp;&nbsp;
+            <a xthyperlink="850803" xtlinkname="BottomNav_Cookies" xt="SPCLICK" name="BottomNav_Cookies" href="http://www.proquest.com/about/cookie-policy.html">Cookies</a>&nbsp;&nbsp;
+            <a xthyperlink="850804" xtlinkname="BottomNav_Accessibility" xt="SPCLICK" name="BottomNav_Accessibility" href="http://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>&nbsp;&nbsp;
+            <a xthyperlink="850805" xtlinkname="BottomNav_DMCAPolicy" xt="SPCLICK" name="BottomNav_DMCAPolicy" href="http://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a>
           </p>
         </div>
       </div>
     </div>
   </div><!-- /.main_footer -->
-
-<!-- ======== END Temporary Footer ======== -->
-
-
-</div>
-<!-- ============ END Main Form Body ============ -->
-
-</body>
-
+</div><!-- /.first_form_part -->
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script>
-var formLanguage = "zh-Hant";
-
+  window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>');
+</script>
+<script src="http://www.proquest.com/includes/bootstrap.min.js"></script>
+<script src="http://www.proquest.com/includes/plugins.js"></script>
+<script src="http://www.proquest.com/includes/main.js"></script>
+<script src="http://www.proquest.com/includes/wow.min.js"></script>
+</body>
+<script>
 // Put language-specific button labels here
 var SELECT_ALL_LABEL = '選擇全部';
 var UNSELECT_ALL_LABEL = '取消選擇所有';
@@ -1125,34 +1010,32 @@ var UNSELECT_ALL_LABEL = '取消選擇所有';
 // Function to Select or Unselect all checkboxes in a multi-select checkbox area
 function toggleCheckboxes(checkboxesSelector, buttonSelector) {
 
-  var checkboxes = $('[name="'+checkboxesSelector+'"]');
-  var button = $( buttonSelector );
+	var checkboxes = $('[name="'+checkboxesSelector+'"]');
+	var button = $( buttonSelector );
 
-  if (button.val() == SELECT_ALL_LABEL) {
-    checkboxes.each(function() {
-      this.checked = true;
-    })
-    button.val(UNSELECT_ALL_LABEL);
-  } else {
-    checkboxes.each(function() {
-      this.checked = false;
-    })
-    button.val(SELECT_ALL_LABEL);
-  }
+	if (button.val() == SELECT_ALL_LABEL) {
+		checkboxes.each(function() {
+			this.checked = true;
+		})
+		button.val(UNSELECT_ALL_LABEL);
+	} else {
+		checkboxes.each(function() {
+			this.checked = false;
+		})
+		button.val(SELECT_ALL_LABEL);
+	}
 }
 
-// Function to clear the checkbox selections from the form
-function clearPreferences() {
-  $(':input', '#pq-contact').not(':text, :button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected');
-  $('#toggle1').val(SELECT_ALL_LABEL);
-  $('#toggle2').val(SELECT_ALL_LABEL);
-  $('#toggle3').val(SELECT_ALL_LABEL);
+// Function to clear the form
+function formClear() {
+	$(':input', '#contact').not(':button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected').not(':checkbox, :radio').val('');
+	$('#toggle1').val(SELECT_ALL_LABEL);
+	$('#toggle2').val(SELECT_ALL_LABEL);
+	$('#toggle3').val(SELECT_ALL_LABEL);
 }
 
-// Document Ready
+// Set the date for the "Last Touch Lead Source Date"
 $( document ).ready(function() {
-
-  // Set the date for the "Last Touch Lead Source Date"
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth()+1; //January is 0!
@@ -1163,12 +1046,6 @@ $( document ).ready(function() {
   today = mm+'/'+dd+'/'+yyyy;
   $('#LastTouchLeadSourceDate').val(today);         // Sets hidden field for current date
   $('#LastTouchLeadSource').val('Targeted Email');  // Sets hidden field for LastTouchLeadSource
-  
-  // From pq-clear-contact-form.js - disallow changing the email address if already set
-  initContactForm('pq-contact', 'control_EMAIL', 'control_COLUMN30');
-
-  console.log('Document loaded.'); ////////////////
-
 });
 </script>
 </html>
