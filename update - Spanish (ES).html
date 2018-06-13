@@ -20,27 +20,19 @@
 <link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/IMC-style.css" />
 <link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/IMC-responsive.css" />
 <link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/bootstrap-override-20140226.css" />
-
-<script src="https://www.proquest.com/includes/IMC-modernizr-2.6.2.min.js"></script>
-<!--[if IE]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<script src="https://www.proquest.com/includes/IMC-jquery-1.10.2.min.js"></script>
-<script src="https://www.proquest.com/includes/bootstrap.min.js"></script>
-<script src="https://www.proquest.com/includes/parsley.min.js"></script>
-<script src="https://www.proquest.com/includes/jquery.form.min.js"></script>
-<script src="https://www.proquest.com/includes/pq-clear-preference-center.js"></script>
-<script>
-// Enable Bootstrap tooltips
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-});
-</script>
-
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/print-stylesheet.css" media="print" />
 <style type="text/css">
+.parsley-border { /* must come before .parsley-error */
+  border: 2px solid transparent;
+}
 .parsley-error {
   border: 2px solid #a51f1e;
 }
 .parsley-error:focus {
   border: 2px solid #a51f1e;
+}
+.parsley-error-list {
+  color: #a51f1e;
 }
 .parsley-required {
   color: #a51f1e;
@@ -70,15 +62,135 @@ a.clear-identity-action {
   max-width: 275px;
   color: #a94442;
   background-color: #f2dede;
-  border-color: #ebccd1;
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid #ebccd1;
 }
-/* ID needed here for specificity */
-#pq-contact .tooltip-arrow {
+#pq-contact .tooltip-arrow { /* id needed here for specificity */
   border-top-color: #ebccd1;
 }
+.main_footer {
+  float: left;
+  width: 100%;
+  padding: 0;
+}
+.main_footer a {
+  color: white;
+}
+.main_footer .links {
+  padding: 5px 15px;
+}
+.main_footer .links a {
+  font-size: 12px;
+  padding: 5px;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
 </style>
+
+<script src="https://www.proquest.com/includes/IMC-modernizr-2.6.2.min.js"></script>
+<!--[if IE]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="https://www.proquest.com/includes/IMC-jquery-1.10.2.min.js"></script>
+<script src="https://www.proquest.com/includes/bootstrap.min.js"></script>
+<script src="https://www.proquest.com/includes/parsley.min.js"></script>
+<script src="https://www.proquest.com/includes/jquery.form.min.js"></script>
+<script src="https://www.proquest.com/includes/pq-clear-preference-center.js"></script>
+<script>
+var formLanguage = 'es-419';
+
+// Put language-specific button labels here
+var SELECT_ALL_LABEL = 'Seleccionar todo';
+var UNSELECT_ALL_LABEL = 'Deselecciona todo';
+
+// Function to set checkboxes from hidden shadow fields mapped to DB fields 
+//  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
+function setCheckboxes() {
+  $('.shadow-field').each(function() {
+    var shadow_field = $(this);
+    var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
+
+    var valuesArray = shadow_field.val().split(';');
+
+    $.each(valuesArray, function(index, value) {
+      checkboxes.filter('[value="'+value+'"]').prop('checked', true);
+    })
+  })
+}
+
+// Function to set hidden shadow fields (mapped to DB fields) based on checkbox values
+//  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
+function getCheckboxes() {
+  $('.shadow-field').each(function() {
+    var shadow_field = $(this);
+    var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
+
+    var valuesString = checkboxes.filter(':checked').map(function() {
+      return $(this).val();
+    }).get().join(';');
+
+    shadow_field.val(valuesString);
+  })
+}
+
+// Function to Select or Unselect all checkboxes in a multi-select checkbox area
+function toggleCheckboxes(checkboxesSelector, buttonSelector) {
+  var checkboxes = $('[name="'+checkboxesSelector+'"]');
+  var button = $( buttonSelector );
+
+  if (button.val() == SELECT_ALL_LABEL) {
+    checkboxes.each(function() {
+      this.checked = true;
+    })
+    button.val(UNSELECT_ALL_LABEL);
+  } else {
+    checkboxes.each(function() {
+      this.checked = false;
+    })
+    button.val(SELECT_ALL_LABEL);
+  }
+}
+
+// Function to clear the checkbox selections from the form
+function clearPreferences() {
+  $('input:checkbox', '.cbgroup').removeAttr('checked');
+  $('.select-all-btn').val(SELECT_ALL_LABEL);
+}
+
+// Function to get today's date for filling out date fields
+function getTodaysDateString() {
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+  var yyyy = today.getFullYear();
+
+  if (dd < 10) { dd = '0'+dd };
+  if (mm < 10) { mm = '0'+mm };
+  today = mm+'/'+dd+'/'+yyyy;
+
+  return today;
+}
+
+// Document Ready
+$( document ).ready(function() {
+
+  console.log('Begin Doc Ready.'); ////////////////
+
+  // From pq-clear-preference-center.js - disallow changing the email address if already set
+  initContactForm('pq-contact', 'control_EMAIL', 'control_COLUMN30');
+
+  // enable Bootstrap tooltip for email field
+  $('[data-toggle="tooltip"]').tooltip();
+
+  // Populate checkboxes with data from DB
+  setCheckboxes();
+
+  // Set hidden fields to current date
+  var dateString = getTodaysDateString();
+  $('#LastTouchLeadSourceDate').val(dateString);
+
+  console.log('End Doc Ready.'); ////////////////
+
+});
+</script>
 </head>
 
 <body>
@@ -87,7 +199,7 @@ a.clear-identity-action {
 <![endif]-->
 
 
-<!-- ============ START Temporary Header (to be removed) ============ -->
+<!-- ============ START Header ============ -->
 
 <div class="header-area">
   <div class="container">
@@ -152,7 +264,7 @@ a.clear-identity-action {
   </div>
 </div><!-- /.background_part -->
 
-<!-- ============ END Temporary Header ============ -->
+<!-- ============ END Header ============ -->
 
 
 <!-- ============ START Intro Text ============ -->
@@ -172,6 +284,7 @@ a.clear-identity-action {
   </div>
 </div>
 <!-- ============ END Intro Text ============ -->
+
 
 <!-- ============ START Main Form Body ============ -->
 <div class="main_form_part">
@@ -741,8 +854,9 @@ a.clear-identity-action {
                 <div class="col-xs-12">
                   <p>Privacy regulations require that we get your consent to continue to collect, store and use the personal information submitted for account creation or collected while using our services.</p>
                   <div class="form-group">
-                    <label class="pq-form-label"><span class="parsley-required">*</span>&nbsp;<input type="checkbox" value="Yes" name="Double OptIn" required="" />
-                    I consent to the collection and use of my personal information consistent with the <a href="https://www.proquest.com/go/privacy" style="color: #00a0df;">Privacy Policy</a>. I&nbsp;acknowledge that use of the service is subject to the <a href="https://proquest.com/go/termsandconditions" style="color: #00a0df;">Terms & Conditions</a>.</label>
+                    <label class="parsley-border pq-form-label"><span class="parsley-required">*</span>&nbsp;<input type="checkbox" value="Yes" name="Double OptIn" required="" />
+                    I consent to the collection and use of my personal information consistent with the <a href="https://www.proquest.com/go/privacy" style="color: #00a0df;">Privacy Policy</a>.
+                    I&nbsp;acknowledge that use of the service is subject to the <a href="https://proquest.com/go/termsandconditions" style="color: #00a0df;">Terms & Conditions</a>.</label>
                   </div>
                 </div>
               </div>
@@ -750,193 +864,77 @@ a.clear-identity-action {
               <div class="row">
                 <div class="col-xs-12">
                   <div class="form-group">
-                <a name="SubmitButton"></a>
-                <input type="submit" value="Enviar" class="btn btn-primary btn-lg" />
-                <input type="button" value="Borrar Preferencias" onclick="clearPreferences();" class="btn btn-primary btn-lg" />
+                    <a name="SubmitButton"></a>
+                    <input type="submit" value="Enviar" class="btn btn-primary btn-lg" />
+                    <input type="button" value="Borrar Preferencias" onclick="clearPreferences();" class="btn btn-primary btn-lg" />
                   </div>
                 </div>
               </div>
 
-              </div>
+            </div>
           </div>
         <!-- ====== END Submission Buttons ====== -->
 
-        <input type="hidden" name="LastTouchLeadSource" id="LastTouchLeadSource" value="Targeted Email">
+          <input type="hidden" name="LastTouchLeadSource" id="LastTouchLeadSource" value="Targeted Email">
           <input type="hidden" name="LastTouchLeadSourceDate" id="LastTouchLeadSourceDate" value="mm/dd/yyyy">
 
         </form>
       <!-- ======== END FORM ======== -->
 
       </div>
-      </div>
     </div>
-
-
-<!-- ======== START Temporary Footer (to be removed) ======== -->
-
-  <div class="footer_one">
-    <div class="container">
-      <div class="col-md-12">
-        <div class="col-md-2 col-xs-6">
-          <div class="single_ft quicklinks">
-            <h4>Navegación</h4><!--Navigation-->
-            <a name="Footer_Navigation_Libraries" href="https://www.proquest.com/libraries" xthyperlink="915142" xt="SPCLICK" xtlinkname="Footer_Navigation_Libraries">Para bibliotecas</a><br>
-            <a name="Footer_Navigation_Researchers" href="https://www.proquest.com/researchers" xthyperlink="915143" xt="SPCLICK" xtlinkname="Footer_Navigation_Researchers">Para los investigadores</a><br>
-            <a name="Footer_Navigation_ProductsServices" href="https://www.proquest.com/products-services" xthyperlink="915144" xt="SPCLICK" xtlinkname="Footer_Navigation_ProductsServices"> Productos &amp; Servicios</a><br>
-            <a name="Footer_Navigation_Customers" href="https://www.proquest.com/customer-care" xthyperlink="915145" xt="SPCLICK" xtlinkname="Footer_Navigation_Customers">Para clientes</a><br>
-            <a name="Footer_Navigation_Events" href="https://www.proquest.com/events" xthyperlink="915146" xt="SPCLICK" xtlinkname="Footer_Navigation_Events">Eventos</a><br>
-            <a name="Footer_Navigation_About" href="https://www.proquest.com/about" xthyperlink="915147" xt="SPCLICK" xtlinkname="Footer_Navigation_About">Sobre</a><br>
-            <a name="Footer_Navigation_Blogs" href="https://www.proquest.com/blog" xthyperlink="915148" xt="SPCLICK" xtlinkname="Footer_Navigation_Blogs">Blogs</a>
-          </div>
-        </div>
-        <div class="col-md-2 col-xs-6">
-          <div class="single_ft quicklinks">
-            <h4>Soporte</h4><!--Support-->
-            <a name="Footer_Support_SupportCenter" href="https://www.proquest.com/company/support-landing.html" xthyperlink="915149" xt="SPCLICK" xtlinkname="Footer_Support_SupportCenter">Centro de Apoyo</a><br>
-            <a name="Footer_Support_ToolsResources" href="https://www.proquest.com/customer-care/tools-resources/" xthyperlink="915150" xt="SPCLICK" xtlinkname="Footer_Support_ToolsResources">Herramientas y recursos</a><br>
-            <a name="Footer_Support_TrainingWebinars" href="https://www.proquest.com/customer-care/training-webinars/" xthyperlink="915151" xt="SPCLICK" xtlinkname="Footer_Support_TrainingWebinars">Seminarios web de formación</a><br>
-            <a name="Footer_Support_LibGuides" href="https://proquest.libguides.com/home" xthyperlink="915152" xt="SPCLICK" xtlinkname="Footer_Support_LibGuides">LibGuides</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><!-- /.footer_one -->
-
-  <!-- For the "Cookie Preferences" footer link - served by trustarc.com -->
-  <script src="https://consent.trustarc.com/notice?domain=proquest.com&c=teconsent&js=nj&noticeType=bb&text=true" async="async" crossorigin=""></script>
-
-  <div class="main_footer">
-    <div class="container links col-xs-12">
-      <div style="text-align: center;">
-        <a name="BottomNav_Privacy" href="https://www.proquest.com/about/privacy-statement.html" xthyperlink="915153" xt="SPCLICK" xtlinkname="BottomNav_Privacy">Privacy</a>
-        <a name="BottomNav_TermsofUse" href="https://www.proquest.com/about/terms-and-conditions.html" xthyperlink="915154" xt="SPCLICK" xtlinkname="BottomNav_TermsofUse">Terms of Use</a>
-        <a name="BottomNav_Cookies" href="https://www.proquest.com/about/cookie-policy.html" xthyperlink="915155" xt="SPCLICK" xtlinkname="BottomNav_Cookies">Cookies</a>
-        <div id="teconsent" style="display: inline;"></div>
-        <a name="BottomNav_Accessibility" href="https://www.proquest.com/company/ProQuest-ADA-Compliance.html" xthyperlink="915156" xt="SPCLICK" xtlinkname="BottomNav_Accessibility">Accessibility</a>
-        <a name="BottomNav_DMCAPolicy" href="https://media2.proquest.com/documents/dmcapolicy.pdf" xthyperlink="915157" xt="SPCLICK" xtlinkname="BottomNav_DMCAPolicy">DMCA Policy</a>
-      </div>
-    </div>
-  </div><!-- /.main_footer -->
-
-<!-- ======== END Temporary Footer ======== -->
-
-
+  </div>
 </div>
 <!-- ============ END Main Form Body ============ -->
 
+
+<!-- ============ START Footer ============ -->
+
+<div class="footer_one">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="col-md-2 col-xs-6">
+        <div class="single_ft quicklinks">
+          <h4>Navegación</h4><!--Navigation-->
+          <a name="Footer_Navigation_Libraries" href="https://www.proquest.com/libraries" xthyperlink="915142" xt="SPCLICK" xtlinkname="Footer_Navigation_Libraries">Para bibliotecas</a><br>
+          <a name="Footer_Navigation_Researchers" href="https://www.proquest.com/researchers" xthyperlink="915143" xt="SPCLICK" xtlinkname="Footer_Navigation_Researchers">Para los investigadores</a><br>
+          <a name="Footer_Navigation_ProductsServices" href="https://www.proquest.com/products-services" xthyperlink="915144" xt="SPCLICK" xtlinkname="Footer_Navigation_ProductsServices">Productos &amp; Servicios</a><br>
+          <a name="Footer_Navigation_Customers" href="https://www.proquest.com/customer-care" xthyperlink="915145" xt="SPCLICK" xtlinkname="Footer_Navigation_Customers">Para clientes</a><br>
+          <a name="Footer_Navigation_Events" href="https://www.proquest.com/events" xthyperlink="915146" xt="SPCLICK" xtlinkname="Footer_Navigation_Events">Eventos</a><br>
+          <a name="Footer_Navigation_About" href="https://www.proquest.com/about" xthyperlink="915147" xt="SPCLICK" xtlinkname="Footer_Navigation_About">Sobre</a><br>
+          <a name="Footer_Navigation_Blogs" href="https://www.proquest.com/blog" xthyperlink="915148" xt="SPCLICK" xtlinkname="Footer_Navigation_Blogs">Blogs</a>
+        </div>
+      </div>
+      <div class="col-md-2 col-xs-6">
+        <div class="single_ft quicklinks">
+          <h4>Soporte</h4><!--Support-->
+          <a name="Footer_Support_SupportCenter" href="https://www.proquest.com/company/support-landing.html" xthyperlink="915149" xt="SPCLICK" xtlinkname="Footer_Support_SupportCenter">Centro de Apoyo</a><br>
+          <a name="Footer_Support_ToolsResources" href="https://www.proquest.com/customer-care/tools-resources/" xthyperlink="915150" xt="SPCLICK" xtlinkname="Footer_Support_ToolsResources">Herramientas y recursos</a><br>
+          <a name="Footer_Support_TrainingWebinars" href="https://www.proquest.com/customer-care/training-webinars/" xthyperlink="915151" xt="SPCLICK" xtlinkname="Footer_Support_TrainingWebinars">Seminarios web de formación</a><br>
+          <a name="Footer_Support_LibGuides" href="https://proquest.libguides.com/home" xthyperlink="915152" xt="SPCLICK" xtlinkname="Footer_Support_LibGuides">LibGuides</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /.footer_one -->
+
+<!-- For the "Cookie Preferences" footer link - served by trustarc.com -->
+<script src="https://consent.trustarc.com/notice?domain=proquest.com&c=teconsent&js=nj&noticeType=bb&text=true" async="async" crossorigin=""></script>
+
+<div class="main_footer">
+  <div class="container links col-xs-12">
+    <div style="text-align: center;">
+      <a name="BottomNav_Privacy" href="https://www.proquest.com/about/privacy-statement.html" xthyperlink="915153" xt="SPCLICK" xtlinkname="BottomNav_Privacy">Privacy</a>
+      <a name="BottomNav_TermsofUse" href="https://www.proquest.com/about/terms-and-conditions.html" xthyperlink="915154" xt="SPCLICK" xtlinkname="BottomNav_TermsofUse">Terms of Use</a>
+      <a name="BottomNav_Cookies" href="https://www.proquest.com/about/cookie-policy.html" xthyperlink="915155" xt="SPCLICK" xtlinkname="BottomNav_Cookies">Cookies</a>
+      <div id="teconsent" style="display: inline;"></div>
+      <a name="BottomNav_Accessibility" href="https://www.proquest.com/company/ProQuest-ADA-Compliance.html" xthyperlink="915156" xt="SPCLICK" xtlinkname="BottomNav_Accessibility">Accessibility</a>
+      <a name="BottomNav_DMCAPolicy" href="https://media2.proquest.com/documents/dmcapolicy.pdf" xthyperlink="915157" xt="SPCLICK" xtlinkname="BottomNav_DMCAPolicy">DMCA Policy</a>
+    </div>
+  </div>
+</div><!-- /.main_footer -->
+
+<!-- ============ END Footer ============ -->
+
 </body>
-
-<style>
-.main_footer {
-  float: left;
-  width: 100%;
-  padding: 0;
-}
-.main_footer a {
-  color: white;
-}
-.main_footer .links {
-  padding: 5px 15px;
-}
-.main_footer .links a {
-  font-size: 12px;
-  padding: 5px;
-}
-a:hover, a:focus {
-  text-decoration: none;
-}
-</style>
-
-<script>
-var formLanguage = 'es-419';
-
-// Put language-specific button labels here
-var SELECT_ALL_LABEL = 'Seleccionar todo';
-var UNSELECT_ALL_LABEL = 'Deselecciona todo';
-
-// Function to set checkboxes from hidden shadow fields mapped to DB fields 
-//  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
-function setCheckboxes() {
-  $('.shadow-field').each(function() {
-    var shadow_field = $(this);
-    var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
-
-    var valuesArray = shadow_field.val().split(';');
-
-    $.each(valuesArray, function(index, value) {
-      checkboxes.filter('[value="'+value+'"]').prop('checked', true);
-    })
-  })
-}
-
-// Function to set hidden shadow fields (mapped to DB fields) based on checkbox values
-//  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
-function getCheckboxes() {
-  $('.shadow-field').each(function() {
-    var shadow_field = $(this);
-    var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
-
-    var valuesString = checkboxes.filter(':checked').map(function() {
-      return $(this).val();
-    }).get().join(';');
-
-    shadow_field.val(valuesString);
-  })
-}
-
-// Function to Select or Unselect all checkboxes in a multi-select checkbox area
-function toggleCheckboxes(checkboxesSelector, buttonSelector) {
-  var checkboxes = $('[name="'+checkboxesSelector+'"]');
-  var button = $( buttonSelector );
-
-  if (button.val() == SELECT_ALL_LABEL) {
-    checkboxes.each(function() {
-      this.checked = true;
-    })
-    button.val(UNSELECT_ALL_LABEL);
-  } else {
-    checkboxes.each(function() {
-      this.checked = false;
-    })
-    button.val(SELECT_ALL_LABEL);
-  }
-}
-
-// Function to clear the checkbox selections from the form
-function clearPreferences() {
-  $('input:checkbox', '.cbgroup').removeAttr('checked');
-  $('.select-all-btn').val(SELECT_ALL_LABEL);
-}
-
-// Function to get today's date for filling out date fields
-function getTodaysDateString() {
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth()+1; //January is 0!
-  var yyyy = today.getFullYear();
-
-  if (dd < 10) { dd = '0'+dd };
-  if (mm < 10) { mm = '0'+mm };
-  today = mm+'/'+dd+'/'+yyyy;
-
-  return today;
-}
-
-// Document Ready
-$( document ).ready(function() {
-
-  // From pq-clear-preference-center.js - disallow changing the email address if already set
-  initContactForm('pq-contact', 'control_EMAIL', 'control_COLUMN30');
-
-  // Populate checkboxes with data from DB
-  setCheckboxes();
-
-  // Set hidden fields to current date
-  var dateString = getTodaysDateString();
-  $('#LastTouchLeadSourceDate').val(dateString);
-
-  console.log('Document loaded.'); ////////////////
-
-});
-</script>
 </html>
