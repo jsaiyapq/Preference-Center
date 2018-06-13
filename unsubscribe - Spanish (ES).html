@@ -73,6 +73,9 @@
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
+
+<!-- ============ START Header ============ -->
+
 <div class="header-area">
   <div class="container">
     <div class="row">
@@ -136,45 +139,60 @@
   </div>
 </div><!-- /.background_part -->
 
+<!-- ============ END Header ============ -->
+
+
 <!-- ============ START Intro Text ============ -->
 <div class="small_para_part">
   <div class="container">
     <div class="col-md-12">
-      <div class="inner_small">
-        <p class="pq-lead-text">Lamentamos que se vaya, pero entendemos que usted tiene un montón de correos electrónicos en su buzón todos los días, y a veces simplemente necesitamos simplificar.</p>
-        <h2>¿Usted ha actualizado sus preferencias recientemente?</h2>
-        <p>Nos esforzamos por ofrecer a nuestros clientes contenido de calidad que sea relevante para ellos mediante el uso de opciones de suscripción individuales. Si usted simplemente quiere recibir menos o diferentes comunicaciones, le sugerimos que <a href="http://go.proquest.com/preferences-es" name="update_preferences" target="_blank" xt="SPCLICK" xtlinkname="update_preferences" xthyperlink="850424" style="color: #00a0df; text-decoration:none">actualice sus preferencias de suscripción</a> en lugar de anular la suscripción.</p>
-      </div>
+      <p class="pq-lead-text">Lamentamos que se vaya, pero entendemos que usted tiene un montón de correos electrónicos en su buzón todos los días, y a veces simplemente necesitamos simplificar.</p>
     </div>
   </div>
 </div>
 <!-- ============ END Intro Text ============ -->
 
+
 <!-- ============ START Main Form Body ============ -->
 <div class="main_form_part">
   <div class="container">
     <div class="col-md-12">
-      <div class="inner_first_one">
+      <div class="panel">
+        <h2>¿Usted ha actualizado sus preferencias recientemente?</h2>
+        <p>Nos esforzamos por ofrecer a nuestros clientes contenido de calidad que sea relevante para ellos mediante el uso de opciones de suscripción individuales.
+        Si usted simplemente quiere recibir menos o diferentes comunicaciones, le sugerimos que <a href="http://go.proquest.com/preferences-es" name="update_preferences" target="_blank" xt="SPCLICK" xtlinkname="update_preferences" xthyperlink="850424" style="color: #00a0df; text-decoration:none">actualice sus preferencias de suscripción</a> en lugar de anular la suscripción.</p>
         
-        <form id="unsubscribe" method="post">
-          <ul class="clearfix">
-            <li class="clearfix">
+      <!-- ======== START FORM ======== -->
+        <form id="unsubscribe" method="post" style="margin-top: 20px;">
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
               <label class="pq-form-label-dark">Correo electrónico <span class="required">*</span></label>
               <input type="text" class="form-control" id="email" name="email" data-required="true" data-type="email" />
-            </li>
-            <br>
-            <li class="clearfix">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
               <input type="submit" value="Cancelar" class="btn btn-primary btn-lg" id="submit" name="submit" />
-            </li>
-            <br>
-          </ul>
+              </div>
+            </div>
+          </div>
+
         </form>
+      <!-- ======== END FORM ======== -->
 
       </div>
     </div>
   </div>
+</div>
+<!-- ============ END Main Form Body ============ -->
 
-<!-- ======== START Temporary Footer (to be removed) ======== -->
+
+<!-- ============ START Footer ============ -->
 
   <div class="footer_one">
     <div class="container">
@@ -220,10 +238,7 @@
     </div>
   </div><!-- /.main_footer -->
 
-<!-- ======== END Temporary Footer ======== -->
-
-</div>
-<!-- ============ END Main Form Body ============ -->
+<!-- ============ END Footer ============ -->
 
 </body>
 </html>
