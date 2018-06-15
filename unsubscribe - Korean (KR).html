@@ -1,211 +1,256 @@
 <!DOCTYPE html>
-<html class="no-js">
-<!--<![endif]-->
+<html lang="ko" class="no-js">
 <head>
 <title>ProQuest수신거부</title>
+<link rel="icon" type="image/x-icon" href="https://www.proquest.com/favicon.ico" />
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta http-equiv="content-type" content="text/html;charset=utf-8">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat" />
-<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Slabo+27px" />
-<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Indie+Flower" />
-<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Dancing+Script:400,700" />
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
-<link href="http://www.proquest.com/includes/IMC-animate.css" rel="stylesheet" />
-<link href="http://www.proquest.com/includes/IMC-normalize.css" rel="stylesheet" />
-<link href="http://www.proquest.com/includes/IMC-bootstrap.css" rel="stylesheet" />
-<link href="http://www.proquest.com/includes/IMC-style.css" rel="stylesheet" />
-<link href="http://www.proquest.com/includes/IMC-responsive.css" rel="stylesheet" />
-<link href="http://www.proquest.com/includes/bootstrap-override-20140226.css" rel="stylesheet" />
-<script src="http://www.proquest.com/includes/IMC-modernizr-2.6.2.min.js"></script><!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Slabo+27px" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Indie+Flower" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" />
+<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/IMC-animate.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/IMC-normalize.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/IMC-bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/IMC-style.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/IMC-responsive.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/bootstrap-override-20140226.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/print-stylesheet.css" media="print" />
 <style type="text/css">
 .header {
-	color: #333333;
-	font-weight: bold;
+  color: #333333;
+  font-weight: bold;
 }
 #h3header {
-	font-size: 20px;
-	color: #333333;
-	font-weight: bold;
-}
-#formfontcolor {
-	color: #333333;
-!important font-size:15px;
+  font-size: 20px;
+  color: #333333;
+  font-weight: bold;
 }
 hr {
-	display: block;
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-	margin-left: auto;
-	margin-right: auto;
-	border-style: inset;
-	border-width: 2px;
+  display: block;
+  margin: 0.5em auto 0.5em auto;
+  border: 2px inset;
+}
+.pq-lead-text {
+  font-size: 16px;
+}
+.pq-form-label-dark {
+  color: #333333;
+}
+.required {
+  color: #a51f1e;
+}
+.main_footer {
+  float: left;
+  width: 100%;
+  padding: 0;
+}
+.main_footer a {
+  color: white;
+}
+.main_footer .links {
+  padding: 5px 15px;
+}
+.main_footer .links a {
+  font-size: 12px;
+  padding: 5px;
+}
+a:hover, a:focus {
+  text-decoration: none;
 }
 </style>
+
+<!--[if IE]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
+
 <body>
 <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<!-- ============ START Header ============ -->
+
 <div class="header-area">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <nav class="navbar navbar-default">
-          <div class="container-fluid"><!-- Brand and toggle get grouped for better mobile display -->
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-              <button aria-expanded="false" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar" /> <span class="icon-bar" /> <span class="icon-bar" /> </button>
-            </div>
+              <button aria-expanded="false" data-target="#navbar-collapse-1" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar">&nbsp;</span>
+                <span class="icon-bar">&nbsp;</span>
+                <span class="icon-bar">&nbsp;</span>
+              </button>
+            </div><!-- /.navbar-header -->
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+            <div id="navbar-collapse-1" class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-right">
-                <li><a  xtlinkname="TopNav_SupportCenter" xt="SPCLICK" name="TopNav_SupportCenter" href="http://www.proquest.com/company/support-landing.html" xthyperlink="850641">Support Center |</a></li>
-                <li><a  xtlinkname="TopNavNews" xt="SPCLICK" name="TopNavNews" href="http://www.proquest.com/about/news/" xthyperlink="850642">News |</a></li>
-                <li><a  xtlinkname="TopNav_Contact" xt="SPCLICK" name="TopNav_Contact" href="http://www.proquest.com/contact/contact-landing.html" xthyperlink="850643">Contact</a></li>
+                <li><a name="TopNav_SupportCenter" href="https://www.proquest.com/company/support-landing.html">Support Center |</a></li>
+                <li><a name="TopNavNews" href="https://www.proquest.com/about/news/">News |</a></li>
+                <li><a name="TopNav_Contact" href="https://www.proquest.com/APAC-KO/ko-contact">Contact</a></li>
               </ul>
-            </div>
-            <!-- /.navbar-collapse --></div>
-          <!-- /.container-fluid --> </nav>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
       </div>
     </div>
   </div>
-</div>
+</div><!-- /.header-area -->
+
 <div class="proquest_part">
   <div class="container">
     <div class="col-md-12">
-      <div class="inner_proquest"><img width="169" height="66" class="img-responsive" alt="ProQuest Logo" src="logo_3.jpg" name="logo_3.jpg" title="ProQuest Logo" contentid="21211413" xt="SPIMAGE" spname="logo_5.jpg" /></div>
+      <div class="inner_proquest">
+        <a href="https://www.proquest.com/APAC-KO/" target="_blank">
+          <img src="pq-header-logo.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="pq-header-logo.jpg" xt="SPIMAGE" contentId="21963216" />
+        </a>
+      </div>
     </div>
   </div>
-</div>
+</div><!-- /.proquest_part -->
+
 <div class="arts_db_part">
   <div class="container">
     <div class="col-md-12">
       <div class="inner_db">
         <div class="top_db">
-          <p>ProQuest | Your Subscription Preferences</p>
+          <p><a href="https://www.proquest.com/APAC-KO/" style="color: #00a0df; text-decoration: none;">ProQuest</a> > Your Email Preferences</p>
         </div>
-        <div class="bottom_t"><span style="font-size: 36px; padding-bottom: 10px; color: #33333; font-family: 'Open Sans'">수신거부</span></div>
+        <div class="bottom_t"><span style="font-size: 36px; padding-bottom: 10px;">수신거부</span></div>
       </div>
     </div>
   </div>
-</div>
-<div style="color:" class="background_part">
+</div><!-- /.arts_db_part -->
+
+<div class="background_part">
   <div class="container-fluid">
     <div class="col-md-12">
       <div class="inner_subscription">&nbsp;</div>
     </div>
   </div>
-</div>
+</div><!-- /.background_part -->
+
+<!-- ============ END Header ============ -->
+
+
+<!-- ============ START Intro Text ============ -->
 <div class="small_para_part">
   <div class="container">
     <div class="col-md-12">
-      <div class="inner_small">
-        <p><span style="font-size: 16px; color: #333333; 'font-family': 'Open Sans'">이메일  수신을 원치 않으시면 수신거부를 해주시기 바랍니다.</span></p>
-        <h2>최근 이메일 수신 관심분야 정보를 체크해 보셨나요?</h2>
-        <p>저희는 고객들 개개인의 관심분야에 따라 유용한 양질의 정보를 제공하고자 최선의 노력을 기울이고 있습니다. 많은 양의 이메일 수신을 원치 않으시거나, 다른 방식으로 정보를 받기 원하시는 경우, 수신거부 대신 <a href="http://go.proquest.com/preferences-kr" name="update_preferences" target="_blank" xt="SPCLICK" xtlinkname="update_preferences" xthyperlink="850644" style="color: #00a0df; text-decoration:none">이메일 수신 관심분야</a> 정보를 업데이트 해주시기 바랍니다.</p>
-      </div>
+      <p class="pq-lead-text">이메일 수신을 원치 않으시면 수신거부를 해주시기 바랍니다.</p>
     </div>
   </div>
 </div>
-<div class="first_form_part">
+<!-- ============ END Intro Text ============ -->
+
+
+<!-- ============ START Main Form Body ============ -->
+<div class="main_form_part">
   <div class="container">
     <div class="col-md-12">
-      <div class="inner_first_one">
-        
-        <form id="unsubscribe" method="post">
-        <ul class="clearfix">
-          <li class="clearfix">
-            <label id="formfontcolor">이메일<span class="required">*</span></label>
-            <input type="text" name="email" class="form-control" id="email" data-required="true" data-type="email" />
-          </li>
-          <br />
-          <li class="clearfix">
-            <input type="submit" id="submit" name="submit" value="수신거부" class="btn btn-primary btn-lg" />
-          </li>
-        </ul>
-      </form>
-        
-        
+      <div class="panel">
+        <h2>최근 이메일 수신 관심분야 정보를 체크해 보셨나요?</h2>
+        <p>저희는 고객들 개개인의 관심분야에 따라 유용한 양질의 정보를 제공하고자 최선의 노력을 기울이고 있습니다.
+        많은 양의 이메일 수신을 원치 않으시거나, 다른 방식으로 정보를 받기 원하시는 경우, 수신거부 대신 <a href="http://go.proquest.com/preferences-kr" name="update_preferences" target="_blank" style="color: #00a0df; text-decoration: none;">이메일 수신 관심분야</a> 정보를 업데이트 해주시기 바랍니다.</p>
+
+      <!-- ======== START FORM ======== -->
+        <form id="unsubscribe" method="post" style="margin-top: 20px;">
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="pq-form-label-dark">이메일 <span class="required">*</span></label>
+                <input type="text" class="form-control" id="email" name="email" data-required="true" data-type="email" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <input type="submit" value="수신거부" class="btn btn-primary btn-lg" id="submit" name="submit" />
+              </div>
+            </div>
+          </div>
+
+<!--
+          <h2>Instead of leaving for good you could just take a break.</h2>
+          <p>Click Pause to stop recieving mailing from us for 60 days.</p>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <input type="submit" value="Pause" class="btn btn-primary btn-lg" name="SP_SNOOZE_SUBMIT" />
+              </div>
+            </div>
+          </div>
+-->
+
+        </form>
+      <!-- ======== END FORM ======== -->
+
       </div>
     </div>
   </div>
-  <div class="footer_one">
-    <div class="container">
-      <div class="col-md-12">
-        <div class="col-md-2 col-xs-6">
-          <div class="single_ft">
-            <h4>사이트맵</h4>
-            <a  xtlinkname="Footer_Navigation_Libraries" xt="SPCLICK" name="Footer_Navigation_Libraries" href="http://www.proquest.com/libraries" xthyperlink="850877"> 사서 대상</a> <a  xtlinkname="Footer_Navigation_Researchers" xt="SPCLICK" name="Footer_Navigation_Researchers" href="http://www.proquest.com/researchers" xthyperlink="850878"> 연구원 대상</a> <a  xtlinkname="Footer_Navigation_ProductsServices" xt="SPCLICK" name="Footer_Navigation_ProductsServices" href="http://www.proquest.com/products-services" xthyperlink="850879"> 제품/서비스</a> <a  xtlinkname="Footer_Navigation_Customers" xt="SPCLICK" name="Footer_Navigation_Customers" href="http://www.proquest.com/customer-care" xthyperlink="850880"> 고객 지원</a> <a  xtlinkname="Footer_Navigation_Events" xt="SPCLICK" name="Footer_Navigation_Events" href="http://www.proquest.com/events" xthyperlink="850881"> 이벤트</a> <a  xtlinkname="Footer_Navigation_About" xt="SPCLICK" name="Footer_Navigation_About" href="http://www.proquest.com/about" xthyperlink="850882"> 회사 소개</a> <a  xtlinkname="Footer_Navigation_Blogs" xt="SPCLICK" name="Footer_Navigation_Blogs" href="http://www.proquest.com/blog" xthyperlink="850883"> 블로그</a></div>
-        </div>
-        <div class="col-md-2 col-xs-6">
-          <div class="single_ft">
-            <h4>고객 지원</h4>
-            <a  xtlinkname="Footer_Support_SupportCenter" xt="SPCLICK" name="Footer_Support_SupportCenter" href="http://www.proquest.com/company/support-landing.html" xthyperlink="850884"> 서포트 센터</a> <a  xtlinkname="Footer_Support_ToolsResources" xt="SPCLICK" name="Footer_Support_ToolsResources" href="http://www.proquest.com/customer-care/tools-resources/" xthyperlink="850885"> 자료</a> <a  xtlinkname="Footer_Support_TrainingWebinars" xt="SPCLICK" name="Footer_Support_TrainingWebinars" href="http://www.proquest.com/customer-care/training-webinars/" xthyperlink="850886"> 온라인 이용교육</a> <a  xtlinkname="Footer_Support_LibGuides" xt="SPCLICK" name="Footer_Support_LibGuides" href="http://proquest.libguides.com/home" xthyperlink="850887"> 립가이드</a></div>
-        </div></div>
-    </div>
-  </div>
-  <div class="main_footer">
-    <div class="container">
-      <div class="col-md-12">
-        <div class="inner_footer">
-          <p align="center"><a  xtlinkname="BottomNav_Privacy" xt="SPCLICK" name="BottomNav_Privacy" href="http://www.proquest.com/about/privacy-statement.html" xthyperlink="850656">Privacy</a>&nbsp;&nbsp; <a  xtlinkname="BottomNav_TermsofUse" xt="SPCLICK" name="BottomNav_TermsofUse" href="http://www.proquest.com/about/terms-and-conditions.html" xthyperlink="850657">Terms of Use</a>&nbsp;&nbsp; <a  xtlinkname="BottomNav_Cookies" xt="SPCLICK" name="BottomNav_Cookies" href="http://www.proquest.com/about/cookie-policy.html" xthyperlink="850658">Cookies</a>&nbsp;&nbsp; <a  xtlinkname="BottomNav_Accessibility" xt="SPCLICK" name="BottomNav_Accessibility" href="http://www.proquest.com/company/ProQuest-ADA-Compliance.html" xthyperlink="850659">Accessibility</a>&nbsp;&nbsp; <a  xtlinkname="BottomNav_DMCAPolicy" xt="SPCLICK" name="BottomNav_DMCAPolicy" href="http://media2.proquest.com/documents/dmcapolicy.pdf" xthyperlink="850660">DMCA Policy</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <p><em> <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script> <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
-    </script> <script src="http://www.proquest.com/includes/bootstrap.min.js"></script> <script src="http://www.proquest.com/includes/plugins.js"></script> <script src="http://www.proquest.com/includes/main.js"></script> <script src="http://www.proquest.com/includes/wow.min.js"></script> </em></p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
 </div>
+<!-- ============ END Main Form Body ============ -->
+
+
+<!-- ============ START Footer ============ -->
+
+<div class="footer_one">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="col-md-2 col-xs-6">
+        <div class="single_ft quicklinks">
+          <h4>사이트맵</h4><!--Navigation-->
+          <a name="Footer_Navigation_Libraries" href="https://www.proquest.com/libraries">사서 대상</a><br>
+          <a name="Footer_Navigation_Researchers" href="https://www.proquest.com/researchers">연구원 대상</a><br>
+          <a name="Footer_Navigation_ProductsServices" href="https://www.proquest.com/products-services">제품/서비스</a><br>
+          <a name="Footer_Navigation_Customers" href="https://www.proquest.com/customer-care">고객 지원</a><br>
+          <a name="Footer_Navigation_Events" href="https://www.proquest.com/events">이벤트</a><br>
+          <a name="Footer_Navigation_About" href="https://www.proquest.com/about">회사 소개</a><br>
+          <a name="Footer_Navigation_Blogs" href="https://www.proquest.com/blog">블로그</a>
+        </div>
+      </div>
+      <div class="col-md-2 col-xs-6">
+        <div class="single_ft quicklinks">
+          <h4>고객 지원</h4><!--Support-->
+          <a name="Footer_Support_SupportCenter" href="https://www.proquest.com/company/support-landing.html">서포트 센터</a><br>
+          <a name="Footer_Support_ToolsResources" href="https://www.proquest.com/customer-care/tools-resources/">자료</a><br>
+          <a name="Footer_Support_TrainingWebinars" href="https://www.proquest.com/customer-care/training-webinars/">온라인 이용교육</a><br>
+          <a name="Footer_Support_LibGuides" href="https://proquest.libguides.com/home">립가이드</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /.footer_one -->
+
+<!-- For the "Cookie Preferences" footer link - served by trustarc.com -->
+<script src="https://consent.trustarc.com/notice?domain=proquest.com&c=teconsent&js=nj&noticeType=bb&text=true" async="async" crossorigin=""></script>
+
+<div class="main_footer">
+  <div class="container links col-xs-12">
+    <div style="text-align: center;">
+      <a name="BottomNav_Privacy" href="https://www.proquest.com/about/privacy-statement.html">Privacy</a>
+      <a name="BottomNav_TermsofUse" href="https://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>
+      <a name="BottomNav_Cookies" href="https://www.proquest.com/about/cookie-policy.html">Cookies</a>
+      <div id="teconsent" style="display: inline;"></div>
+      <a name="BottomNav_Accessibility" href="https://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>
+      <a name="BottomNav_DMCAPolicy" href="https://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a>
+    </div>
+  </div>
+</div><!-- /.main_footer -->
+
+<!-- ============ END Footer ============ -->
+
 </body>
-<script>
-<!-- Function to clear the form -->
-function formClear() {
-              $(':input','#contact').not(':button, :submit, :reset, :hidden').val('').removeAttr('selected');
-               console.log("form cleared");
-           }
-
-<!-- Function to Select or Unselect all in the Subject area -->		   
-function SelectButton_Subject(){
-
-        var checkboxes = document.getElementsByName('email_topic_pc');
-        var button = document.getElementById('toggle');
-
-        if(button.value == 'Select All'){
-            for (var i in checkboxes){
-                checkboxes[i].checked = 'FALSE';
-            }
-            button.value = 'Unselect All'
-        }else{
-            for (var i in checkboxes){
-                checkboxes[i].checked = '';
-            }
-            button.value = 'Select All';
-        }
-    }
-
-<!-- Function to Select or Unselect all in the Subject area -->		   
-function SelectButton_Ebooks(){
-
-        var checkboxes = document.getElementsByName('email_ebooks_types_pc');
-        var button = document.getElementById('toggle2');
-
-        if(button.value == 'Select All'){
-            for (var i in checkboxes){
-                checkboxes[i].checked = 'FALSE';
-            }
-            button.value = 'Unselect All'
-        }else{
-            for (var i in checkboxes){
-                checkboxes[i].checked = '';
-            }
-            button.value = 'Select All';
-        }
-    }
-</script>
 </html>
