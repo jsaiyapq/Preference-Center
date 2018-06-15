@@ -2,45 +2,37 @@
 <html lang="ko" class="no-js">
 <head>
 <title>ProQuest Preference Center</title>
+<link rel="icon" type="image/x-icon" href="https://www.proquest.com/favicon.ico" />
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat" />
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Slabo+27px" />
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Indie+Flower" />
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dancing+Script:400,700" />
-<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
-<link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-animate.css" />
-<link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-normalize.css" />
-<link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-style.css" />
-<link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/IMC-responsive.css" />
-<link rel="stylesheet" type="text/css" href="http://www.proquest.com/includes/bootstrap-override-20140226.css" />
-
-<script src="http://www.proquest.com/includes/IMC-modernizr-2.6.2.min.js"></script>
-<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<script src="http://www.proquest.com/includes/IMC-jquery-1.10.2.min.js"></script>
-<script src="http://www.proquest.com/includes/bootstrap.min.js"></script>
-<script src="http://www.proquest.com/includes/parsley.min.js"></script>
-<script src="http://www.proquest.com/includes/jquery.cookie.js"></script>
-<script src="http://www.proquest.com/includes/jquery.form.min.js"></script>
-<script src="http://www.proquest.com/includes/pq-clear-preference-center.js"></script>
-<script>
-// Enable Bootstrap tooltips
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-});
-</script>
-
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Slabo+27px" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Indie+Flower" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" />
+<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/IMC-animate.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/IMC-normalize.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/IMC-bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/IMC-style.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/IMC-responsive.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/bootstrap-override-20140226.css" />
+<link rel="stylesheet" type="text/css" href="https://www.proquest.com/includes/print-stylesheet.css" media="print" />
 <style type="text/css">
+.parsley-border { /* must come before .parsley-error */
+  border: 2px solid transparent;
+}
 .parsley-error {
   border: 2px solid #a51f1e;
 }
 .parsley-error:focus {
   border: 2px solid #a51f1e;
+}
+.parsley-error-list {
+  color: #a51f1e;
 }
 .parsley-required {
   color: #a51f1e;
@@ -63,22 +55,142 @@ hr {
 #email-warning {
   display: none;
 }
-.well-sm-adjacent {
-  padding-top: 9px;
+a.clear-identity-action {
+  color: #00a0df;
 }
 .tooltip-inner {
   max-width: 275px;
   color: #a94442;
   background-color: #f2dede;
-  border-color: #ebccd1;
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid #ebccd1;
 }
-/* ID needed here for specificity */
-#pq-contact .tooltip-arrow {
+#pq-contact .tooltip-arrow { /* id needed here for specificity */
   border-top-color: #ebccd1;
 }
+.main_footer {
+  float: left;
+  width: 100%;
+  padding: 0;
+}
+.main_footer a {
+  color: white;
+}
+.main_footer .links {
+  padding: 5px 15px;
+}
+.main_footer .links a {
+  font-size: 12px;
+  padding: 5px;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
 </style>
+
+<script src="https://www.proquest.com/includes/IMC-modernizr-2.6.2.min.js"></script>
+<!--[if IE]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="https://www.proquest.com/includes/IMC-jquery-1.10.2.min.js"></script>
+<script src="https://www.proquest.com/includes/bootstrap.min.js"></script>
+<script src="https://www.proquest.com/includes/parsley.min.js"></script>
+<script src="https://www.proquest.com/includes/jquery.form.min.js"></script>
+<script src="https://www.proquest.com/includes/pq-clear-preference-center.js"></script>
+<script>
+var formLanguage = 'ko';
+
+// Put language-specific button labels here
+var SELECT_ALL_LABEL = '모두 선택';
+var UNSELECT_ALL_LABEL = '모두 선택 취소';
+
+// Function to set checkboxes from hidden shadow fields mapped to DB fields 
+//  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
+function setCheckboxes() {
+  $('.shadow-field').each(function() {
+    var shadow_field = $(this);
+    var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
+
+    var valuesArray = shadow_field.val().split(';');
+
+    $.each(valuesArray, function(index, value) {
+      checkboxes.filter('[value="'+value+'"]').prop('checked', true);
+    })
+  })
+}
+
+// Function to set hidden shadow fields (mapped to DB fields) based on checkbox values
+//  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
+function getCheckboxes() {
+  $('.shadow-field').each(function() {
+    var shadow_field = $(this);
+    var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
+
+    var valuesString = checkboxes.filter(':checked').map(function() {
+      return $(this).val();
+    }).get().join(';');
+
+    shadow_field.val(valuesString);
+  })
+}
+
+// Function to Select or Unselect all checkboxes in a multi-select checkbox area
+function toggleCheckboxes(checkboxesSelector, buttonSelector) {
+  var checkboxes = $('[name="'+checkboxesSelector+'"]');
+  var button = $( buttonSelector );
+
+  if (button.val() == SELECT_ALL_LABEL) {
+    checkboxes.each(function() {
+      this.checked = true;
+    })
+    button.val(UNSELECT_ALL_LABEL);
+  } else {
+    checkboxes.each(function() {
+      this.checked = false;
+    })
+    button.val(SELECT_ALL_LABEL);
+  }
+}
+
+// Function to clear the checkbox selections from the form
+function clearPreferences() {
+  $('input:checkbox', '.cbgroup').removeAttr('checked');
+  $('.select-all-btn').val(SELECT_ALL_LABEL);
+}
+
+// Function to get today's date for filling out date fields
+function getTodaysDateString() {
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+  var yyyy = today.getFullYear();
+
+  if (dd < 10) { dd = '0'+dd };
+  if (mm < 10) { mm = '0'+mm };
+  today = mm+'/'+dd+'/'+yyyy;
+
+  return today;
+}
+
+// Document Ready
+$( document ).ready(function() {
+
+  console.log('Begin Doc Ready.'); ////////////////
+
+  // From pq-clear-preference-center.js - disallow changing the email address if already set
+  initContactForm('pq-contact', 'control_EMAIL', 'control_COLUMN30');
+
+  // enable Bootstrap tooltip for email field
+  $('[data-toggle="tooltip"]').tooltip();
+
+  // Populate checkboxes with data from DB
+  setCheckboxes();
+
+  // Set hidden fields to current date
+  var dateString = getTodaysDateString();
+  $('#LastTouchLeadSourceDate').val(dateString);
+
+  console.log('End Doc Ready.'); ////////////////
+
+});
+</script>
 </head>
 
 <body>
@@ -87,7 +199,7 @@ hr {
 <![endif]-->
 
 
-<!-- ============ START Temporary Header (to be removed) ============ -->
+<!-- ============ START Header ============ -->
 
 <div class="header-area">
   <div class="container">
@@ -107,9 +219,9 @@ hr {
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div id="navbar-collapse-1" class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-right">
-                <li><a name="TopNav_SupportCenter" href="http://www.proquest.com/company/support-landing.html">Support Center |</a></li>
-                <li><a name="TopNavNews" href="http://www.proquest.com/about/news/">News |</a></li>
-                <li><a name="TopNav_Contact" href="http://www.proquest.com/contact/contact-landing.html">Contact</a></li>
+                <li><a name="TopNav_SupportCenter" href="https://www.proquest.com/company/support-landing.html">Support Center |</a></li>
+                <li><a name="TopNavNews" href="https://www.proquest.com/about/news/">News |</a></li>
+                <li><a name="TopNav_Contact" href="https://www.proquest.com/APAC-KO/ko-contact">Contact</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -123,7 +235,9 @@ hr {
   <div class="container">
     <div class="col-md-12">
       <div class="inner_proquest">
-        <a href="https://www.proquest.com" target="_blank" name="httpswwwproquestcom"><img src="pq-header-logo.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="pq-header-logo.jpg" xt="SPIMAGE" /></a>
+        <a href="https://www.proquest.com/APAC-KO/" target="_blank">
+          <img src="pq-header-logo.jpg" title="ProQuest Logo" alt="ProQuest" class="img-responsive" width="169" height="66" spname="pq-header-logo.jpg" xt="SPIMAGE" />
+        </a>
       </div>
     </div>
   </div>
@@ -134,7 +248,7 @@ hr {
     <div class="col-md-12">
       <div class="inner_db">
         <div class="top_db">
-          <p><a href="https://www.proquest.com" style="color: #00a0df; text-decoration: none;" name="httpswwwproquestcom">ProQuest</a> > Your Email Preferences</p>
+          <p><a href="https://www.proquest.com/APAC-KO/" style="color: #00a0df; text-decoration: none;">ProQuest</a> > Your Email Preferences</p>
         </div>
         <div class="bottom_t"><span style="font-size: 36px; padding-bottom: 10px;">Your Email Preferences</span></div>
       </div>
@@ -150,7 +264,7 @@ hr {
   </div>
 </div><!-- /.background_part -->
 
-<!-- ============ END Temporary Header ============ -->
+<!-- ============ END Header ============ -->
 
 
 <!-- ============ START Intro Text ============ -->
@@ -167,10 +281,7 @@ hr {
       </div>
     </div>
     <div class="col-md-6">
-      <div class="well well-sm">
-        <p>이메일 수신을 원치 않으시면 <a href="http://go.proquest.com/preferences/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;">여기</a>를 눌러 수신거부를 해주시기 바랍니다.</p>
-        <p>알렉산더 거리 의사 소통 환경 설정을 관리하려면<a href="https://alexanderstreet.com/preferences" target="_blank" name="AS Unsubscribe" style="color: #00a0df; text-decoration: none;">여기에서 선택하십시오</a>.</p>
-      </div>
+      <div class="well well-sm">이메일 수신을 원치 않으시면 <a href="https://go.proquest.com/preferences-kr/unsubscribe.html" target="_blank" name="Unsubscribe Redirect" style="color: #00a0df; text-decoration: none;">여기</a>를 눌러 수신거부를 해주시기 바랍니다.</div>
     </div>
   </div>
 </div>
@@ -181,14 +292,14 @@ hr {
   <div class="container">
     <div class="col-md-12">
       <div class="panel">
-        <h2>개인정보.<span class="n_fields">(<span class="parsley-required">*</span> = 필수 항목)</span></h2>
+        <h2>개인정보. <span class="n_fields">(<span class="parsley-required">*</span> = 필수 항목)</span></h2>
 
       <!-- ======== START FORM ======== -->
         <form id="pq-contact" name="pq-contact" onsubmit="getCheckboxes();" method="post" class="pq-contact" style="margin-top: 20px;" autocomplete="off">
         <!-- Autocomplete set to "off" for compatibility workaround for Firefox. -->
 
         <!-- ====== START Hidden Fields for Checkboxes ====== -->
-          <!-- Needed because WCA, a.k.a. IMC doesn't know how to do multi-select checkboxes. -->
+          <!-- Needed because Silverpop/IMC/WCA doesn't know how to do multi-select checkboxes. -->
           <div id="shadow-fields">
             <input type="hidden" class="shadow-field" name="email_type_pc" />
             <input type="hidden" class="shadow-field" name="email_newsleter_type" />
@@ -444,7 +555,7 @@ hr {
             <span style="font-size: 24px;">아래 어떤 종류의 이메일을 받길 원하십니까?<br>
               <br>
             </span>
-            <div class="panel-body">
+            <div class="panel-body cbgroup">
 
               <div class="row">
                 <div class="col-md-4">
@@ -487,7 +598,7 @@ hr {
             <span style="font-size: 24px;">뉴스 레터<br>
               <br>
             </span>
-            <div class="panel-body">
+            <div class="panel-body cbgroup">
 
               <div class="row">
                 <div class="col-md-4">
@@ -554,7 +665,7 @@ hr {
               <span style="font-size: 20px; font-weight: bold;">컬렉션 유형<br>
                 <br>
               </span>
-              <div class="panel-body">
+              <div class="panel-body cbgroup">
 
                 <div class="row">
                   <div class="col-md-4">
@@ -613,7 +724,7 @@ hr {
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="button" onclick="toggleCheckboxes('email_collection_types_cbgroup', this);" value="모두 선택" id="toggle1" class="btn btn-primary btn-xs" />
+                      <input type="button" onclick="toggleCheckboxes('email_collection_types_cbgroup', this);" value="모두 선택" class="btn btn-primary btn-xs select-all-btn" />
                     </div>
                   </div>
                 </div>
@@ -627,7 +738,7 @@ hr {
               <span style="font-size: 20px; font-weight: bold;">주제 분야<br>
                 <br>
               </span>
-              <div class="panel-body">
+              <div class="panel-body cbgroup">
 
                 <div class="row">
                   <div class="col-md-4">
@@ -722,7 +833,7 @@ hr {
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="button" onclick="toggleCheckboxes('email_topic_pc_cbgroup', this);" value="모두 선택" id="toggle2" class="btn btn-primary btn-xs" />
+                      <input type="button" onclick="toggleCheckboxes('email_topic_pc_cbgroup', this);" value="모두 선택" class="btn btn-primary btn-xs select-all-btn" />
                     </div>
                   </div>
                 </div>
@@ -734,15 +845,36 @@ hr {
           </div>
         <!-- ====== END Section 4 - Topics of Interest ====== -->
 
+          <hr>
+
+        <!-- ====== START Submission Buttons ====== -->
           <div class="panel">
             <div class="panel-body">
+
               <div class="row">
-                <a name="SubmitButton"></a>
-                <input type="submit" value="완료" class="btn btn-primary btn-lg" />
-                <input type="button" value="새로 작성하기" onclick="clearPreferences();" class="btn btn-primary btn-lg" />
+                <div class="col-xs-12">
+                  <p>Privacy regulations require that we get your consent to continue to collect, store and use the personal information submitted for account creation or collected while using our services.</p>
+                  <div class="form-group">
+                    <label class="parsley-border pq-form-label"><span class="parsley-required">*</span>&nbsp;<input type="checkbox" value="Yes" name="Double OptIn" required="" />
+                    I consent to the collection and use of my personal information consistent with the <a href="https://www.proquest.com/go/privacy" style="color: #00a0df;">Privacy Policy</a>.
+                    I&nbsp;acknowledge that use of the service is subject to the <a href="https://proquest.com/go/termsandconditions" style="color: #00a0df;">Terms & Conditions</a>.</label>
+                  </div>
+                </div>
               </div>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <a name="SubmitButton"></a>
+                    <input type="submit" value="완료" class="btn btn-primary btn-lg" />
+                    <input type="button" value="새로 작성하기" onclick="clearPreferences();" class="btn btn-primary btn-lg" />
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
+        <!-- ====== END Submission Buttons ====== -->
 
           <input type="hidden" name="LastTouchLeadSource" id="LastTouchLeadSource" value="Targeted Email">
           <input type="hidden" name="LastTouchLeadSourceDate" id="LastTouchLeadSourceDate" value="mm/dd/yyyy">
@@ -753,153 +885,57 @@ hr {
       </div>
     </div>
   </div>
-
-
-<!-- ======== START Temporary Footer (to be removed) ======== -->
-
-  <div class="footer_one">
-    <div class="container">
-      <div class="col-md-12">
-        <div class="col-md-2 col-xs-6">
-          <div class="single_ft">
-            <h4>사이트맵</h4><!--Navigation-->
-            <a name="Footer_Navigation_Libraries" href="http://www.proquest.com/libraries">사서 대상</a><br>
-            <a name="Footer_Navigation_Researchers" href="http://www.proquest.com/researchers">연구원 대상</a><br>
-            <a name="Footer_Navigation_ProductsServices" href="http://www.proquest.com/products-services">제품/서비스</a><br>
-            <a name="Footer_Navigation_Customers" href="http://www.proquest.com/customer-care">고객 지원</a><br>
-            <a name="Footer_Navigation_Events" href="http://www.proquest.com/events">이벤트</a><br>
-            <a name="Footer_Navigation_About" href="http://www.proquest.com/about">회사 소개</a><br>
-            <a name="Footer_Navigation_Blogs" href="http://www.proquest.com/blog">블로그</a>
-          </div>
-        </div>
-        <div class="col-md-2 col-xs-6">
-          <div class="single_ft">
-            <h4>고객 지원</h4><!--Support-->
-            <a name="Footer_Support_SupportCenter" href="http://www.proquest.com/company/support-landing.html">서포트 센터</a><br>
-            <a name="Footer_Support_ToolsResources" href="http://www.proquest.com/customer-care/tools-resources/">자료</a><br>
-            <a name="Footer_Support_TrainingWebinars" href="http://www.proquest.com/customer-care/training-webinars/">온라인 이용교육</a><br>
-            <a name="Footer_Support_LibGuides" href="http://proquest.libguides.com/home">립가이드</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><!-- /.footer_one -->
-
-  <div class="main_footer">
-    <div class="container">
-      <div class="col-md-12">
-        <div class="inner_footer">
-          <p style="text-align: center;">
-            <a name="BottomNav_Privacy" href="http://www.proquest.com/about/privacy-statement.html">Privacy</a>&nbsp;&nbsp;
-            <a name="BottomNav_TermsofUse" href="http://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>&nbsp;&nbsp;
-            <a name="BottomNav_Cookies" href="http://www.proquest.com/about/cookie-policy.html">Cookies</a>&nbsp;&nbsp;
-            <a name="BottomNav_Accessibility" href="http://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>&nbsp;&nbsp;
-            <a name="BottomNav_DMCAPolicy" href="http://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div><!-- /.main_footer -->
-
-<!-- ======== END Temporary Footer ======== -->
-
-
 </div>
 <!-- ============ END Main Form Body ============ -->
 
+
+<!-- ============ START Footer ============ -->
+
+<div class="footer_one">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="col-md-2 col-xs-6">
+        <div class="single_ft quicklinks">
+          <h4>사이트맵</h4><!--Navigation-->
+          <a name="Footer_Navigation_Libraries" href="https://www.proquest.com/libraries">사서 대상</a><br>
+          <a name="Footer_Navigation_Researchers" href="https://www.proquest.com/researchers">연구원 대상</a><br>
+          <a name="Footer_Navigation_ProductsServices" href="https://www.proquest.com/products-services">제품/서비스</a><br>
+          <a name="Footer_Navigation_Customers" href="https://www.proquest.com/customer-care">고객 지원</a><br>
+          <a name="Footer_Navigation_Events" href="https://www.proquest.com/events">이벤트</a><br>
+          <a name="Footer_Navigation_About" href="https://www.proquest.com/about">회사 소개</a><br>
+          <a name="Footer_Navigation_Blogs" href="https://www.proquest.com/blog">블로그</a>
+        </div>
+      </div>
+      <div class="col-md-2 col-xs-6">
+        <div class="single_ft quicklinks">
+          <h4>고객 지원</h4><!--Support-->
+          <a name="Footer_Support_SupportCenter" href="https://www.proquest.com/company/support-landing.html">서포트 센터</a><br>
+          <a name="Footer_Support_ToolsResources" href="https://www.proquest.com/customer-care/tools-resources/">자료</a><br>
+          <a name="Footer_Support_TrainingWebinars" href="https://www.proquest.com/customer-care/training-webinars/">온라인 이용교육</a><br>
+          <a name="Footer_Support_LibGuides" href="https://proquest.libguides.com/home">립가이드</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /.footer_one -->
+
+<!-- For the "Cookie Preferences" footer link - served by trustarc.com -->
+<script src="https://consent.trustarc.com/notice?domain=proquest.com&c=teconsent&js=nj&noticeType=bb&text=true" async="async" crossorigin=""></script>
+
+<div class="main_footer">
+  <div class="container links col-xs-12">
+    <div style="text-align: center;">
+      <a name="BottomNav_Privacy" href="https://www.proquest.com/about/privacy-statement.html">Privacy</a>
+      <a name="BottomNav_TermsofUse" href="https://www.proquest.com/about/terms-and-conditions.html">Terms of Use</a>
+      <a name="BottomNav_Cookies" href="https://www.proquest.com/about/cookie-policy.html">Cookies</a>
+      <div id="teconsent" style="display: inline;"></div>
+      <a name="BottomNav_Accessibility" href="https://www.proquest.com/company/ProQuest-ADA-Compliance.html">Accessibility</a>
+      <a name="BottomNav_DMCAPolicy" href="https://media2.proquest.com/documents/dmcapolicy.pdf">DMCA Policy</a>
+    </div>
+  </div>
+</div><!-- /.main_footer -->
+
+<!-- ============ END Footer ============ -->
+
 </body>
-
-<script>
-var formLanguage = 'ko';
-
-// Put language-specific button labels here
-var SELECT_ALL_LABEL = '모두 선택';
-var UNSELECT_ALL_LABEL = '모두 선택 취소';
-
-// Function to set checkboxes from hidden shadow fields mapped to DB fields 
-//  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
-function setCheckboxes() {
-  console.log('In setCheckboxes();'); ////////////////
-  $('.shadow-field').each(function() {
-    var shadow_field = $(this);
-    var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
-
-    var valuesArray = shadow_field.val().split(';');
-
-    $.each(valuesArray, function(index, value) {
-      checkboxes.filter('[value="'+value+'"]').prop('checked', true);
-    })
-  })
-}
-
-// Function to set hidden shadow fields (mapped to DB fields) based on checkbox values
-//  required because Silverpop/IMC/WCA is dain-bramaged and doesn't do it for us
-function getCheckboxes() {
-  console.log('In getCheckboxes();'); ////////////////
-  $('.shadow-field').each(function() {
-    var shadow_field = $(this);
-    var checkboxes = $('input[type="checkbox"][name="'+shadow_field.attr('name')+'_cbgroup"]');
-
-    var valuesString = checkboxes.filter(':checked').map(function() {
-      return $(this).val();
-    }).get().join(';');
-
-    shadow_field.val(valuesString);
-  })
-}
-
-// Function to Select or Unselect all checkboxes in a multi-select checkbox area
-function toggleCheckboxes(checkboxesSelector, buttonSelector) {
-  var checkboxes = $('[name="'+checkboxesSelector+'"]');
-  var button = $( buttonSelector );
-
-  if (button.val() == SELECT_ALL_LABEL) {
-    checkboxes.each(function() {
-      this.checked = true;
-    })
-    button.val(UNSELECT_ALL_LABEL);
-  } else {
-    checkboxes.each(function() {
-      this.checked = false;
-    })
-    button.val(SELECT_ALL_LABEL);
-  }
-}
-
-// Function to clear the checkbox selections from the form
-function clearPreferences() {
-  $(':input', '#pq-contact').not(':text, :button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected');
-  $('#toggle1').val(SELECT_ALL_LABEL);
-  $('#toggle2').val(SELECT_ALL_LABEL);
-}
-
-// Function to set the date for the "Last Touch Lead Source Date"
-function setLastTouchLeadSourceDate() {
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth()+1; //January is 0!
-  var yyyy = today.getFullYear();
-
-  if (dd < 10) { dd = '0'+dd };
-  if (mm < 10) { mm = '0'+mm };
-  today = mm+'/'+dd+'/'+yyyy;
-  $('#LastTouchLeadSourceDate').val(today);  // Sets hidden field for current date
-}
-
-// Document Ready
-$( document ).ready(function() {
-
-  // From pq-clear-contact-form.js - disallow changing the email address if already set
-  initContactForm('pq-contact', 'control_EMAIL', 'control_COLUMN30');
-
-  // Populate checkboxes
-  setCheckboxes();
-
-  // Do that last-touch-lead-source thing
-  setLastTouchLeadSourceDate();
-
-  console.log('Document loaded.'); ////////////////
-
-});
-</script>
 </html>
